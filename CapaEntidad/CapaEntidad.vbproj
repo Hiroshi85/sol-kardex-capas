@@ -63,7 +63,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="Categoria.vb" />
+    <Compile Include="Documento.vb" />
+    <Compile Include="Kardex.vb" />
+    <Compile Include="Medida.vb" />
+    <Compile Include="Movimiento.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -79,6 +83,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Producto.vb" />
+    <Compile Include="Proveedor.vb" />
+    <Compile Include="Responsable.vb" />
+    <Compile Include="Tipo_Documento.vb" />
+    <Compile Include="Tipo_Movimiento.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
