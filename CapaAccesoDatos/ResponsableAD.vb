@@ -59,6 +59,7 @@ Public Class ResponsableAD
             oComando.Connection = oConeccion
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_UPDATE_RESPONSABLE"
+            oComando.Parameters.Add("@CodigoResponsable", SqlDbType.VarChar, 36).Value = x.CodigoResponsable
             oComando.Parameters.Add("@NumDNI", SqlDbType.Char, 8).Value = x.NumDNI
             oComando.Parameters.Add("@FechaNacimiento", SqlDbType.Date).Value = x.FechaNacimiento
             oComando.Parameters.Add("@Nombre", SqlDbType.VarChar, 40).Value = x.Nombre
