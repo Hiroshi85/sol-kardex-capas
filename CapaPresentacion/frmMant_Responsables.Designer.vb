@@ -28,7 +28,6 @@ Partial Class frmMant_Responsables
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBuscarCodigoResp = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -92,7 +91,6 @@ Partial Class frmMant_Responsables
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.txtBuscarCodigoResp)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnLimpiar)
@@ -108,31 +106,22 @@ Partial Class frmMant_Responsables
         Me.Panel1.Size = New System.Drawing.Size(1194, 473)
         Me.Panel1.TabIndex = 1
         '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(1082, 209)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(105, 64)
-        Me.btnBuscar.TabIndex = 10
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
-        '
         'txtBuscarCodigoResp
         '
-        Me.txtBuscarCodigoResp.Location = New System.Drawing.Point(948, 166)
+        Me.txtBuscarCodigoResp.Location = New System.Drawing.Point(812, 166)
         Me.txtBuscarCodigoResp.Name = "txtBuscarCodigoResp"
-        Me.txtBuscarCodigoResp.Size = New System.Drawing.Size(125, 22)
+        Me.txtBuscarCodigoResp.Size = New System.Drawing.Size(261, 22)
         Me.txtBuscarCodigoResp.TabIndex = 9
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(735, 166)
+        Me.Label5.Location = New System.Drawing.Point(616, 168)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(180, 20)
+        Me.Label5.Size = New System.Drawing.Size(165, 20)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Código de responsable"
+        Me.Label5.Text = "Buscar Responsable"
         '
         'btnLimpiar
         '
@@ -145,7 +134,7 @@ Partial Class frmMant_Responsables
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(1082, 340)
+        Me.btnEliminar.Location = New System.Drawing.Point(1082, 290)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(103, 55)
         Me.btnEliminar.TabIndex = 8
@@ -154,7 +143,7 @@ Partial Class frmMant_Responsables
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(1082, 279)
+        Me.btnActualizar.Location = New System.Drawing.Point(1082, 215)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(103, 55)
         Me.btnActualizar.TabIndex = 7
@@ -283,7 +272,6 @@ Partial Class frmMant_Responsables
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents dtpFechaNacimiento As DateTimePicker
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents txtBuscarCodigoResp As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnLimpiar As Button

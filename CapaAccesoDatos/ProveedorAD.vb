@@ -8,7 +8,7 @@ Public Class ProveedorAD
         Try
             oConeccion.Open()
             oComando.Connection = oConeccion
-            oComando.CommandText = "select * from PROVEEDOR"
+            oComando.CommandText = "select * from PROVEEDOR where borrado = 0"
             oComando.CommandType = CommandType.Text
             Dim oLector As SqlDataReader
             oLector = oComando.ExecuteReader

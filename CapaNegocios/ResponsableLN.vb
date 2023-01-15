@@ -13,8 +13,12 @@ Public Class ResponsableLN
         Dim objAD As New ResponsableAD
         objAD.Actualizar(obj)
     End Sub
-    Public Shared Sub Eliminar(obj As Responsable)
+    Public Shared Sub Eliminar(obj As String)
         Dim objAD As New ResponsableAD
         objAD.Eliminar(obj)
     End Sub
+    Public Shared Function Buscar(obj As String) As List(Of Responsable)
+        Dim objAD As New ResponsableAD
+        Return objAD.Buscar(obj)
+    End Function
 End Class

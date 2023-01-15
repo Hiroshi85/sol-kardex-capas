@@ -14,6 +14,7 @@ Public Class frmMant_Responsables
         DGVResponsables.AllowUserToOrderColumns = True
         DGVResponsables.MultiSelect = False
         DGVResponsables.DataSource = lista
+        DGVResponsables.Columns("CodigoResponsable").ReadOnly = True
     End Sub
 
     Private Sub listarProveedores()
@@ -41,24 +42,27 @@ Public Class frmMant_Responsables
             .FechaNacimiento = xFecha,
             .NumDNI = xDNI
         }
-        If xResponsable.CodigoResponsable Then
-            ResponsableLN.Actualizar(xResponsable)
-            MessageInformation("Datos actualizados")
-        Else
-            MessageInformation("Código no encontrado")
-        End If
+        ResponsableLN.Actualizar(xResponsable)
         listarResponsables()
+        MessageInformation("Datos actualizados")
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
-        Dim xResponsable As New Responsable With {
-            .Nombre = txtNombre.Text,
-            .FechaNacimiento = dtpFechaNacimiento.Value.ToString("yyyy-MM-dd"),
-            .NumDNI = txtDNI.Text
-        }
-        ResponsableLN.Insertar(xResponsable)
-        MessageInformation("Responsable registrado")
-        listarResponsables()
+        Dim nombre As String = txtNombre.Text
+        Dim dni As String = txtDNI.Text
+        If nombre <> "" And dni <> "" Then
+            Dim xResponsable As New Responsable With {
+                .Nombre = txtNombre.Text,
+                .FechaNacimiento = dtpFechaNacimiento.Value.ToString("yyyy-MM-dd"),
+                .NumDNI = txtDNI.Text
+            }
+            ResponsableLN.Insertar(xResponsable)
+            listarResponsables()
+            Clear()
+            MessageInformation("Responsable registrado")
+        Else
+            MessageError("Todos los campos son obligatorios")
+        End If
     End Sub
 
     Private Sub MessageInformation(mensaje As String)
@@ -67,21 +71,46 @@ Public Class frmMant_Responsables
     Private Sub MessageError(mensaje As String)
         MessageBox.Show(mensaje, "Datos no válidos", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
+    Private Function MessageConfirm(mensaje As String) As DialogResult
+        Dim confirm As DialogResult = MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo)
+        Return confirm
+    End Function
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs)
 
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-
+        If DGVResponsables.SelectedRows.Count > 0 Then
+            Dim confirm As DialogResult = MessageConfirm("¿Seguro que quiere eliminar el responsable seleccionado?")
+            If confirm = DialogResult.Yes Then
+                Dim i As Integer = DGVResponsables.SelectedRows(0).Index
+                Dim CodigoResponsable As String = CStr(DGVResponsables.Rows(i).Cells("CodigoResponsable").Value)
+                'DGVResponsables.Rows.RemoveAt(i)
+                ResponsableLN.Eliminar(CodigoResponsable)
+                listarResponsables()
+                MessageInformation("Responsable eliminado del registro")
+            End If
+        Else
+            MessageInformation("Seleccione una fila a eliminar")
+        End If
     End Sub
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        Clear()
+    End Sub
+
+    Private Sub Clear()
         txtDNI.Text = ""
         txtNombre.Text = ""
         txtBuscarCodigoResp.Text = ""
         dtpFechaNacimiento.Value = Date.Now
     End Sub
 
-
+    Private Sub txtBuscarCodigoResp_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCodigoResp.TextChanged
+        Dim texto As String = txtBuscarCodigoResp.Text
+        Dim lista As List(Of Responsable)
+        lista = ResponsableLN.Buscar(texto)
+        DGVResponsables.DataSource = lista
+    End Sub
 End Class

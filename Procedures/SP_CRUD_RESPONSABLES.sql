@@ -24,9 +24,15 @@ as
 go
 
 CREATE PROCEDURE SP_DELETE_RESPONSABLE
-	@CodigoResponsable
+	@CodigoResponsable		varchar(36)
 as
 	UPDATE RESPONSABLE SET 
-		borrado = 1
+		Borrado = 1
 		where CodigoResponsable = @CodigoResponsable
+go
+
+CREATE PROCEDURE SP_SEARCH_RESPONSABLExNOMBRE
+	@Nombre			varchar(40)
+as
+	SELECT * FROM RESPONSABLE WHERE Borrado = 0 AND Nombre like '%'+@Nombre+'%'
 go
