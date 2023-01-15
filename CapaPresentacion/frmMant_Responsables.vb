@@ -80,7 +80,7 @@ Public Class frmMant_Responsables
         txtDNI.Text = ""
         txtNombre.Text = ""
         txtBuscarCodigoResp.Text = ""
-        dtpFechaNacimiento.Value.ToString = ""
+        dtpFechaNacimiento.Value = Date.Now
     End Sub
 
 
