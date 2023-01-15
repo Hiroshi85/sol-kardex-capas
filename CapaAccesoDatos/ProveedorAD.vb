@@ -64,7 +64,7 @@ Public Class ProveedorAD
         End Try
     End Sub
 
-    Public Sub Eliminar(x As Proveedor)
+    Public Sub Eliminar(x As Integer)
         Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
@@ -72,7 +72,7 @@ Public Class ProveedorAD
             oComando.Connection = oConeccion
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_DELETE_PROVEEDOR"
-            oComando.Parameters.Add("@IdProveedor", SqlDbType.Int).Value = x.IdProveedor
+            oComando.Parameters.Add("@IdProveedor", SqlDbType.Int).Value = x
             oComando.ExecuteNonQuery()
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -80,4 +80,34 @@ Public Class ProveedorAD
             oConeccion.Close()
         End Try
     End Sub
+
+    Public Function Buscar(x As String) As List(Of Proveedor)
+        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
+        Dim oComando As New SqlCommand
+        Dim lista As New List(Of Proveedor)
+        Try
+            oConeccion.Open()
+            oComando.Connection = oConeccion
+            oComando.CommandText = "SP_SEARCH_PROVEEDOR"
+            oComando.CommandType = CommandType.StoredProcedure
+            oComando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 30).Value = x
+            Dim oLector As SqlDataReader
+            oLector = oComando.ExecuteReader
+            If oLector.HasRows = True Then
+                While oLector.Read
+                    lista.Add(
+                        New Proveedor With {
+                            .IdProveedor = oLector.Item(0),
+                            .Descripcion = oLector.Item(1)
+                        }
+                    )
+                End While
+            End If
+            Return lista
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        Finally
+            oConeccion.Close()
+        End Try
+    End Function
 End Class

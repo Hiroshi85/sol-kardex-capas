@@ -79,6 +79,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMant_Proveedores.Designer.vb">
+      <DependentUpon>frmMant_Proveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMant_Proveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMant_Responsables.Designer.vb">
       <DependentUpon>frmMant_Responsables.vb</DependentUpon>
     </Compile>
@@ -104,6 +110,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMant_Proveedores.resx">
+      <DependentUpon>frmMant_Proveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Responsables.resx">
       <DependentUpon>frmMant_Responsables.vb</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
 Public Class frmMant_Responsables
+    'Variables de edición de celda en el DataGridView
     Dim xNombre As String
     Dim xDNI As String
     Dim xFecha As Date
@@ -15,12 +16,6 @@ Public Class frmMant_Responsables
         DGVResponsables.MultiSelect = False
         DGVResponsables.DataSource = lista
         DGVResponsables.Columns("CodigoResponsable").ReadOnly = True
-    End Sub
-
-    Private Sub listarProveedores()
-        Dim lista As List(Of Proveedor)
-        lista = ProveedorLN.ListarProveedores
-        'DGVProveedores.DataSource = lista
     End Sub
 
     Private Sub DGVResponsables_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGVResponsables.CellEndEdit

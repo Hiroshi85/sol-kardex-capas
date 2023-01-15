@@ -43,6 +43,7 @@ Partial Class frmMant_Responsables
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblResp = New System.Windows.Forms.Label()
+        Me.btnCerrar = New System.Windows.Forms.Button()
         CType(Me.DGVResponsables, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -94,8 +95,6 @@ Partial Class frmMant_Responsables
         Me.Panel1.Controls.Add(Me.txtBuscarCodigoResp)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnLimpiar)
-        Me.Panel1.Controls.Add(Me.btnEliminar)
-        Me.Panel1.Controls.Add(Me.btnActualizar)
         Me.Panel1.Controls.Add(Me.btnAñadir)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -103,12 +102,12 @@ Partial Class frmMant_Responsables
         Me.Panel1.Controls.Add(Me.DGVResponsables)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1194, 473)
+        Me.Panel1.Size = New System.Drawing.Size(1073, 473)
         Me.Panel1.TabIndex = 1
         '
         'txtBuscarCodigoResp
         '
-        Me.txtBuscarCodigoResp.Location = New System.Drawing.Point(812, 166)
+        Me.txtBuscarCodigoResp.Location = New System.Drawing.Point(204, 168)
         Me.txtBuscarCodigoResp.Name = "txtBuscarCodigoResp"
         Me.txtBuscarCodigoResp.Size = New System.Drawing.Size(261, 22)
         Me.txtBuscarCodigoResp.TabIndex = 9
@@ -117,7 +116,7 @@ Partial Class frmMant_Responsables
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(616, 168)
+        Me.Label5.Location = New System.Drawing.Point(20, 168)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(165, 20)
         Me.Label5.TabIndex = 9
@@ -134,7 +133,7 @@ Partial Class frmMant_Responsables
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(1082, 290)
+        Me.btnEliminar.Location = New System.Drawing.Point(593, 491)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(103, 55)
         Me.btnEliminar.TabIndex = 8
@@ -143,7 +142,7 @@ Partial Class frmMant_Responsables
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(1082, 215)
+        Me.btnActualizar.Location = New System.Drawing.Point(317, 491)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(103, 55)
         Me.btnActualizar.TabIndex = 7
@@ -238,18 +237,30 @@ Partial Class frmMant_Responsables
         '
         Me.lblResp.AutoSize = True
         Me.lblResp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResp.Location = New System.Drawing.Point(551, 0)
+        Me.lblResp.Location = New System.Drawing.Point(453, -3)
         Me.lblResp.Name = "lblResp"
         Me.lblResp.Size = New System.Drawing.Size(148, 25)
         Me.lblResp.TabIndex = 0
         Me.lblResp.Text = "Responsables"
         '
+        'btnCerrar
+        '
+        Me.btnCerrar.Location = New System.Drawing.Point(982, 491)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(103, 55)
+        Me.btnCerrar.TabIndex = 9
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = True
+        '
         'frmMant_Responsables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1209, 487)
+        Me.ClientSize = New System.Drawing.Size(1091, 551)
+        Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btnActualizar)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Name = "frmMant_Responsables"
         Me.Text = "frmMant_Responsables"
         CType(Me.DGVResponsables, System.ComponentModel.ISupportInitialize).EndInit()
@@ -282,4 +293,5 @@ Partial Class frmMant_Responsables
     Friend WithEvents NumDNI As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents FechaNacimiento As DataGridViewTextBoxColumn
+    Friend WithEvents btnCerrar As Button
 End Class
