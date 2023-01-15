@@ -5,5 +5,8 @@
 
         Dim frmP As New frmMant_Proveedores
         frmP.Visible = True
+
+        Dim frmKM As New frmKardex_Movs
+        frmKM.Visible = True
     End Sub
 End Class
