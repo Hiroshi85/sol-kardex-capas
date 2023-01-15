@@ -22,7 +22,12 @@ Partial Class frmMant_Responsables
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DGVResponsables = New System.Windows.Forms.DataGridView()
+        Me.CodigoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtBuscarCodigoResp = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,10 +45,8 @@ Partial Class frmMant_Responsables
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.CodigoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DGVResponsables, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -62,8 +65,37 @@ Partial Class frmMant_Responsables
         Me.DGVResponsables.Size = New System.Drawing.Size(1049, 263)
         Me.DGVResponsables.TabIndex = 0
         '
+        'CodigoResponsable
+        '
+        Me.CodigoResponsable.DataPropertyName = "CodigoResponsable"
+        Me.CodigoResponsable.HeaderText = "Código"
+        Me.CodigoResponsable.MinimumWidth = 6
+        Me.CodigoResponsable.Name = "CodigoResponsable"
+        '
+        'NumDNI
+        '
+        Me.NumDNI.DataPropertyName = "NumDNI"
+        Me.NumDNI.HeaderText = "DNI"
+        Me.NumDNI.MinimumWidth = 6
+        Me.NumDNI.Name = "NumDNI"
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        '
+        'FechaNacimiento
+        '
+        Me.FechaNacimiento.DataPropertyName = "FechaNacimiento"
+        Me.FechaNacimiento.HeaderText = "Fecha de Nacimiento"
+        Me.FechaNacimiento.MinimumWidth = 6
+        Me.FechaNacimiento.Name = "FechaNacimiento"
+        '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtBuscarCodigoResp)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnLimpiar)
@@ -79,38 +111,47 @@ Partial Class frmMant_Responsables
         '
         'txtBuscarCodigoResp
         '
-        Me.txtBuscarCodigoResp.Location = New System.Drawing.Point(204, 168)
+        Me.txtBuscarCodigoResp.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtBuscarCodigoResp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarCodigoResp.Location = New System.Drawing.Point(806, 173)
         Me.txtBuscarCodigoResp.Name = "txtBuscarCodigoResp"
-        Me.txtBuscarCodigoResp.Size = New System.Drawing.Size(261, 22)
+        Me.txtBuscarCodigoResp.Size = New System.Drawing.Size(261, 21)
         Me.txtBuscarCodigoResp.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.txtBuscarCodigoResp, "Escriba el nombre del responsable")
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(20, 168)
+        Me.Label5.Location = New System.Drawing.Point(718, 175)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(165, 20)
+        Me.Label5.Size = New System.Drawing.Size(63, 20)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Buscar Responsable"
+        Me.Label5.Text = "Buscar"
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(970, 78)
+        Me.btnLimpiar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiar.Location = New System.Drawing.Point(954, 78)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(103, 66)
         Me.btnLimpiar.TabIndex = 9
         Me.btnLimpiar.Text = "Limpiar"
-        Me.btnLimpiar.UseVisualStyleBackColor = True
+        Me.btnLimpiar.UseVisualStyleBackColor = False
         '
         'btnAñadir
         '
+        Me.btnAñadir.BackColor = System.Drawing.SystemColors.Window
+        Me.btnAñadir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAñadir.Location = New System.Drawing.Point(843, 80)
         Me.btnAñadir.Name = "btnAñadir"
         Me.btnAñadir.Size = New System.Drawing.Size(105, 64)
         Me.btnAñadir.TabIndex = 6
         Me.btnAñadir.Text = "Añadir"
-        Me.btnAñadir.UseVisualStyleBackColor = True
+        Me.btnAñadir.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -168,9 +209,12 @@ Partial Class frmMant_Responsables
         '
         'txtDNI
         '
-        Me.txtDNI.Location = New System.Drawing.Point(63, 11)
+        Me.txtDNI.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDNI.Location = New System.Drawing.Point(63, 14)
+        Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
-        Me.txtDNI.Size = New System.Drawing.Size(125, 22)
+        Me.txtDNI.Size = New System.Drawing.Size(137, 21)
         Me.txtDNI.TabIndex = 1
         '
         'dtpFechaNacimiento
@@ -182,9 +226,11 @@ Partial Class frmMant_Responsables
         '
         'txtNombre
         '
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.Location = New System.Drawing.Point(419, 11)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(328, 22)
+        Me.txtNombre.Size = New System.Drawing.Size(328, 21)
         Me.txtNombre.TabIndex = 2
         '
         'lblResp
@@ -199,58 +245,49 @@ Partial Class frmMant_Responsables
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(593, 491)
+        Me.btnEliminar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Location = New System.Drawing.Point(179, 491)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(103, 55)
         Me.btnEliminar.TabIndex = 8
         Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(317, 491)
+        Me.btnActualizar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Location = New System.Drawing.Point(60, 491)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(103, 55)
         Me.btnActualizar.TabIndex = 7
         Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizar.UseVisualStyleBackColor = False
         '
         'btnCerrar
         '
+        Me.btnCerrar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Location = New System.Drawing.Point(982, 491)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(103, 55)
         Me.btnCerrar.TabIndex = 9
         Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'CodigoResponsable
+        'Label6
         '
-        Me.CodigoResponsable.DataPropertyName = "CodigoResponsable"
-        Me.CodigoResponsable.HeaderText = "Código"
-        Me.CodigoResponsable.MinimumWidth = 6
-        Me.CodigoResponsable.Name = "CodigoResponsable"
-        '
-        'NumDNI
-        '
-        Me.NumDNI.DataPropertyName = "NumDNI"
-        Me.NumDNI.HeaderText = "DNI"
-        Me.NumDNI.MinimumWidth = 6
-        Me.NumDNI.Name = "NumDNI"
-        '
-        'Nombre
-        '
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 6
-        Me.Nombre.Name = "Nombre"
-        '
-        'FechaNacimiento
-        '
-        Me.FechaNacimiento.DataPropertyName = "FechaNacimiento"
-        Me.FechaNacimiento.HeaderText = "Fecha de Nacimiento"
-        Me.FechaNacimiento.MinimumWidth = 6
-        Me.FechaNacimiento.Name = "FechaNacimiento"
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(28, 173)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(221, 20)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Listado de Responsables"
         '
         'frmMant_Responsables
         '
@@ -294,4 +331,6 @@ Partial Class frmMant_Responsables
     Friend WithEvents NumDNI As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents FechaNacimiento As DataGridViewTextBoxColumn
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Label6 As Label
 End Class
