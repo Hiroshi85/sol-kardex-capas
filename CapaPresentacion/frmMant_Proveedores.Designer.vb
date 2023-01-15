@@ -31,11 +31,23 @@ Partial Class frmMant_Proveedores
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtProveedor = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtCorreo = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,21 +55,21 @@ Partial Class frmMant_Proveedores
         '
         Me.DGVProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedor, Me.Descripcion})
-        Me.DGVProveedores.Location = New System.Drawing.Point(23, 209)
+        Me.DGVProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedor, Me.Proveedor, Me.Descripcion, Me.Correo, Me.Direccion, Me.Telefono})
+        Me.DGVProveedores.Location = New System.Drawing.Point(12, 272)
         Me.DGVProveedores.Name = "DGVProveedores"
         Me.DGVProveedores.RowHeadersWidth = 51
         Me.DGVProveedores.RowTemplate.Height = 24
-        Me.DGVProveedores.Size = New System.Drawing.Size(739, 219)
+        Me.DGVProveedores.Size = New System.Drawing.Size(1190, 219)
         Me.DGVProveedores.TabIndex = 0
         '
         'Proveedores
         '
         Me.Proveedores.AutoSize = True
-        Me.Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Proveedores.Location = New System.Drawing.Point(310, 24)
+        Me.Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Proveedores.Location = New System.Drawing.Point(503, 9)
         Me.Proveedores.Name = "Proveedores"
-        Me.Proveedores.Size = New System.Drawing.Size(134, 25)
+        Me.Proveedores.Size = New System.Drawing.Size(163, 29)
         Me.Proveedores.TabIndex = 1
         Me.Proveedores.Text = "Proveedores"
         '
@@ -73,76 +85,59 @@ Partial Class frmMant_Proveedores
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(126, 82)
+        Me.txtDescripcion.Location = New System.Drawing.Point(530, 82)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(247, 22)
+        Me.txtDescripcion.Size = New System.Drawing.Size(234, 22)
         Me.txtDescripcion.TabIndex = 3
         '
         'btnAñadir
         '
-        Me.btnAñadir.Location = New System.Drawing.Point(433, 69)
+        Me.btnAñadir.Location = New System.Drawing.Point(874, 74)
         Me.btnAñadir.Name = "btnAñadir"
-        Me.btnAñadir.Size = New System.Drawing.Size(90, 48)
+        Me.btnAñadir.Size = New System.Drawing.Size(111, 60)
         Me.btnAñadir.TabIndex = 4
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = True
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(547, 69)
+        Me.btnLimpiar.Location = New System.Drawing.Point(874, 148)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(90, 48)
+        Me.btnLimpiar.Size = New System.Drawing.Size(111, 60)
         Me.btnLimpiar.TabIndex = 5
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(160, 444)
+        Me.btnActualizar.Location = New System.Drawing.Point(192, 497)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(90, 48)
+        Me.btnActualizar.Size = New System.Drawing.Size(113, 53)
         Me.btnActualizar.TabIndex = 6
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(341, 444)
+        Me.btnEliminar.Location = New System.Drawing.Point(377, 497)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(90, 48)
+        Me.btnEliminar.Size = New System.Drawing.Size(113, 53)
         Me.btnEliminar.TabIndex = 7
-        Me.btnEliminar.Text = "Elimiinar"
+        Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(675, 444)
+        Me.btnCerrar.Location = New System.Drawing.Point(1076, 497)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(90, 48)
+        Me.btnCerrar.Size = New System.Drawing.Size(113, 53)
         Me.btnCerrar.TabIndex = 8
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
-        'IdProveedor
-        '
-        Me.IdProveedor.DataPropertyName = "IdProveedor"
-        Me.IdProveedor.FillWeight = 53.47594!
-        Me.IdProveedor.HeaderText = "ID"
-        Me.IdProveedor.MinimumWidth = 6
-        Me.IdProveedor.Name = "IdProveedor"
-        Me.IdProveedor.ReadOnly = True
-        '
-        'Descripcion
-        '
-        Me.Descripcion.DataPropertyName = "Descripcion"
-        Me.Descripcion.FillWeight = 146.5241!
-        Me.Descripcion.HeaderText = "Proveedor"
-        Me.Descripcion.MinimumWidth = 6
-        Me.Descripcion.Name = "Descripcion"
-        '
         'txtBuscar
         '
-        Me.txtBuscar.Location = New System.Drawing.Point(125, 170)
+        Me.txtBuscar.Location = New System.Drawing.Point(121, 232)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(248, 22)
         Me.txtBuscar.TabIndex = 9
@@ -151,7 +146,7 @@ Partial Class frmMant_Proveedores
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(34, 167)
+        Me.Label2.Location = New System.Drawing.Point(30, 229)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 29)
         Me.Label2.TabIndex = 10
@@ -160,18 +155,146 @@ Partial Class frmMant_Proveedores
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(263, 134)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(471, 200)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(240, 25)
+        Me.Label3.Size = New System.Drawing.Size(218, 25)
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Listado de Proveedores"
+        '
+        'IdProveedor
+        '
+        Me.IdProveedor.DataPropertyName = "IdProveedor"
+        Me.IdProveedor.FillWeight = 48.12834!
+        Me.IdProveedor.HeaderText = "ID"
+        Me.IdProveedor.MinimumWidth = 6
+        Me.IdProveedor.Name = "IdProveedor"
+        Me.IdProveedor.ReadOnly = True
+        '
+        'Proveedor
+        '
+        Me.Proveedor.DataPropertyName = "Proveedor"
+        Me.Proveedor.FillWeight = 150.4922!
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.MaxInputLength = 30
+        Me.Proveedor.MinimumWidth = 6
+        Me.Proveedor.Name = "Proveedor"
+        '
+        'Descripcion
+        '
+        Me.Descripcion.DataPropertyName = "Descripcion"
+        Me.Descripcion.FillWeight = 118.9635!
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.MaxInputLength = 30
+        Me.Descripcion.MinimumWidth = 6
+        Me.Descripcion.Name = "Descripcion"
+        '
+        'Correo
+        '
+        Me.Correo.DataPropertyName = "Correo"
+        Me.Correo.FillWeight = 120.4335!
+        Me.Correo.HeaderText = "Correo Electrónico"
+        Me.Correo.MinimumWidth = 6
+        Me.Correo.Name = "Correo"
+        '
+        'Direccion
+        '
+        Me.Direccion.DataPropertyName = "Direccion"
+        Me.Direccion.FillWeight = 112.7975!
+        Me.Direccion.HeaderText = "Dirección"
+        Me.Direccion.MinimumWidth = 6
+        Me.Direccion.Name = "Direccion"
+        '
+        'Telefono
+        '
+        Me.Telefono.DataPropertyName = "Telefono"
+        Me.Telefono.FillWeight = 49.18496!
+        Me.Telefono.HeaderText = "Teléfono"
+        Me.Telefono.MaxInputLength = 13
+        Me.Telefono.MinimumWidth = 6
+        Me.Telefono.Name = "Telefono"
+        '
+        'txtProveedor
+        '
+        Me.txtProveedor.Location = New System.Drawing.Point(134, 82)
+        Me.txtProveedor.Name = "txtProveedor"
+        Me.txtProveedor.Size = New System.Drawing.Size(235, 22)
+        Me.txtProveedor.TabIndex = 12
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(410, 79)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(94, 29)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Descripción"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(41, 116)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(78, 29)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Dirección"
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.Location = New System.Drawing.Point(134, 119)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(235, 22)
+        Me.txtDireccion.TabIndex = 15
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(134, 155)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(148, 22)
+        Me.txtTelefono.TabIndex = 17
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(44, 148)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(75, 29)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Teléfono"
+        '
+        'txtCorreo
+        '
+        Me.txtCorreo.Location = New System.Drawing.Point(476, 155)
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Size = New System.Drawing.Size(276, 22)
+        Me.txtCorreo.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(323, 152)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 29)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Correo Electrónico"
         '
         'frmMant_Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(774, 500)
+        Me.ClientSize = New System.Drawing.Size(1201, 562)
+        Me.Controls.Add(Me.txtCorreo)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtDireccion)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtProveedor)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtBuscar)
@@ -197,8 +320,6 @@ Partial Class frmMant_Proveedores
     Friend WithEvents Label1 As Label
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents btnAñadir As Button
-    Friend WithEvents IdProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnEliminar As Button
@@ -206,4 +327,18 @@ Partial Class frmMant_Proveedores
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents IdProveedor As DataGridViewTextBoxColumn
+    Friend WithEvents Proveedor As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Correo As DataGridViewTextBoxColumn
+    Friend WithEvents Direccion As DataGridViewTextBoxColumn
+    Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents txtProveedor As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtDireccion As TextBox
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtCorreo As TextBox
+    Friend WithEvents Label7 As Label
 End Class

@@ -23,16 +23,10 @@ Partial Class frmMant_Responsables
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGVResponsables = New System.Windows.Forms.DataGridView()
-        Me.CodigoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txtBuscarCodigoResp = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -43,7 +37,13 @@ Partial Class frmMant_Responsables
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblResp = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.CodigoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGVResponsables, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -61,34 +61,6 @@ Partial Class frmMant_Responsables
         Me.DGVResponsables.RowTemplate.Height = 24
         Me.DGVResponsables.Size = New System.Drawing.Size(1049, 263)
         Me.DGVResponsables.TabIndex = 0
-        '
-        'CodigoResponsable
-        '
-        Me.CodigoResponsable.DataPropertyName = "CodigoResponsable"
-        Me.CodigoResponsable.HeaderText = "Código"
-        Me.CodigoResponsable.MinimumWidth = 6
-        Me.CodigoResponsable.Name = "CodigoResponsable"
-        '
-        'NumDNI
-        '
-        Me.NumDNI.DataPropertyName = "NumDNI"
-        Me.NumDNI.HeaderText = "DNI"
-        Me.NumDNI.MinimumWidth = 6
-        Me.NumDNI.Name = "NumDNI"
-        '
-        'Nombre
-        '
-        Me.Nombre.DataPropertyName = "Nombre"
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.MinimumWidth = 6
-        Me.Nombre.Name = "Nombre"
-        '
-        'FechaNacimiento
-        '
-        Me.FechaNacimiento.DataPropertyName = "FechaNacimiento"
-        Me.FechaNacimiento.HeaderText = "Fecha de Nacimiento"
-        Me.FechaNacimiento.MinimumWidth = 6
-        Me.FechaNacimiento.Name = "FechaNacimiento"
         '
         'Panel1
         '
@@ -130,24 +102,6 @@ Partial Class frmMant_Responsables
         Me.btnLimpiar.TabIndex = 9
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(593, 491)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(103, 55)
-        Me.btnEliminar.TabIndex = 8
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Location = New System.Drawing.Point(317, 491)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(103, 55)
-        Me.btnActualizar.TabIndex = 7
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnAñadir
         '
@@ -243,6 +197,24 @@ Partial Class frmMant_Responsables
         Me.lblResp.TabIndex = 0
         Me.lblResp.Text = "Responsables"
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(593, 491)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(103, 55)
+        Me.btnEliminar.TabIndex = 8
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(317, 491)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(103, 55)
+        Me.btnActualizar.TabIndex = 7
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
         'btnCerrar
         '
         Me.btnCerrar.Location = New System.Drawing.Point(982, 491)
@@ -251,6 +223,34 @@ Partial Class frmMant_Responsables
         Me.btnCerrar.TabIndex = 9
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
+        '
+        'CodigoResponsable
+        '
+        Me.CodigoResponsable.DataPropertyName = "CodigoResponsable"
+        Me.CodigoResponsable.HeaderText = "Código"
+        Me.CodigoResponsable.MinimumWidth = 6
+        Me.CodigoResponsable.Name = "CodigoResponsable"
+        '
+        'NumDNI
+        '
+        Me.NumDNI.DataPropertyName = "NumDNI"
+        Me.NumDNI.HeaderText = "DNI"
+        Me.NumDNI.MinimumWidth = 6
+        Me.NumDNI.Name = "NumDNI"
+        '
+        'Nombre
+        '
+        Me.Nombre.DataPropertyName = "Nombre"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.MinimumWidth = 6
+        Me.Nombre.Name = "Nombre"
+        '
+        'FechaNacimiento
+        '
+        Me.FechaNacimiento.DataPropertyName = "FechaNacimiento"
+        Me.FechaNacimiento.HeaderText = "Fecha de Nacimiento"
+        Me.FechaNacimiento.MinimumWidth = 6
+        Me.FechaNacimiento.Name = "FechaNacimiento"
         '
         'frmMant_Responsables
         '
@@ -289,9 +289,9 @@ Partial Class frmMant_Responsables
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnAñadir As Button
+    Friend WithEvents btnCerrar As Button
     Friend WithEvents CodigoResponsable As DataGridViewTextBoxColumn
     Friend WithEvents NumDNI As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents FechaNacimiento As DataGridViewTextBoxColumn
-    Friend WithEvents btnCerrar As Button
 End Class

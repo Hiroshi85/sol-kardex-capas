@@ -17,7 +17,11 @@ Public Class ProveedorAD
                     lista.Add(
                         New Proveedor With {
                             .IdProveedor = oLector.Item(0),
-                            .Descripcion = oLector.Item(1)
+                            .Proveedor = oLector.Item(1),
+                            .Descripcion = oLector.Item(2),
+                            .Direccion = oLector.Item(3),
+                            .Telefono = oLector.Item(4),
+                            .Correo = oLector.Item(5)
                         }
                     )
                 End While
@@ -38,7 +42,11 @@ Public Class ProveedorAD
             oComando.Connection = oConeccion
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_INSERT_PROVEEDOR"
+            oComando.Parameters.Add("@Proveedor", SqlDbType.VarChar, 30).Value = x.Proveedor
             oComando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 30).Value = x.Descripcion
+            oComando.Parameters.Add("@Direccion", SqlDbType.VarChar, 30).Value = x.Direccion
+            oComando.Parameters.Add("@Telefono", SqlDbType.VarChar, 13).Value = x.Telefono
+            oComando.Parameters.Add("@Correo", SqlDbType.VarChar, 30).Value = x.Correo
             oComando.ExecuteNonQuery()
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -55,7 +63,12 @@ Public Class ProveedorAD
             oComando.Connection = oConeccion
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_UPDATE_PROVEEDOR"
+            oComando.Parameters.Add("@IdProveedor", SqlDbType.Int).Value = x.IdProveedor
+            oComando.Parameters.Add("@Proveedor", SqlDbType.VarChar, 30).Value = x.Proveedor
             oComando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 30).Value = x.Descripcion
+            oComando.Parameters.Add("@Direccion", SqlDbType.VarChar, 30).Value = x.Direccion
+            oComando.Parameters.Add("@Telefono", SqlDbType.VarChar, 13).Value = x.Telefono
+            oComando.Parameters.Add("@Correo", SqlDbType.VarChar, 30).Value = x.Correo
             oComando.ExecuteNonQuery()
         Catch ex As Exception
             Throw New Exception(ex.Message)
@@ -90,7 +103,7 @@ Public Class ProveedorAD
             oComando.Connection = oConeccion
             oComando.CommandText = "SP_SEARCH_PROVEEDOR"
             oComando.CommandType = CommandType.StoredProcedure
-            oComando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 30).Value = x
+            oComando.Parameters.Add("@Proveedor", SqlDbType.VarChar, 30).Value = x
             Dim oLector As SqlDataReader
             oLector = oComando.ExecuteReader
             If oLector.HasRows = True Then
@@ -98,7 +111,11 @@ Public Class ProveedorAD
                     lista.Add(
                         New Proveedor With {
                             .IdProveedor = oLector.Item(0),
-                            .Descripcion = oLector.Item(1)
+                            .Proveedor = oLector.Item(1),
+                            .Descripcion = oLector.Item(2),
+                            .Direccion = oLector.Item(3),
+                            .Telefono = oLector.Item(4),
+                            .Correo = oLector.Item(5)
                         }
                     )
                 End While
