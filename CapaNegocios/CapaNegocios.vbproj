@@ -64,7 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentoLN.vb" />
+<<<<<<< HEAD
     <Compile Include="KardexLN.vb" />
+=======
+    <Compile Include="MovimientoLN.vb" />
+>>>>>>> 8f1bdad884d98e054447f01236e764948364a524
     <Compile Include="MedidaLN.vb" />
     <Compile Include="CategoriaLN.vb" />
     <Compile Include="MovimientoLN.vb" />
