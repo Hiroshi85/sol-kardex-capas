@@ -3,15 +3,11 @@
         Dim frmR As New frmMant_Responsables
         frmR.Visible = True
 
-        Dim frmP As New frmMant_Proveedores
-        frmP.Visible = True
-
-<<<<<<< HEAD
+        'Dim frmP As New frmMant_Proveedores
+        'frmP.Visible = True
         Dim frmKM As New frmKardex_Movs
         frmKM.Visible = True
-=======
-        Dim frmProductos As New frmMant_Productos
-        frmProductos.Visible = True
->>>>>>> 16aba4609c846e6ffc997e41364345e5c000e2d4
+        'Dim frmProductos As New FrmMant_Productos
+        'frmProductos.Visible = True
     End Sub
 End Class

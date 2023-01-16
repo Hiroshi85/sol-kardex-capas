@@ -91,6 +91,18 @@
     <Compile Include="frmKardex_Movs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMant_Documento.Designer.vb">
+      <DependentUpon>frmMant_Documento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMant_Documento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMant_Movimientos.Designer.vb">
+      <DependentUpon>frmMant_Movimientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMant_Movimientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMant_Proveedores.Designer.vb">
       <DependentUpon>frmMant_Proveedores.vb</DependentUpon>
     </Compile>
@@ -121,11 +133,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Productos.resx">
       <DependentUpon>frmMant_Productos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKardex_Movs.resx">
       <DependentUpon>frmKardex_Movs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMant_Documento.resx">
+      <DependentUpon>frmMant_Documento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMant_Movimientos.resx">
+      <DependentUpon>frmMant_Movimientos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Proveedores.resx">
       <DependentUpon>frmMant_Proveedores.vb</DependentUpon>
