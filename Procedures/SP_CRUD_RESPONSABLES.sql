@@ -1,6 +1,6 @@
 USE EMPRESA_LIMPIEZA
 GO
-select * from RESPONSABLE
+
 --RESPONSABLES
 CREATE PROCEDURE SP_INSERT_RESPONSABLE
 	@NumDNI					char(8),
@@ -40,21 +40,22 @@ go
 
 
 -- PROVEEDORES
-select * from PROVEEDOR
-INSERT INTO PROVEEDOR VALUES ('La Poderosa SAAWAMAN','Mineria ilegal','AV LAS ROSAS ROJAS','+51 921234513','lapo@gmail.com',0)
+
 CREATE PROCEDURE SP_INSERT_PROVEEDOR
+	@Ruc			  char(11),
 	@Proveedor		  varchar(30),
 	@Descripcion      varchar(30),
 	@Direccion		  varchar(30),
 	@Telefono		  varchar(13),
 	@Correo			  varchar(30)
 as
-	INSERT INTO PROVEEDOR(Proveedor, Descripcion, Direccion, Telefono, Correo) 
-		VALUES	(@Proveedor, @Descripcion, @Direccion, @Telefono, @Correo)
+	INSERT INTO PROVEEDOR(RUC,Proveedor, Descripcion, Direccion, Telefono, Correo) 
+		VALUES	(@Ruc,@Proveedor, @Descripcion, @Direccion, @Telefono, @Correo)
 go
 
 CREATE PROCEDURE SP_UPDATE_PROVEEDOR
 	@IdProveedor	        int,
+	@Ruc				char(11),
 	@Proveedor		  varchar(30),
 	@Descripcion      varchar(30),
 	@Direccion		  varchar(30),
@@ -62,6 +63,7 @@ CREATE PROCEDURE SP_UPDATE_PROVEEDOR
 	@Correo			  varchar(30)
 as
 	UPDATE PROVEEDOR SET 
+		RUC = @Ruc,
 		Proveedor = @Proveedor,
 		Descripcion = @Descripcion,
 		Direccion = @Direccion,

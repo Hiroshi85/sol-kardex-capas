@@ -136,6 +136,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDetail_GuiaRemision.resx">
+      <DependentUpon>frmDetail_GuiaRemision.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Productos.resx">
       <DependentUpon>frmMant_Productos.vb</DependentUpon>
     </EmbeddedResource>

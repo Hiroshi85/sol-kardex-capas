@@ -21,11 +21,12 @@ Public Class ProveedorAD
                     lista.Add(
                         New Proveedor With {
                             .IdProveedor = oLector.Item(0),
-                            .Proveedor = oLector.Item(1),
-                            .Descripcion = oLector.Item(2),
-                            .Direccion = oLector.Item(3),
-                            .Telefono = oLector.Item(4),
-                            .Correo = oLector.Item(5)
+                            .RUC = oLector.Item(1),
+                            .Proveedor = oLector.Item(2),
+                            .Descripcion = oLector.Item(3),
+                            .Direccion = oLector.Item(4),
+                            .Telefono = oLector.Item(5),
+                            .Correo = oLector.Item(6)
                         }
                     )
                 End While
