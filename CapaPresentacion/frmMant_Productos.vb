@@ -191,4 +191,8 @@ Public Class FrmMant_Productos
             .IdMedida = DGVProductos.Rows(e.RowIndex).Cells("IdMedida").Value
         }
     End Sub
+
+    Private Sub FrmMant_Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -5,6 +5,7 @@
     Private m_idProveedor As Integer
     Private m_codigoResponsable As String
     Private m_detalles As List(Of Movimiento)
+
     Public Property Detalles() As List(Of Movimiento)
         Get
             Return m_detalles

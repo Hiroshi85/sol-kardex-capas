@@ -63,6 +63,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentosAD.vb" />
+    <Compile Include="MovimientosAD.vb" />
     <Compile Include="MedidaAD.vb" />
     <Compile Include="CategoriaAD.vb" />
     <Compile Include="ConexionAD.vb" />

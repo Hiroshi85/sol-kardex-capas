@@ -63,6 +63,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentoLN.vb" />
+    <Compile Include="MovimientoLN.vb" />
     <Compile Include="MedidaLN.vb" />
     <Compile Include="CategoriaLN.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
