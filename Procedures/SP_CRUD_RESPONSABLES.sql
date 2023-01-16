@@ -2,6 +2,7 @@ USE EMPRESA_LIMPIEZA
 GO
 
 --RESPONSABLES
+
 CREATE PROCEDURE SP_INSERT_RESPONSABLE
 	@NumDNI					char(8),
 	@FechaNacimiento		date,
@@ -42,7 +43,7 @@ go
 -- PROVEEDORES
 
 CREATE PROCEDURE SP_INSERT_PROVEEDOR
-	@Ruc			  char(11),
+	@RUC			  char(11),
 	@Proveedor		  varchar(30),
 	@Descripcion      varchar(30),
 	@Direccion		  varchar(30),
@@ -50,12 +51,12 @@ CREATE PROCEDURE SP_INSERT_PROVEEDOR
 	@Correo			  varchar(30)
 as
 	INSERT INTO PROVEEDOR(RUC,Proveedor, Descripcion, Direccion, Telefono, Correo) 
-		VALUES	(@Ruc,@Proveedor, @Descripcion, @Direccion, @Telefono, @Correo)
+		VALUES	(@RUC,@Proveedor, @Descripcion, @Direccion, @Telefono, @Correo)
 go
 
 CREATE PROCEDURE SP_UPDATE_PROVEEDOR
 	@IdProveedor	        int,
-	@Ruc				char(11),
+	@RUC				char(11),
 	@Proveedor		  varchar(30),
 	@Descripcion      varchar(30),
 	@Direccion		  varchar(30),
@@ -63,7 +64,7 @@ CREATE PROCEDURE SP_UPDATE_PROVEEDOR
 	@Correo			  varchar(30)
 as
 	UPDATE PROVEEDOR SET 
-		RUC = @Ruc,
+		RUC = @RUC,
 		Proveedor = @Proveedor,
 		Descripcion = @Descripcion,
 		Direccion = @Direccion,

@@ -45,6 +45,7 @@ Partial Class frmMant_Movimientos
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RUC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumHoja = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,9 +61,10 @@ Partial Class frmMant_Movimientos
         '
         Me.DGVMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.CodigoProducto, Me.NumHoja, Me.PrecioDocumento, Me.StockAnterior, Me.CantidadSalida, Me.CantidadEntrada, Me.StockActual})
+        Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.RUC, Me.CodigoProducto, Me.NumHoja, Me.PrecioDocumento, Me.StockAnterior, Me.CantidadSalida, Me.CantidadEntrada, Me.StockActual})
         Me.DGVMovimientos.Location = New System.Drawing.Point(35, 363)
         Me.DGVMovimientos.Name = "DGVMovimientos"
+        Me.DGVMovimientos.RowHeadersWidth = 51
         Me.DGVMovimientos.RowTemplate.Height = 24
         Me.DGVMovimientos.Size = New System.Drawing.Size(1025, 258)
         Me.DGVMovimientos.TabIndex = 30
@@ -269,51 +271,66 @@ Partial Class frmMant_Movimientos
         '
         Me.NumItem.DataPropertyName = "NumItem"
         Me.NumItem.HeaderText = "NumItem"
+        Me.NumItem.MinimumWidth = 6
         Me.NumItem.Name = "NumItem"
+        '
+        'RUC
+        '
+        Me.RUC.DataPropertyName = "RUC"
+        Me.RUC.HeaderText = "RUC"
+        Me.RUC.MinimumWidth = 6
+        Me.RUC.Name = "RUC"
         '
         'CodigoProducto
         '
         Me.CodigoProducto.DataPropertyName = "CodigoProducto"
         Me.CodigoProducto.HeaderText = "CodigoProducto"
+        Me.CodigoProducto.MinimumWidth = 6
         Me.CodigoProducto.Name = "CodigoProducto"
         '
         'NumHoja
         '
         Me.NumHoja.DataPropertyName = "NumHoja"
         Me.NumHoja.HeaderText = "NumHoja"
+        Me.NumHoja.MinimumWidth = 6
         Me.NumHoja.Name = "NumHoja"
         '
         'PrecioDocumento
         '
         Me.PrecioDocumento.DataPropertyName = "PrecioDocumento"
         Me.PrecioDocumento.HeaderText = "PrecioDocumento"
+        Me.PrecioDocumento.MinimumWidth = 6
         Me.PrecioDocumento.Name = "PrecioDocumento"
         '
         'StockAnterior
         '
         Me.StockAnterior.DataPropertyName = "StockAnterior"
         Me.StockAnterior.HeaderText = "StockAnterior"
+        Me.StockAnterior.MinimumWidth = 6
         Me.StockAnterior.Name = "StockAnterior"
         '
         'CantidadSalida
         '
         Me.CantidadSalida.DataPropertyName = "CantidadSalida"
         Me.CantidadSalida.HeaderText = "CantidadSalida"
+        Me.CantidadSalida.MinimumWidth = 6
         Me.CantidadSalida.Name = "CantidadSalida"
         '
         'CantidadEntrada
         '
         Me.CantidadEntrada.DataPropertyName = "CantidadEntrada"
         Me.CantidadEntrada.HeaderText = "CantidadEntrada"
+        Me.CantidadEntrada.MinimumWidth = 6
         Me.CantidadEntrada.Name = "CantidadEntrada"
         '
         'StockActual
         '
         Me.StockActual.DataPropertyName = "StockActual"
         Me.StockActual.HeaderText = "StockActual"
+        Me.StockActual.MinimumWidth = 6
         Me.StockActual.Name = "StockActual"
         '
-        'PRUEBA
+        'frmMant_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -333,7 +350,7 @@ Partial Class frmMant_Movimientos
         Me.Controls.Add(Me.lblProveedor)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGVMovimientos)
-        Me.Name = "PRUEBA"
+        Me.Name = "frmMant_Movimientos"
         Me.Text = "PRUEBA"
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -366,6 +383,7 @@ Partial Class frmMant_Movimientos
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents NumItem As DataGridViewTextBoxColumn
+    Friend WithEvents RUC As DataGridViewTextBoxColumn
     Friend WithEvents CodigoProducto As DataGridViewTextBoxColumn
     Friend WithEvents NumHoja As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDocumento As DataGridViewTextBoxColumn
