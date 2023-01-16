@@ -1,0 +1,76 @@
+USE EMPRESA_LIMPIEZA
+GO
+
+DROP PROCEDURE  IF EXISTS SP_LISTAR_PRODUCTOS
+GO
+
+CREATE PROCEDURE SP_LISTAR_PRODUCTOS
+AS
+BEGIN
+    SELECT *
+    FROM PRODUCTO
+    WHERE BORRADO = 0
+END
+GO
+
+
+DROP PROCEDURE  IF EXISTS SP_BUSCAR_PRODUCTOS_POR_NOMBRE
+GO
+
+CREATE PROCEDURE SP_BUSCAR_PRODUCTOS_POR_NOMBRE
+    @NombreProducto VARCHAR(50)
+AS
+BEGIN
+    SELECT *
+    FROM PRODUCTO
+    WHERE NombreProducto LIKE '%' + @NombreProducto + '%' AND BORRADO = 0
+END
+GO
+
+DROP PROCEDURE  IF EXISTS SP_OBTENER_PRODUCTO_POR_ID
+GO
+
+CREATE PROCEDURE SP_OBTENER_PRODUCTO_POR_ID
+    @CodigoProducto INT
+AS
+BEGIN
+    SELECT *
+    FROM PRODUCTO
+    WHERE CodigoProducto = @CodigoProducto AND BORRADO = 0
+END
+GO
+
+DROP PROCEDURE IF EXISTS SP_ACTUALIZAR_PRODUCTO 
+GO
+
+CREATE PROCEDURE SP_ACTUALIZAR_PRODUCTO
+    @CodigoProducto INT,
+    @NombreProducto VARCHAR(255),
+    @DescripcionProducto VARCHAR(255),
+    @PrecioBase MONEY,
+    @IdCategoria INT,
+    @IdMedida INT
+AS
+BEGIN
+    UPDATE PRODUCTO
+    SET NombreProducto = @NombreProducto,
+        DescripcionProducto = @DescripcionProducto,
+        PrecioBase = @PrecioBase,
+        IdCategoria = @IdCategoria,
+        IdMedida = @IdMedida
+    WHERE CodigoProducto = @CodigoProducto
+END
+GO
+
+DROP PROCEDURE IF EXISTS SP_ELIMINAR_PRODUCTO
+GO
+
+CREATE PROCEDURE SP_ELIMINAR_PRODUCTO
+    @CodigoProducto INT
+AS
+BEGIN
+    UPDATE PRODUCTO
+    SET BORRADO = 1
+    WHERE CodigoProducto = @CodigoProducto
+END
+GO
