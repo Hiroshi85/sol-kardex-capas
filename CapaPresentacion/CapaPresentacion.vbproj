@@ -133,6 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Productos.resx">
       <DependentUpon>frmMant_Productos.vb</DependentUpon>
     </EmbeddedResource>

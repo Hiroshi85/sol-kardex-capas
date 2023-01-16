@@ -6,9 +6,6 @@
     Private Sub btnProveedores_Click(sender As Object, e As EventArgs) Handles btnProveedores.Click
         Dim frmP As New frmMant_Proveedores
         frmP.Visible = True
-
-        Dim frmProductos As New frmMant_Productos
-        frmProductos.Visible = True
     End Sub
 
     Private Sub btnResponsables_Click(sender As Object, e As EventArgs) Handles btnResponsables.Click
