@@ -5,5 +5,8 @@
 
         Dim frmP As New frmMant_Proveedores
         frmP.Visible = True
+
+        Dim frmProductos As New frmMant_Productos
+        frmProductos.Visible = True
     End Sub
 End Class
