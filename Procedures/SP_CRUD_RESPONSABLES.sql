@@ -1,11 +1,8 @@
 USE EMPRESA_LIMPIEZA
 GO
-<<<<<<< HEAD
 select * from RESPONSABLE
 go
-=======
 
->>>>>>> 8f1bdad884d98e054447f01236e764948364a524
 --RESPONSABLES
 CREATE PROCEDURE SP_INSERT_RESPONSABLE
 	@NumDNI					char(8),
@@ -45,13 +42,10 @@ go
 
 
 -- PROVEEDORES
-<<<<<<< HEAD
 select * from PROVEEDOR
 INSERT INTO PROVEEDOR VALUES ('La Poderosa SAAWAMAN','Mineria ilegal','AV LAS ROSAS ROJAS','+51 921234513','lapo@gmail.com',0)
 go
-=======
 
->>>>>>> 8f1bdad884d98e054447f01236e764948364a524
 CREATE PROCEDURE SP_INSERT_PROVEEDOR
 	@Ruc			  char(11),
 	@Proveedor		  varchar(30),

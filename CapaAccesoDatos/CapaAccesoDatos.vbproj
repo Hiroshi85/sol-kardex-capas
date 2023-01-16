@@ -64,15 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentosAD.vb" />
-<<<<<<< HEAD
     <Compile Include="KardexAD.vb" />
-=======
     <Compile Include="MovimientosAD.vb" />
->>>>>>> 8f1bdad884d98e054447f01236e764948364a524
     <Compile Include="MedidaAD.vb" />
     <Compile Include="CategoriaAD.vb" />
     <Compile Include="ConexionAD.vb" />
-    <Compile Include="MovimientosAD.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
