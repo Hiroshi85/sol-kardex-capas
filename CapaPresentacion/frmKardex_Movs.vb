@@ -4,8 +4,8 @@ Public Class frmKardex_Movs
 
     Private Sub frmKardex_Movs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarUltimaHoja()
+        ListarMovDeKardex()
         CargarKardex()
-        CargarEstado()
     End Sub
     Private Sub CargarKardex()
         Dim Kard As Kardex
@@ -13,6 +13,29 @@ Public Class frmKardex_Movs
         TxtMinimo.Text = Kard.StockMinRepo.ToString
         DtpFecha.Value = Kard.FechaApertura
         TxtActual.Text = KardexLN.GetStockActual(Kard.CodigoProducto)
+        CargarEstado()
+        Dim Estado = KardexLN.GetEstado(NudKardex.Value)
+        If (Estado <> 1) Then
+            TxtFalta.Visible = True
+            lblFalta.Visible = True
+            TxtFalta.Text = Convert.ToDouble(TxtMinimo.Text) - Convert.ToDouble(TxtActual.Text)
+        Else
+            TxtFalta.Visible = False
+            lblFalta.Visible = False
+        End If
+        LlenarDatosProd(Kard.CodigoProducto)
+    End Sub
+
+    Private Sub LlenarDatosProd(CodProd As Integer)
+        Dim Prod As Producto
+        Dim ProdLN = New ProductoLN
+        Dim CateLN = New CategoriaLN
+        Prod = ProdLN.ObtenerProductoPorId(CodProd)
+        LblNombre.Text = Prod.NombreProducto
+        TxtDesc.Text = Prod.DescripcionProducto
+        TxtPrecio.Text = Prod.PrecioBase
+        TxtUnidad.Text = New MedidaLN().GetMedida(Prod.IdMedida).Unidad
+        TxtCategoria.Text = New CategoriaLN().GetCategoria(Prod.IdCategoria).Descripcion
     End Sub
 
     Private Sub ListarMovDeKardex()
@@ -51,13 +74,10 @@ Public Class frmKardex_Movs
         Next
     End Sub
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        CargarUltimaHoja()
         ListarMovDeKardex()
         CargarKardex()
-        CargarEstado()
-    End Sub
 
-    Private Sub NudKardex_ValueChanged(sender As Object, e As EventArgs) Handles NudKardex.ValueChanged
-        CargarUltimaHoja()
     End Sub
 
     Private Sub CargarUltimaHoja()
@@ -80,11 +100,15 @@ Public Class frmKardex_Movs
                 LblEstado.Text = "NORMAL"
                 LblEstado.ForeColor = Color.Green
             Case 2
-                LblEstado.Text = "EN RIESGO"
-                LblEstado.ForeColor = Color.Orange
+                LblEstado.Text = "EN RIESGO!"
+                LblEstado.ForeColor = Color.OrangeRed
             Case 3
                 LblEstado.Text = "SIN STOCK!!!"
                 LblEstado.ForeColor = Color.Red
         End Select
+    End Sub
+
+    Private Sub BtnIr_Click(sender As Object, e As EventArgs) Handles BtnIr.Click
+        ListarMovDeKardex()
     End Sub
 End Class
