@@ -1,6 +1,7 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
 Public Class frmMant_Responsables
+    ReadOnly _helpers As New Helpers
     'Variables de edición de celda en el DataGridView
     Dim xNombre As String
     Dim xDNI As String
@@ -27,7 +28,7 @@ Public Class frmMant_Responsables
     End Sub
 
     Private Sub DGVResponsables_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles DGVResponsables.DataError
-        MessageError("Uno de los datos ingreados no es correcto, verifique e inténtelo nuevamente")
+        _helpers.MessageError("Uno de los datos ingreados no es correcto, verifique e inténtelo nuevamente")
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -39,7 +40,7 @@ Public Class frmMant_Responsables
         }
         ResponsableLN.Actualizar(xResponsable)
         listarResponsables()
-        MessageInformation("Datos actualizados")
+        _helpers.MessageInformation("Datos actualizados")
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
@@ -54,22 +55,13 @@ Public Class frmMant_Responsables
             ResponsableLN.Insertar(xResponsable)
             listarResponsables()
             Clear()
-            MessageInformation("Responsable registrado")
+            _helpers.MessageInformation("Responsable registrado")
         Else
-            MessageError("Todos los campos son obligatorios")
+            _helpers.MessageError("Todos los campos son obligatorios")
         End If
     End Sub
 
-    Private Sub MessageInformation(mensaje As String)
-        MessageBox.Show(mensaje, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
-    Private Sub MessageError(mensaje As String)
-        MessageBox.Show(mensaje, "Datos no válidos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    End Sub
-    Private Function MessageConfirm(mensaje As String) As DialogResult
-        Dim confirm As DialogResult = MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo)
-        Return confirm
-    End Function
+
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs)
 
@@ -77,17 +69,17 @@ Public Class frmMant_Responsables
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If DGVResponsables.SelectedRows.Count > 0 Then
-            Dim confirm As DialogResult = MessageConfirm("¿Seguro que quiere eliminar el responsable seleccionado?")
+            Dim confirm As DialogResult = _helpers.MessageConfirm("¿Seguro que quiere eliminar el responsable seleccionado?")
             If confirm = DialogResult.Yes Then
                 Dim i As Integer = DGVResponsables.SelectedRows(0).Index
                 Dim CodigoResponsable As String = CStr(DGVResponsables.Rows(i).Cells("CodigoResponsable").Value)
                 'DGVResponsables.Rows.RemoveAt(i)
                 ResponsableLN.Eliminar(CodigoResponsable)
                 listarResponsables()
-                MessageInformation("Responsable eliminado del registro")
+                _helpers.MessageInformation("Responsable eliminado del registro")
             End If
         Else
-            MessageInformation("Seleccione una fila a eliminar")
+            _helpers.MessageInformation("Seleccione una fila a eliminar")
         End If
     End Sub
 
