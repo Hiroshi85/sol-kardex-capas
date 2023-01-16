@@ -155,23 +155,30 @@ Public Class frmMant_Documento
         Dim dIdTipoDoc As Integer
         Dim dIdProveedor As Integer
         Dim dCodigoR As String
+        If DGVDocumentos.SelectedRows.Count > 0 Then
+            dCodigoR = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(0).Value)
+            dIdProveedor = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(1).Value)
+            dIdTipoDoc = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(2).Value)
+            dFecha = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(3).Value)
+            dNumDoc = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(4).Value)
 
-        dCodigoR = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(0).Value)
-        dIdProveedor = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(1).Value)
-        dIdTipoDoc = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(2).Value)
-        dFecha = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(3).Value)
-        dNumDoc = Convert.ToString(DGVDocumentos.SelectedRows(0).Cells(4).Value)
+            Dim xDocumento As New Documento With {
+                    .NumDocumento = dNumDoc,
+                    .Fecha = dFecha,
+                    .IdTipoDoc = dIdTipoDoc,
+                    .IdProveedor = dIdProveedor,
+                    .CodigoResponsable = dCodigoR
+                }
 
-        Dim xDocumento As New Documento With {
-                .NumDocumento = dNumDoc,
-                .Fecha = dFecha,
-                .IdTipoDoc = dIdTipoDoc,
-                .IdProveedor = dIdProveedor,
-                .CodigoResponsable = dCodigoR
-            }
+            Dim frm As New frmMant_Movimientos()
+            frm.cargar(xDocumento)
+            frm.Visible() = True
+        Else
+            MessageInformation("Seleccione un documento")
+        End If
+    End Sub
 
-        Dim frm As New frmMant_Movimientos()
-        frm.cargar(xDocumento)
-        frm.Visible() = True
+    Private Sub MessageInformation(mensaje As String)
+        MessageBox.Show(mensaje, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
