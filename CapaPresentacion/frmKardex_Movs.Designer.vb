@@ -35,6 +35,14 @@ Partial Class frmKardex_Movs
         Me.TxtActual = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LblEstado = New System.Windows.Forms.Label()
+        Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdTipoMov = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockActual = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.NudKardex, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVMovDeKardex, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NudHoja, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,11 +59,13 @@ Partial Class frmKardex_Movs
         '
         'DGVMovDeKardex
         '
+        Me.DGVMovDeKardex.AllowUserToAddRows = False
         Me.DGVMovDeKardex.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVMovDeKardex.Location = New System.Drawing.Point(40, 251)
+        Me.DGVMovDeKardex.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.NumDocumento, Me.IdTipoMov, Me.PrecioDocumento, Me.StockActual, Me.CantidadEntrada, Me.CantidadSalida, Me.StockFinal})
+        Me.DGVMovDeKardex.Location = New System.Drawing.Point(105, 211)
         Me.DGVMovDeKardex.Name = "DGVMovDeKardex"
         Me.DGVMovDeKardex.RowTemplate.Height = 24
-        Me.DGVMovDeKardex.Size = New System.Drawing.Size(1258, 263)
+        Me.DGVMovDeKardex.Size = New System.Drawing.Size(1126, 263)
         Me.DGVMovDeKardex.TabIndex = 1
         '
         'Label1
@@ -154,6 +164,54 @@ Partial Class frmKardex_Movs
         Me.LblEstado.TabIndex = 12
         Me.LblEstado.Text = "-"
         '
+        'NumItem
+        '
+        Me.NumItem.HeaderText = "N°"
+        Me.NumItem.Name = "NumItem"
+        Me.NumItem.ReadOnly = True
+        '
+        'NumDocumento
+        '
+        Me.NumDocumento.HeaderText = "Documento"
+        Me.NumDocumento.Name = "NumDocumento"
+        Me.NumDocumento.ReadOnly = True
+        '
+        'IdTipoMov
+        '
+        Me.IdTipoMov.HeaderText = "Movimiento"
+        Me.IdTipoMov.Name = "IdTipoMov"
+        Me.IdTipoMov.ReadOnly = True
+        '
+        'PrecioDocumento
+        '
+        Me.PrecioDocumento.HeaderText = "Precio"
+        Me.PrecioDocumento.Name = "PrecioDocumento"
+        Me.PrecioDocumento.ReadOnly = True
+        '
+        'StockActual
+        '
+        Me.StockActual.HeaderText = "Stock Actual"
+        Me.StockActual.Name = "StockActual"
+        Me.StockActual.ReadOnly = True
+        '
+        'CantidadEntrada
+        '
+        Me.CantidadEntrada.HeaderText = "Entrada"
+        Me.CantidadEntrada.Name = "CantidadEntrada"
+        Me.CantidadEntrada.ReadOnly = True
+        '
+        'CantidadSalida
+        '
+        Me.CantidadSalida.HeaderText = "Salida"
+        Me.CantidadSalida.Name = "CantidadSalida"
+        Me.CantidadSalida.ReadOnly = True
+        '
+        'StockFinal
+        '
+        Me.StockFinal.HeaderText = "Stock Final"
+        Me.StockFinal.Name = "StockFinal"
+        Me.StockFinal.ReadOnly = True
+        '
         'frmKardex_Movs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -195,4 +253,12 @@ Partial Class frmKardex_Movs
     Friend WithEvents TxtActual As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents LblEstado As Label
+    Friend WithEvents NumItem As DataGridViewTextBoxColumn
+    Friend WithEvents NumDocumento As DataGridViewTextBoxColumn
+    Friend WithEvents IdTipoMov As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioDocumento As DataGridViewTextBoxColumn
+    Friend WithEvents StockActual As DataGridViewTextBoxColumn
+    Friend WithEvents CantidadEntrada As DataGridViewTextBoxColumn
+    Friend WithEvents CantidadSalida As DataGridViewTextBoxColumn
+    Friend WithEvents StockFinal As DataGridViewTextBoxColumn
 End Class

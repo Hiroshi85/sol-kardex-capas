@@ -23,23 +23,33 @@ Public Class frmKardex_Movs
         NHoja = Convert.ToInt32(NudHoja.Value)
 
         lista = KardexLN.ListarMovimientosKardex(CodProd, NHoja)
+        DGVMovDeKardex.Rows.Clear()
         DGVMovDeKardex.AllowUserToOrderColumns = True
         DGVMovDeKardex.MultiSelect = False
-        DGVMovDeKardex.DataSource = lista
-
-        DGVMovDeKardex.Columns("NumItem").DisplayIndex = 0
-        DGVMovDeKardex.Columns("NumDocumento").DisplayIndex = 1
-        DGVMovDeKardex.Columns("IdTipoMov").DisplayIndex = 2
-        DGVMovDeKardex.Columns("StockAnterior").DisplayIndex = 3
-        DGVMovDeKardex.Columns("CantidadEntrada").DisplayIndex = 4
-        DGVMovDeKardex.Columns("CantidadSalida").DisplayIndex = 5
-        DGVMovDeKardex.Columns("StockActual").DisplayIndex = 6
-        DGVMovDeKardex.Columns("PrecioDocumento").DisplayIndex = 7
-        DGVMovDeKardex.Columns("NumHoja").Visible = False
-        DGVMovDeKardex.Columns("CodigoProducto").Visible = False
-
+        Dim Tipo As String
+        Dim Entrada As String
+        Dim Salida As String
+        For Each item As Movimiento In lista
+            Entrada = If(item.CantidadEntrada <> -1, item.CantidadEntrada.ToString, "-")
+            Salida = If(item.CantidadSalida <> -1, item.CantidadSalida.ToString, "-")
+            If (item.IdTipoMov = 1) Then
+                Tipo = "Entrada"
+            Else
+                Tipo = "Salida"
+            End If
+            DGVMovDeKardex.Rows.Add(
+                item.NumItem,
+                item.NumDocumento,
+                Tipo,
+                item.StockActual,
+                item.PrecioDocumento,
+                Entrada,
+                Salida,
+                item.StockAnterior,
+                item.PrecioDocumento
+                )
+        Next
     End Sub
-
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         ListarMovDeKardex()
         CargarKardex()
