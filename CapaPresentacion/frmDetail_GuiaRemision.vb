@@ -24,9 +24,12 @@ Public Class frmDetail_GuiaRemision
     End Sub
     Private Sub mostrarMovimientos()
         Dim lista As List(Of Movimiento)
+        Dim subTotal As Double
         lista = MovimientoLN.ListarMovimientos(xDoc.NumDocumento)
         DGVMovimientos.DataSource = lista
         columnsOrder()
+        subTotal = MovimientoLN.CalcularSubTotal(xDoc.NumDocumento, 2)
+        txtTotal.Text = "S/. " + Convert.ToString(subTotal)
     End Sub
     Private Sub columnsOrder()
         DGVMovimientos.Columns("NumDocumento").DisplayIndex = 0
@@ -44,6 +47,8 @@ Public Class frmDetail_GuiaRemision
         DGVMovimientos.Columns("CantidadSalida").Visible = False
         DGVMovimientos.Columns("CantidadSalida").Visible = False
         DGVMovimientos.Columns("NumDocumento").Visible = False
+
+
     End Sub
     Public Sub cargar(obj As Documento)
         xDoc = obj
