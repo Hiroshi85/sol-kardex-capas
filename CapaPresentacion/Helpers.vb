@@ -3,14 +3,14 @@
         For Each ctrl As Control In panel.Controls
             If TypeOf ctrl Is TextBox Then
                 If ctrl.Text Is "" Then
-                    MessageBox.Show("El campo " & ctrl.Name.Substring(3) & " es obligatorio!")
+                    MessageError("El campo " & ctrl.Name.Substring(3) & " es obligatorio!")
                     Return False
                 End If
             End If
             If TypeOf ctrl Is ComboBox Then
                 Dim ctrlCb = DirectCast(ctrl, ComboBox)
                 If ctrlCb.SelectedIndex = -1 Then
-                    MessageBox.Show("El campo " & ctrlCb.Name.Substring(3) & " es obligatorio!")
+                    MessageError("El campo " & ctrlCb.Name.Substring(3) & " es obligatorio!")
                     Return False
                 End If
             End If
@@ -48,4 +48,13 @@
         Dim confirm As DialogResult = MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo)
         Return confirm
     End Function
+    Public Sub SeleccionarFilaDGV(DGV As DataGridView, id As Integer)
+        For Each row As DataGridViewRow In DGV.Rows
+            If row.Cells(0).Value = id Then
+                row.Selected = True
+                DGV.FirstDisplayedScrollingRowIndex = row.Index
+                Exit For
+            End If
+        Next
+    End Sub
 End Class

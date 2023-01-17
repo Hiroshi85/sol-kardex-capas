@@ -1,13 +1,16 @@
 ﻿Imports CapaEntidad
 Imports System.Data.SqlClient
 Public Class MovimientosAD
+    Private ReadOnly _conexion As ConexionAD
+    Public Sub New()
+        _conexion = New ConexionAD()
+    End Sub
     Public Function ListarMovimientos(obj As Integer) As List(Of Movimiento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Dim lista As New List(Of Movimiento)
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandText = "select * from MOVIMIENTO where NumDocumento=" + Convert.ToString(obj)
             oComando.CommandType = CommandType.Text
             Dim oLector As SqlDataReader
@@ -34,16 +37,15 @@ Public Class MovimientosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 
     Public Sub InsertarMovEntrada(x As Movimiento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_INSERT_MOV_ENTRADA"
             oComando.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = x.CodigoProducto
@@ -54,16 +56,15 @@ Public Class MovimientosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Sub
 
     Public Sub InsertarMovSalida(x As Movimiento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_INSERT_MOV_SALIDA"
             oComando.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = x.CodigoProducto
@@ -74,7 +75,7 @@ Public Class MovimientosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Sub
 End Class

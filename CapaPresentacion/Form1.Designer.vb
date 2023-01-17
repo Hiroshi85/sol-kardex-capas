@@ -26,7 +26,7 @@ Partial Class Form1
         Me.btnProveedores = New System.Windows.Forms.Button()
         Me.btnResponsables = New System.Windows.Forms.Button()
         Me.btnDocumentos = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnProductos = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,14 +59,14 @@ Partial Class Form1
         Me.btnDocumentos.Text = "DOCUMENTOS"
         Me.btnDocumentos.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnProductos
         '
-        Me.Button4.Location = New System.Drawing.Point(20, 269)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(172, 128)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnProductos.Location = New System.Drawing.Point(20, 269)
+        Me.btnProductos.Name = "btnProductos"
+        Me.btnProductos.Size = New System.Drawing.Size(172, 128)
+        Me.btnProductos.TabIndex = 3
+        Me.btnProductos.Text = "PRODUCTOS"
+        Me.btnProductos.UseVisualStyleBackColor = True
         '
         'Button5
         '
@@ -74,7 +74,6 @@ Partial Class Form1
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(162, 128)
         Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Button5"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button6
@@ -107,7 +106,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.btnProductos)
         Me.Controls.Add(Me.btnDocumentos)
         Me.Controls.Add(Me.btnResponsables)
         Me.Controls.Add(Me.btnProveedores)
@@ -122,7 +121,7 @@ Partial Class Form1
     Friend WithEvents btnProveedores As Button
     Friend WithEvents btnResponsables As Button
     Friend WithEvents btnDocumentos As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnProductos As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Label1 As Label

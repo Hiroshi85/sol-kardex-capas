@@ -121,7 +121,7 @@ Public Class ProductoAD
         Dim cmd As New SqlCommand
         If _conexion.AbrirConexion() Then
             cmd.Connection = _conexion.ObtenerConexion()
-            cmd.CommandText = "INS_NEW_PRODUCTO"
+            cmd.CommandText = "SP_ACTUALIZAR_PRODUCTO"
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = producto.CodigoProducto
             cmd.Parameters.Add("@NombreProducto", SqlDbType.VarChar, 255).Value = producto.NombreProducto

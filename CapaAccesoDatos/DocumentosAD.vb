@@ -2,13 +2,16 @@
 Imports System.Data.SqlClient
 Public Class DocumentosAD
 
+    Private ReadOnly _conexion As ConexionAD
+    Public Sub New()
+        _conexion = New ConexionAD()
+    End Sub
     Public Function listarDocumentos() As List(Of Documento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Dim lista As New List(Of Documento)
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandText = "select * from DOCUMENTO"
             oComando.CommandType = CommandType.Text
             Dim oLector As SqlDataReader
@@ -30,16 +33,15 @@ Public Class DocumentosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 
     Public Sub Insertar(x As Documento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_INSERTAR_DOCUMENTO"
             oComando.Parameters.Add("@Fecha", SqlDbType.Date).Value = x.Fecha
@@ -50,17 +52,16 @@ Public Class DocumentosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Sub
 
     Public Function listarDocumentosSalida() As List(Of Documento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Dim lista As New List(Of Documento)
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandText = "select * from DOCUMENTO where IdTipoDoc=1 or IdTipoDoc=2"
             oComando.CommandType = CommandType.Text
             Dim oLector As SqlDataReader
@@ -82,17 +83,16 @@ Public Class DocumentosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 
     Public Function listarDocumentosEntrada() As List(Of Documento)
-        Dim oConeccion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Dim lista As New List(Of Documento)
         Try
-            oConeccion.Open()
-            oComando.Connection = oConeccion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandText = "select * from DOCUMENTO where IdTipoDoc=3"
             oComando.CommandType = CommandType.Text
             Dim oLector As SqlDataReader
@@ -114,7 +114,7 @@ Public Class DocumentosAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConeccion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 End Class

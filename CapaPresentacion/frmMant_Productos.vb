@@ -6,6 +6,7 @@ Public Class FrmMant_Productos
     ReadOnly _helpers As New Helpers
     ReadOnly _productoLN As New ProductoLN
     Dim productoActualizar As Producto
+    Dim codigoProductoSeleccionado As Integer = -1
     Private Sub LLenarDatos()
         txtNombreProducto.Text = "Jabon Sapolio"
         txtDescripcionProducto.Text = "Detergente verde 1L Sapolio"
@@ -26,7 +27,8 @@ Public Class FrmMant_Productos
             .HeaderText = "Codigo",
             .DataPropertyName = "CodigoProducto",
             .Name = "CodigoProducto",
-            .DisplayIndex = 1
+            .DisplayIndex = 1,
+            .[ReadOnly] = True
         }
         Dim NombreProductoColumn As New DataGridViewTextBoxColumn With {
             .HeaderText = "Nombre",
@@ -42,6 +44,7 @@ Public Class FrmMant_Productos
             .DisplayMember = "Unidad",
             .DataPropertyName = "IdMedida",
             .HeaderText = "Medida",
+            .Name = "IdMedida",
             .DisplayIndex = 2
         }
 
@@ -53,6 +56,7 @@ Public Class FrmMant_Productos
             .DisplayMember = "Descripcion",
             .DataPropertyName = "IdCategoria",
             .HeaderText = "Categoria",
+            .Name = "IdCategoria",
             .DisplayIndex = 3
         }
 
@@ -115,7 +119,7 @@ Public Class FrmMant_Productos
             _helpers.SeleccionarUltimaFila(DGVProductos)
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            _helpers.MessageError(ex.Message)
         End Try
     End Sub
 
@@ -134,40 +138,52 @@ Public Class FrmMant_Productos
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If DGVProductos.SelectedRows.Count = 0 Then
-            MessageBox.Show("Seleccione un producto")
+            _helpers.MessageError("Seleccione un producto")
             Return
         End If
         Dim selectedRow As DataGridViewRow = DGVProductos.SelectedRows(0)
         Dim codigoProducto As Integer = selectedRow.Cells("CodigoProducto").Value
-        Console.WriteLine(codigoProducto)
         Try
             Dim confirm As DialogResult = _helpers.MessageConfirm("¿Seguro que quiere eliminar el producto seleccionado?")
             If confirm = DialogResult.Yes Then
                 _productoLN.EliminarProducto(codigoProducto)
                 CargarProductos(_productoLN.ObtenerProductos())
-                MessageBox.Show("Producto eliminado exitosamente")
+                _helpers.MessageInformation("Producto eliminado exitosamente")
             End If
             _productoLN.EliminarProducto(codigoProducto)
-        CargarProductos(_productoLN.ObtenerProductos())
+            CargarProductos(_productoLN.ObtenerProductos())
         Catch ex As Exception
-            MessageBox.Show("Ocurrió un error al eliminar el producto")
+            _helpers.MessageError("Ocurrió un error al eliminar el producto")
         End Try
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        If DGVProductos.SelectedRows.Count = 0 Then
-            MessageBox.Show("Seleccione una fila para actualizar")
+        If codigoProductoSeleccionado = -1 Then
+            _helpers.MessageError("Modifique una fila para actualizar")
             Return
         End If
         _productoLN.ActualizarProducto(productoActualizar)
         'Actualizar el DataGridView
-        DGVProductos.DataSource = _productoLN.ObtenerProductos()
+        CargarProductos(_productoLN.ObtenerProductos())
+
+        ' seleccionar la fila actualizada
+        _helpers.SeleccionarFilaDGV(DGVProductos, codigoProductoSeleccionado)
+
+        ' Mostrar mensaje de producto actualizado
+        _helpers.MessageInformation("Actualizado el producto #" & codigoProductoSeleccionado)
+
+        ' Reseteando variables globales
+        productoActualizar = Nothing
+        codigoProductoSeleccionado = -1
+        txtQNombreProducto.Text = ""
     End Sub
 
     Private Sub DGVProductos_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProductos.CellEndEdit
 
+        codigoProductoSeleccionado = DGVProductos.Rows(e.RowIndex).Cells("CodigoProducto").Value
+
         productoActualizar = New Producto With {
-            .CodigoProducto = DGVProductos.Rows(e.RowIndex).Cells("CodigoProducto").Value,
+        .CodigoProducto = DGVProductos.Rows(e.RowIndex).Cells("CodigoProducto").Value,
             .NombreProducto = DGVProductos.Rows(e.RowIndex).Cells("NombreProducto").Value,
             .DescripcionProducto = DGVProductos.Rows(e.RowIndex).Cells("DescripcionProducto").Value,
             .PrecioBase = DGVProductos.Rows(e.RowIndex).Cells("PrecioBase").Value,

@@ -26,11 +26,17 @@ Partial Class frmDetail_GuiaRemision
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.DGVMovimientos = New System.Windows.Forms.DataGridView()
-        Me.lblRUC = New System.Windows.Forms.Label()
         Me.lblNumDoc = New System.Windows.Forms.Label()
+        Me.lblRUC = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DGVMovimientos = New System.Windows.Forms.DataGridView()
+        Me.NumDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumHoja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblProveedor = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -40,9 +46,9 @@ Partial Class frmDetail_GuiaRemision
         Me.lblDireccion = New System.Windows.Forms.Label()
         Me.lblTelefono = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblCorreo = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.lblCorreo = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -54,12 +60,7 @@ Partial Class frmDetail_GuiaRemision
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.NumDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumHoja = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -72,7 +73,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(47, 67)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(297, 32)
+        Me.Label1.Size = New System.Drawing.Size(296, 32)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "GUÍA DE REMISIÓN "
         '
@@ -82,7 +83,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(737, 236)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(192, 24)
+        Me.Label2.Size = New System.Drawing.Size(181, 22)
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "Fecha de Emisión: "
         '
@@ -109,6 +110,36 @@ Partial Class frmDetail_GuiaRemision
         Me.Panel1.Size = New System.Drawing.Size(385, 192)
         Me.Panel1.TabIndex = 38
         '
+        'lblNumDoc
+        '
+        Me.lblNumDoc.AutoSize = True
+        Me.lblNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumDoc.Location = New System.Drawing.Point(150, 111)
+        Me.lblNumDoc.Name = "lblNumDoc"
+        Me.lblNumDoc.Size = New System.Drawing.Size(115, 32)
+        Me.lblNumDoc.TabIndex = 42
+        Me.lblNumDoc.Text = "<<N°>>"
+        '
+        'lblRUC
+        '
+        Me.lblRUC.AutoSize = True
+        Me.lblRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRUC.Location = New System.Drawing.Point(151, 16)
+        Me.lblRUC.Name = "lblRUC"
+        Me.lblRUC.Size = New System.Drawing.Size(127, 29)
+        Me.lblRUC.TabIndex = 41
+        Me.lblRUC.Text = "<<RUC>>"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(48, 111)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(47, 32)
+        Me.Label5.TabIndex = 40
+        Me.Label5.Text = "N°"
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -118,16 +149,6 @@ Partial Class frmDetail_GuiaRemision
         Me.Label4.Size = New System.Drawing.Size(67, 29)
         Me.Label4.TabIndex = 39
         Me.Label4.Text = "RUC"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(48, 111)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 32)
-        Me.Label5.TabIndex = 40
-        Me.Label5.Text = "N°"
         '
         'DGVMovimientos
         '
@@ -141,25 +162,47 @@ Partial Class frmDetail_GuiaRemision
         Me.DGVMovimientos.Size = New System.Drawing.Size(1120, 226)
         Me.DGVMovimientos.TabIndex = 39
         '
-        'lblRUC
+        'NumDocumento
         '
-        Me.lblRUC.AutoSize = True
-        Me.lblRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRUC.Location = New System.Drawing.Point(151, 16)
-        Me.lblRUC.Name = "lblRUC"
-        Me.lblRUC.Size = New System.Drawing.Size(127, 29)
-        Me.lblRUC.TabIndex = 41
-        Me.lblRUC.Text = "<<RUC>>"
+        Me.NumDocumento.DataPropertyName = "NumDocumento"
+        Me.NumDocumento.HeaderText = "N° Documento"
+        Me.NumDocumento.MinimumWidth = 6
+        Me.NumDocumento.Name = "NumDocumento"
         '
-        'lblNumDoc
+        'CodigoProducto
         '
-        Me.lblNumDoc.AutoSize = True
-        Me.lblNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumDoc.Location = New System.Drawing.Point(150, 111)
-        Me.lblNumDoc.Name = "lblNumDoc"
-        Me.lblNumDoc.Size = New System.Drawing.Size(116, 32)
-        Me.lblNumDoc.TabIndex = 42
-        Me.lblNumDoc.Text = "<<N°>>"
+        Me.CodigoProducto.DataPropertyName = "CodigoProducto"
+        Me.CodigoProducto.HeaderText = "Código de Producto"
+        Me.CodigoProducto.MinimumWidth = 6
+        Me.CodigoProducto.Name = "CodigoProducto"
+        '
+        'NumItem
+        '
+        Me.NumItem.DataPropertyName = "NumItem"
+        Me.NumItem.HeaderText = "Item"
+        Me.NumItem.MinimumWidth = 6
+        Me.NumItem.Name = "NumItem"
+        '
+        'NumHoja
+        '
+        Me.NumHoja.DataPropertyName = "NumHoja"
+        Me.NumHoja.HeaderText = "N° Hoja"
+        Me.NumHoja.MinimumWidth = 6
+        Me.NumHoja.Name = "NumHoja"
+        '
+        'PrecioDocumento
+        '
+        Me.PrecioDocumento.DataPropertyName = "PrecioDocumento"
+        Me.PrecioDocumento.HeaderText = "Precio en Documento"
+        Me.PrecioDocumento.MinimumWidth = 6
+        Me.PrecioDocumento.Name = "PrecioDocumento"
+        '
+        'CantidadEntrada
+        '
+        Me.CantidadEntrada.DataPropertyName = "CantidadEntrada"
+        Me.CantidadEntrada.HeaderText = "Cantidad de entrada"
+        Me.CantidadEntrada.MinimumWidth = 6
+        Me.CantidadEntrada.Name = "CantidadEntrada"
         '
         'lblProveedor
         '
@@ -167,7 +210,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProveedor.Location = New System.Drawing.Point(158, 19)
         Me.lblProveedor.Name = "lblProveedor"
-        Me.lblProveedor.Size = New System.Drawing.Size(142, 24)
+        Me.lblProveedor.Size = New System.Drawing.Size(137, 22)
         Me.lblProveedor.TabIndex = 43
         Me.lblProveedor.Text = "<<Proveedor>>"
         '
@@ -217,7 +260,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescripcion.Location = New System.Drawing.Point(146, 57)
         Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(154, 24)
+        Me.lblDescripcion.Size = New System.Drawing.Size(148, 22)
         Me.lblDescripcion.TabIndex = 49
         Me.lblDescripcion.Text = "<<Descripcion>>"
         '
@@ -227,7 +270,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDireccion.Location = New System.Drawing.Point(146, 96)
         Me.lblDireccion.Name = "lblDireccion"
-        Me.lblDireccion.Size = New System.Drawing.Size(142, 24)
+        Me.lblDireccion.Size = New System.Drawing.Size(137, 22)
         Me.lblDireccion.TabIndex = 50
         Me.lblDireccion.Text = "<<Proveedor>>"
         '
@@ -237,7 +280,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTelefono.Location = New System.Drawing.Point(505, 96)
         Me.lblTelefono.Name = "lblTelefono"
-        Me.lblTelefono.Size = New System.Drawing.Size(124, 24)
+        Me.lblTelefono.Size = New System.Drawing.Size(124, 22)
         Me.lblTelefono.TabIndex = 51
         Me.lblTelefono.Text = "<<1234567>>"
         '
@@ -259,13 +302,23 @@ Partial Class frmDetail_GuiaRemision
         Me.Panel2.Size = New System.Drawing.Size(678, 192)
         Me.Panel2.TabIndex = 52
         '
+        'lblCorreo
+        '
+        Me.lblCorreo.AutoSize = True
+        Me.lblCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCorreo.Location = New System.Drawing.Point(253, 136)
+        Me.lblCorreo.Name = "lblCorreo"
+        Me.lblCorreo.Size = New System.Drawing.Size(137, 22)
+        Me.lblCorreo.TabIndex = 52
+        Me.lblCorreo.Text = "<<Proveedor>>"
+        '
         'lblFecha
         '
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.Location = New System.Drawing.Point(935, 236)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(112, 24)
+        Me.lblFecha.Size = New System.Drawing.Size(106, 22)
         Me.lblFecha.TabIndex = 52
         Me.lblFecha.Text = "dd-MM-yyyy"
         '
@@ -278,16 +331,6 @@ Partial Class frmDetail_GuiaRemision
         Me.Label6.Size = New System.Drawing.Size(131, 20)
         Me.Label6.TabIndex = 53
         Me.Label6.Text = "MOVIMIENTO:"
-        '
-        'lblCorreo
-        '
-        Me.lblCorreo.AutoSize = True
-        Me.lblCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCorreo.Location = New System.Drawing.Point(253, 136)
-        Me.lblCorreo.Name = "lblCorreo"
-        Me.lblCorreo.Size = New System.Drawing.Size(142, 24)
-        Me.lblCorreo.TabIndex = 52
-        Me.lblCorreo.Text = "<<Proveedor>>"
         '
         'Panel3
         '
@@ -333,7 +376,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(488, 39)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(68, 17)
+        Me.Label12.Size = New System.Drawing.Size(62, 16)
         Me.Label12.TabIndex = 47
         Me.Label12.Text = "(Entrada)"
         '
@@ -391,53 +434,21 @@ Partial Class frmDetail_GuiaRemision
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'NumDocumento
+        'btnImprimir
         '
-        Me.NumDocumento.DataPropertyName = "NumDocumento"
-        Me.NumDocumento.HeaderText = "N° Documento"
-        Me.NumDocumento.MinimumWidth = 6
-        Me.NumDocumento.Name = "NumDocumento"
-        '
-        'CodigoProducto
-        '
-        Me.CodigoProducto.DataPropertyName = "CodigoProducto"
-        Me.CodigoProducto.HeaderText = "Código de Producto"
-        Me.CodigoProducto.MinimumWidth = 6
-        Me.CodigoProducto.Name = "CodigoProducto"
-        '
-        'NumItem
-        '
-        Me.NumItem.DataPropertyName = "NumItem"
-        Me.NumItem.HeaderText = "Item"
-        Me.NumItem.MinimumWidth = 6
-        Me.NumItem.Name = "NumItem"
-        '
-        'NumHoja
-        '
-        Me.NumHoja.DataPropertyName = "NumHoja"
-        Me.NumHoja.HeaderText = "N° Hoja"
-        Me.NumHoja.MinimumWidth = 6
-        Me.NumHoja.Name = "NumHoja"
-        '
-        'PrecioDocumento
-        '
-        Me.PrecioDocumento.DataPropertyName = "PrecioDocumento"
-        Me.PrecioDocumento.HeaderText = "Precio en Documento"
-        Me.PrecioDocumento.MinimumWidth = 6
-        Me.PrecioDocumento.Name = "PrecioDocumento"
-        '
-        'CantidadEntrada
-        '
-        Me.CantidadEntrada.DataPropertyName = "CantidadEntrada"
-        Me.CantidadEntrada.HeaderText = "Cantidad de entrada"
-        Me.CantidadEntrada.MinimumWidth = 6
-        Me.CantidadEntrada.Name = "CantidadEntrada"
+        Me.btnImprimir.Location = New System.Drawing.Point(38, 634)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(130, 42)
+        Me.btnImprimir.TabIndex = 58
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'frmDetail_GuiaRemision
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1189, 680)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnAgregar)
@@ -499,4 +510,5 @@ Partial Class frmDetail_GuiaRemision
     Friend WithEvents NumHoja As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDocumento As DataGridViewTextBoxColumn
     Friend WithEvents CantidadEntrada As DataGridViewTextBoxColumn
+    Friend WithEvents btnImprimir As Button
 End Class
