@@ -706,29 +706,6 @@ GO
 USE EMPRESA_LIMPIEZA;
 GO
 
-drop procedure if exists SP_StockProducto
-go
-create procedure SP_StockProducto 
-	@CodigoProducto int
-AS
-begin
-	declare @maxItem int, @ultima_hoja int;
-	select @ultima_hoja = max(NumHoja) from MOVIMIENTO where CodigoProducto = @CodigoProducto
-	if @ultima_hoja is NULL
-	begin
-		print 'Producto inexistente o sin Kardex registrado'
-		return;
-	end
-	select @maxItem = MAX(NumItem) from MOVIMIENTO WHERE CodigoProducto = @CodigoProducto and NumHoja = @ultima_hoja;
-
-	select m.CodigoProducto, StockActual as 'Stock de Producto', p.DescripcionProducto as 'Descripcion Producto' 
-	from MOVIMIENTO m
-	inner join PRODUCTO P ON p.CodigoProducto = m.CodigoProducto
-	where NumItem = @maxItem
-end
-GO
-
-
 DROP PROCEDURE IF EXISTS SP_MOVS_KARDEX
 GO
 

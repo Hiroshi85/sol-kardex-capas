@@ -59,7 +59,6 @@ Partial Class frmDetail_GuiaRemision
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.txtTotal = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -73,9 +72,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(47, 67)
+        Me.Label1.Location = New System.Drawing.Point(35, 54)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(297, 32)
+        Me.Label1.Size = New System.Drawing.Size(241, 26)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "GUÍA DE REMISIÓN "
         '
@@ -83,9 +83,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(737, 236)
+        Me.Label2.Location = New System.Drawing.Point(553, 192)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(192, 24)
+        Me.Label2.Size = New System.Drawing.Size(153, 18)
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "Fecha de Emisión: "
         '
@@ -93,9 +94,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 14)
+        Me.Label3.Location = New System.Drawing.Point(7, 11)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(139, 29)
+        Me.Label3.Size = New System.Drawing.Size(110, 24)
         Me.Label3.TabIndex = 37
         Me.Label3.Text = "Remitente:"
         '
@@ -107,18 +109,20 @@ Partial Class frmDetail_GuiaRemision
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(720, 32)
+        Me.Panel1.Location = New System.Drawing.Point(540, 26)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(385, 192)
+        Me.Panel1.Size = New System.Drawing.Size(289, 156)
         Me.Panel1.TabIndex = 38
         '
         'lblNumDoc
         '
         Me.lblNumDoc.AutoSize = True
         Me.lblNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumDoc.Location = New System.Drawing.Point(150, 111)
+        Me.lblNumDoc.Location = New System.Drawing.Point(112, 90)
+        Me.lblNumDoc.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNumDoc.Name = "lblNumDoc"
-        Me.lblNumDoc.Size = New System.Drawing.Size(116, 32)
+        Me.lblNumDoc.Size = New System.Drawing.Size(95, 26)
         Me.lblNumDoc.TabIndex = 42
         Me.lblNumDoc.Text = "<<N°>>"
         '
@@ -126,9 +130,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.lblRUC.AutoSize = True
         Me.lblRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRUC.Location = New System.Drawing.Point(151, 16)
+        Me.lblRUC.Location = New System.Drawing.Point(113, 13)
+        Me.lblRUC.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblRUC.Name = "lblRUC"
-        Me.lblRUC.Size = New System.Drawing.Size(127, 29)
+        Me.lblRUC.Size = New System.Drawing.Size(100, 24)
         Me.lblRUC.TabIndex = 41
         Me.lblRUC.Text = "<<RUC>>"
         '
@@ -136,9 +141,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(48, 111)
+        Me.Label5.Location = New System.Drawing.Point(36, 90)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 32)
+        Me.Label5.Size = New System.Drawing.Size(39, 26)
         Me.Label5.TabIndex = 40
         Me.Label5.Text = "N°"
         '
@@ -146,9 +152,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(49, 16)
+        Me.Label4.Location = New System.Drawing.Point(37, 13)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(67, 29)
+        Me.Label4.Size = New System.Drawing.Size(52, 24)
         Me.Label4.TabIndex = 39
         Me.Label4.Text = "RUC"
         '
@@ -157,11 +164,12 @@ Partial Class frmDetail_GuiaRemision
         Me.DGVMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumDocumento, Me.CodigoProducto, Me.NumItem, Me.NumHoja, Me.PrecioDocumento, Me.CantidadEntrada})
-        Me.DGVMovimientos.Location = New System.Drawing.Point(38, 402)
+        Me.DGVMovimientos.Location = New System.Drawing.Point(28, 327)
+        Me.DGVMovimientos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DGVMovimientos.Name = "DGVMovimientos"
         Me.DGVMovimientos.RowHeadersWidth = 51
         Me.DGVMovimientos.RowTemplate.Height = 24
-        Me.DGVMovimientos.Size = New System.Drawing.Size(1120, 226)
+        Me.DGVMovimientos.Size = New System.Drawing.Size(840, 184)
         Me.DGVMovimientos.TabIndex = 39
         '
         'NumDocumento
@@ -210,9 +218,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.lblProveedor.AutoSize = True
         Me.lblProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProveedor.Location = New System.Drawing.Point(158, 19)
+        Me.lblProveedor.Location = New System.Drawing.Point(118, 15)
+        Me.lblProveedor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblProveedor.Name = "lblProveedor"
-        Me.lblProveedor.Size = New System.Drawing.Size(142, 24)
+        Me.lblProveedor.Size = New System.Drawing.Size(113, 18)
         Me.lblProveedor.TabIndex = 43
         Me.lblProveedor.Text = "<<Proveedor>>"
         '
@@ -220,9 +229,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(9, 91)
+        Me.Label7.Location = New System.Drawing.Point(7, 74)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(131, 29)
+        Me.Label7.Size = New System.Drawing.Size(105, 24)
         Me.Label7.TabIndex = 44
         Me.Label7.Text = "Dirección:"
         '
@@ -230,9 +240,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(363, 91)
+        Me.Label9.Location = New System.Drawing.Point(272, 74)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(125, 29)
+        Me.Label9.Size = New System.Drawing.Size(99, 24)
         Me.Label9.TabIndex = 46
         Me.Label9.Text = "Teléfono:"
         '
@@ -240,9 +251,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(12, 131)
+        Me.Label10.Location = New System.Drawing.Point(9, 106)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(245, 29)
+        Me.Label10.Size = New System.Drawing.Size(196, 24)
         Me.Label10.TabIndex = 47
         Me.Label10.Text = "Correo electrónico: "
         '
@@ -250,9 +262,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(11, 52)
+        Me.Label11.Location = New System.Drawing.Point(8, 42)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(91, 29)
+        Me.Label11.Size = New System.Drawing.Size(73, 24)
         Me.Label11.TabIndex = 48
         Me.Label11.Text = "Rubro:"
         '
@@ -260,9 +273,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.lblDescripcion.AutoSize = True
         Me.lblDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescripcion.Location = New System.Drawing.Point(146, 57)
+        Me.lblDescripcion.Location = New System.Drawing.Point(110, 46)
+        Me.lblDescripcion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(154, 24)
+        Me.lblDescripcion.Size = New System.Drawing.Size(123, 18)
         Me.lblDescripcion.TabIndex = 49
         Me.lblDescripcion.Text = "<<Descripcion>>"
         '
@@ -270,9 +284,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.lblDireccion.AutoSize = True
         Me.lblDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDireccion.Location = New System.Drawing.Point(146, 96)
+        Me.lblDireccion.Location = New System.Drawing.Point(110, 78)
+        Me.lblDireccion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDireccion.Name = "lblDireccion"
-        Me.lblDireccion.Size = New System.Drawing.Size(142, 24)
+        Me.lblDireccion.Size = New System.Drawing.Size(113, 18)
         Me.lblDireccion.TabIndex = 50
         Me.lblDireccion.Text = "<<Proveedor>>"
         '
@@ -280,9 +295,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.lblTelefono.AutoSize = True
         Me.lblTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTelefono.Location = New System.Drawing.Point(505, 96)
+        Me.lblTelefono.Location = New System.Drawing.Point(379, 78)
+        Me.lblTelefono.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTelefono.Name = "lblTelefono"
-        Me.lblTelefono.Size = New System.Drawing.Size(124, 24)
+        Me.lblTelefono.Size = New System.Drawing.Size(100, 18)
         Me.lblTelefono.TabIndex = 51
         Me.lblTelefono.Text = "<<1234567>>"
         '
@@ -299,18 +315,20 @@ Partial Class frmDetail_GuiaRemision
         Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Location = New System.Drawing.Point(23, 32)
+        Me.Panel2.Location = New System.Drawing.Point(17, 26)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(678, 192)
+        Me.Panel2.Size = New System.Drawing.Size(509, 156)
         Me.Panel2.TabIndex = 52
         '
         'lblCorreo
         '
         Me.lblCorreo.AutoSize = True
         Me.lblCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCorreo.Location = New System.Drawing.Point(253, 136)
+        Me.lblCorreo.Location = New System.Drawing.Point(190, 110)
+        Me.lblCorreo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCorreo.Name = "lblCorreo"
-        Me.lblCorreo.Size = New System.Drawing.Size(142, 24)
+        Me.lblCorreo.Size = New System.Drawing.Size(113, 18)
         Me.lblCorreo.TabIndex = 52
         Me.lblCorreo.Text = "<<Proveedor>>"
         '
@@ -318,9 +336,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.Location = New System.Drawing.Point(935, 236)
+        Me.lblFecha.Location = New System.Drawing.Point(701, 192)
+        Me.lblFecha.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(112, 24)
+        Me.lblFecha.Size = New System.Drawing.Size(88, 18)
         Me.lblFecha.TabIndex = 52
         Me.lblFecha.Text = "dd-MM-yyyy"
         '
@@ -328,9 +347,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(41, 255)
+        Me.Label6.Location = New System.Drawing.Point(31, 207)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(131, 20)
+        Me.Label6.Size = New System.Drawing.Size(110, 17)
         Me.Label6.TabIndex = 53
         Me.Label6.Text = "MOVIMIENTO:"
         '
@@ -344,41 +364,46 @@ Partial Class frmDetail_GuiaRemision
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.txtCodigo)
         Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Location = New System.Drawing.Point(41, 278)
+        Me.Panel3.Location = New System.Drawing.Point(31, 226)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(810, 107)
+        Me.Panel3.Size = New System.Drawing.Size(608, 87)
         Me.Panel3.TabIndex = 54
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(193, 65)
+        Me.txtPrecio.Location = New System.Drawing.Point(145, 53)
+        Me.txtPrecio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(179, 22)
+        Me.txtPrecio.Size = New System.Drawing.Size(135, 20)
         Me.txtPrecio.TabIndex = 50
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(24, 68)
+        Me.Label8.Location = New System.Drawing.Point(18, 55)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(153, 20)
+        Me.Label8.Size = New System.Drawing.Size(128, 17)
         Me.Label8.TabIndex = 49
         Me.Label8.Text = "Precio Documento:"
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(572, 24)
+        Me.txtCantidad.Location = New System.Drawing.Point(429, 20)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(179, 22)
+        Me.txtCantidad.Size = New System.Drawing.Size(135, 20)
         Me.txtCantidad.TabIndex = 48
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(488, 39)
+        Me.Label12.Location = New System.Drawing.Point(366, 32)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(68, 17)
+        Me.Label12.Size = New System.Drawing.Size(50, 13)
         Me.Label12.TabIndex = 47
         Me.Label12.Text = "(Entrada)"
         '
@@ -386,61 +411,58 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(481, 19)
+        Me.Label13.Location = New System.Drawing.Point(361, 15)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(75, 20)
+        Me.Label13.Size = New System.Drawing.Size(64, 17)
         Me.Label13.TabIndex = 46
         Me.Label13.Text = "Cantidad"
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(193, 21)
+        Me.txtCodigo.Location = New System.Drawing.Point(145, 17)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(179, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(135, 20)
         Me.txtCodigo.TabIndex = 45
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(21, 21)
+        Me.Label14.Location = New System.Drawing.Point(16, 17)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(133, 20)
+        Me.Label14.Size = New System.Drawing.Size(113, 17)
         Me.Label14.TabIndex = 44
         Me.Label14.Text = "Codigo Producto"
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(904, 339)
+        Me.btnLimpiar.Location = New System.Drawing.Point(678, 275)
+        Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(130, 42)
+        Me.btnLimpiar.Size = New System.Drawing.Size(98, 34)
         Me.btnLimpiar.TabIndex = 56
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(906, 280)
+        Me.btnAgregar.Location = New System.Drawing.Point(680, 228)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(130, 42)
+        Me.btnAgregar.Size = New System.Drawing.Size(98, 34)
         Me.btnAgregar.TabIndex = 55
         Me.btnAgregar.Text = "Agregar Movimiento"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
-        'btnGuardar
-        '
-        Me.btnGuardar.Location = New System.Drawing.Point(1028, 691)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(130, 42)
-        Me.btnGuardar.TabIndex = 57
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(38, 691)
+        Me.btnImprimir.Location = New System.Drawing.Point(28, 561)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(130, 42)
+        Me.btnImprimir.Size = New System.Drawing.Size(98, 34)
         Me.btnImprimir.TabIndex = 58
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
@@ -449,9 +471,10 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.txtTotal.AutoSize = True
         Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(1012, 649)
+        Me.txtTotal.Location = New System.Drawing.Point(759, 527)
+        Me.txtTotal.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(0, 18)
+        Me.txtTotal.Size = New System.Drawing.Size(0, 15)
         Me.txtTotal.TabIndex = 60
         Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -459,24 +482,24 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(837, 642)
+        Me.Label15.Location = New System.Drawing.Point(628, 522)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label15.Size = New System.Drawing.Size(162, 30)
+        Me.Label15.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Label15.Size = New System.Drawing.Size(137, 25)
         Me.Label15.TabIndex = 59
         Me.Label15.Text = "        TOTAL      "
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'frmDetail_GuiaRemision
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Info
-        Me.ClientSize = New System.Drawing.Size(1189, 756)
+        Me.ClientSize = New System.Drawing.Size(892, 614)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.btnImprimir)
-        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Panel3)
@@ -486,6 +509,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmDetail_GuiaRemision"
         Me.Text = "frmDetail_GuiaRemision"
         Me.Panel1.ResumeLayout(False)
@@ -530,7 +554,6 @@ Partial Class frmDetail_GuiaRemision
     Friend WithEvents Label14 As Label
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnAgregar As Button
-    Friend WithEvents btnGuardar As Button
     Friend WithEvents NumDocumento As DataGridViewTextBoxColumn
     Friend WithEvents CodigoProducto As DataGridViewTextBoxColumn
     Friend WithEvents NumItem As DataGridViewTextBoxColumn

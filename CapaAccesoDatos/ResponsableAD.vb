@@ -118,4 +118,33 @@ Public Class ResponsableAD
             _conexion.CerrarConexion()
         End Try
     End Function
+
+    Public Function BuscarID(x As Integer) As Responsable
+        Dim oComando As New SqlCommand
+        Dim responsable As New Responsable
+        Try
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
+            oComando.CommandText = "SP_SEARCH_RESPONSABLExCODIGO"
+            oComando.CommandType = CommandType.StoredProcedure
+            oComando.Parameters.Add("@CodigoResponsable", SqlDbType.VarChar, 36).Value = x
+            Dim oLector As SqlDataReader
+            oLector = oComando.ExecuteReader
+            If oLector.HasRows = True Then
+                While oLector.Read
+                    responsable = New Responsable With {
+                        .CodigoResponsable = oLector.Item(0),
+                        .NumDNI = oLector.Item(1),
+                        .FechaNacimiento = oLector.Item(2),
+                        .Nombre = oLector.Item(3)
+                    }
+                End While
+            End If
+            Return responsable
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        Finally
+            _conexion.CerrarConexion()
+        End Try
+    End Function
 End Class

@@ -21,4 +21,9 @@ Public Class ResponsableLN
         Dim objAD As New ResponsableAD
         Return objAD.Buscar(obj)
     End Function
+
+    Public Shared Function BuscarCodigo(obj As String) As Responsable
+        Dim objAD As New ResponsableAD
+        Return objAD.BuscarID(obj)
+    End Function
 End Class
