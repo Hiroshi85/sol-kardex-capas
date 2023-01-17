@@ -1,10 +1,16 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
 Public Class frmMant_Proveedores
-
+    ReadOnly _helpers As New Helpers
     Dim updtProveedor As Proveedor
+    Dim selProveedor As Proveedor = Nothing
     Private Sub frmMant_Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarProveedores()
+        If Me.Modal Then
+            btnSeleccionar.Visible = True
+        Else
+            btnSeleccionar.Visible = False
+        End If
     End Sub
     Private Sub listarProveedores()
         Dim lista As List(Of Proveedor)
@@ -118,7 +124,7 @@ Public Class frmMant_Proveedores
     End Sub
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
-
+        Me.Dispose()
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
@@ -136,4 +142,26 @@ Public Class frmMant_Proveedores
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
+
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+        If DGVProveedores.SelectedRows.Count > 0 Then
+            Dim i As Integer = DGVProveedores.SelectedRows(0).Index
+            selProveedor = New Proveedor With {
+                .IdProveedor = CInt(DGVProveedores.Rows(i).Cells("IdProveedor").Value),
+                .RUC = CStr(DGVProveedores.Rows(i).Cells("RUC").Value),
+                .Correo = CStr(DGVProveedores.Rows(i).Cells("Correo").Value),
+                .Descripcion = CStr(DGVProveedores.Rows(i).Cells("Descripcion").Value),
+                .Direccion = CStr(DGVProveedores.Rows(i).Cells("Direccion").Value),
+                .Proveedor = CStr(DGVProveedores.Rows(i).Cells("Proveedor").Value),
+                .Telefono = CStr(DGVProveedores.Rows(i).Cells("Telefono").Value)
+            }
+            Me.Dispose()
+        Else
+            _helpers.MessageInformation("Seleccione un proveedor")
+        End If
+    End Sub
+
+    Public Function getSelProveedor() As Proveedor
+        Return selProveedor
+    End Function
 End Class

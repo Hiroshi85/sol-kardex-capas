@@ -130,7 +130,7 @@ Public Class frmMant_Responsables
             }
             Me.Dispose()
         Else
-            _helpers.MessageInformation("Seleccione una responsable")
+            _helpers.MessageInformation("Seleccione un responsable")
         End If
     End Sub
 

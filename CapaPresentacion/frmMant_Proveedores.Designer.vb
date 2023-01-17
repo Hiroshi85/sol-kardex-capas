@@ -23,6 +23,13 @@ Partial Class frmMant_Proveedores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGVProveedores = New System.Windows.Forms.DataGridView()
+        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RUC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Proveedores = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
@@ -42,18 +49,12 @@ Partial Class frmMant_Proveedores
         Me.txtCorreo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtRUC = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtRUC = New System.Windows.Forms.TextBox()
-        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RUC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -70,6 +71,65 @@ Partial Class frmMant_Proveedores
         Me.DGVProveedores.RowTemplate.Height = 24
         Me.DGVProveedores.Size = New System.Drawing.Size(1252, 219)
         Me.DGVProveedores.TabIndex = 0
+        '
+        'IdProveedor
+        '
+        Me.IdProveedor.DataPropertyName = "IdProveedor"
+        Me.IdProveedor.FillWeight = 48.12834!
+        Me.IdProveedor.HeaderText = "ID"
+        Me.IdProveedor.MinimumWidth = 6
+        Me.IdProveedor.Name = "IdProveedor"
+        Me.IdProveedor.ReadOnly = True
+        '
+        'RUC
+        '
+        Me.RUC.DataPropertyName = "RUC"
+        Me.RUC.HeaderText = "RUC"
+        Me.RUC.MinimumWidth = 6
+        Me.RUC.Name = "RUC"
+        '
+        'Proveedor
+        '
+        Me.Proveedor.DataPropertyName = "Proveedor"
+        Me.Proveedor.FillWeight = 150.4922!
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.MaxInputLength = 30
+        Me.Proveedor.MinimumWidth = 6
+        Me.Proveedor.Name = "Proveedor"
+        '
+        'Descripcion
+        '
+        Me.Descripcion.DataPropertyName = "Descripcion"
+        Me.Descripcion.FillWeight = 118.9635!
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.MaxInputLength = 30
+        Me.Descripcion.MinimumWidth = 6
+        Me.Descripcion.Name = "Descripcion"
+        '
+        'Correo
+        '
+        Me.Correo.DataPropertyName = "Correo"
+        Me.Correo.FillWeight = 120.4335!
+        Me.Correo.HeaderText = "Correo Electrónico"
+        Me.Correo.MinimumWidth = 6
+        Me.Correo.Name = "Correo"
+        '
+        'Direccion
+        '
+        Me.Direccion.DataPropertyName = "Direccion"
+        Me.Direccion.FillWeight = 112.7975!
+        Me.Direccion.HeaderText = "Dirección"
+        Me.Direccion.MinimumWidth = 6
+        Me.Direccion.Name = "Direccion"
+        '
+        'Telefono
+        '
+        Me.Telefono.DataPropertyName = "Telefono"
+        Me.Telefono.FillWeight = 49.18496!
+        Me.Telefono.HeaderText = "Teléfono"
+        Me.Telefono.MaxInputLength = 13
+        Me.Telefono.MinimumWidth = 6
+        Me.Telefono.Name = "Telefono"
         '
         'Proveedores
         '
@@ -129,7 +189,7 @@ Partial Class frmMant_Proveedores
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.Window
         Me.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(200, 535)
+        Me.btnActualizar.Location = New System.Drawing.Point(49, 535)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(113, 53)
         Me.btnActualizar.TabIndex = 6
@@ -141,7 +201,7 @@ Partial Class frmMant_Proveedores
         Me.btnEliminar.BackColor = System.Drawing.SystemColors.Window
         Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(385, 535)
+        Me.btnEliminar.Location = New System.Drawing.Point(239, 535)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(113, 53)
         Me.btnEliminar.TabIndex = 7
@@ -269,6 +329,26 @@ Partial Class frmMant_Proveedores
         Me.Panel1.Size = New System.Drawing.Size(917, 82)
         Me.Panel1.TabIndex = 21
         '
+        'txtRUC
+        '
+        Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRUC.Location = New System.Drawing.Point(28, 46)
+        Me.txtRUC.MaxLength = 11
+        Me.txtRUC.Name = "txtRUC"
+        Me.txtRUC.Size = New System.Drawing.Size(166, 21)
+        Me.txtRUC.TabIndex = 15
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(21, 14)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 29)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "RUC"
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -303,90 +383,24 @@ Partial Class frmMant_Proveedores
         Me.Panel2.Size = New System.Drawing.Size(917, 88)
         Me.Panel2.TabIndex = 23
         '
-        'Label3
+        'btnSeleccionar
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(21, 14)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 29)
-        Me.Label3.TabIndex = 14
-        Me.Label3.Text = "RUC"
-        '
-        'txtRUC
-        '
-        Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRUC.Location = New System.Drawing.Point(28, 46)
-        Me.txtRUC.MaxLength = 11
-        Me.txtRUC.Name = "txtRUC"
-        Me.txtRUC.Size = New System.Drawing.Size(166, 21)
-        Me.txtRUC.TabIndex = 15
-        '
-        'IdProveedor
-        '
-        Me.IdProveedor.DataPropertyName = "IdProveedor"
-        Me.IdProveedor.FillWeight = 48.12834!
-        Me.IdProveedor.HeaderText = "ID"
-        Me.IdProveedor.MinimumWidth = 6
-        Me.IdProveedor.Name = "IdProveedor"
-        Me.IdProveedor.ReadOnly = True
-        '
-        'RUC
-        '
-        Me.RUC.DataPropertyName = "RUC"
-        Me.RUC.HeaderText = "RUC"
-        Me.RUC.MinimumWidth = 6
-        Me.RUC.Name = "RUC"
-        '
-        'Proveedor
-        '
-        Me.Proveedor.DataPropertyName = "Proveedor"
-        Me.Proveedor.FillWeight = 150.4922!
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.MaxInputLength = 30
-        Me.Proveedor.MinimumWidth = 6
-        Me.Proveedor.Name = "Proveedor"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.DataPropertyName = "Descripcion"
-        Me.Descripcion.FillWeight = 118.9635!
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.MaxInputLength = 30
-        Me.Descripcion.MinimumWidth = 6
-        Me.Descripcion.Name = "Descripcion"
-        '
-        'Correo
-        '
-        Me.Correo.DataPropertyName = "Correo"
-        Me.Correo.FillWeight = 120.4335!
-        Me.Correo.HeaderText = "Correo Electrónico"
-        Me.Correo.MinimumWidth = 6
-        Me.Correo.Name = "Correo"
-        '
-        'Direccion
-        '
-        Me.Direccion.DataPropertyName = "Direccion"
-        Me.Direccion.FillWeight = 112.7975!
-        Me.Direccion.HeaderText = "Dirección"
-        Me.Direccion.MinimumWidth = 6
-        Me.Direccion.Name = "Direccion"
-        '
-        'Telefono
-        '
-        Me.Telefono.DataPropertyName = "Telefono"
-        Me.Telefono.FillWeight = 49.18496!
-        Me.Telefono.HeaderText = "Teléfono"
-        Me.Telefono.MaxInputLength = 13
-        Me.Telefono.MinimumWidth = 6
-        Me.Telefono.Name = "Telefono"
+        Me.btnSeleccionar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSeleccionar.Location = New System.Drawing.Point(423, 533)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(103, 55)
+        Me.btnSeleccionar.TabIndex = 24
+        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.UseVisualStyleBackColor = False
         '
         'frmMant_Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1276, 590)
+        Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtBuscar)
@@ -444,4 +458,5 @@ Partial Class frmMant_Proveedores
     Friend WithEvents Correo As DataGridViewTextBoxColumn
     Friend WithEvents Direccion As DataGridViewTextBoxColumn
     Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents btnSeleccionar As Button
 End Class
