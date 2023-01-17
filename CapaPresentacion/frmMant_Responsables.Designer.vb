@@ -29,6 +29,7 @@ Partial Class frmMant_Responsables
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtBuscarCodigoResp = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -46,7 +47,7 @@ Partial Class frmMant_Responsables
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         CType(Me.DGVResponsables, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -108,6 +109,16 @@ Partial Class frmMant_Responsables
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1073, 473)
         Me.Panel1.TabIndex = 1
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(28, 173)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(221, 20)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Listado de Responsables"
         '
         'txtBuscarCodigoResp
         '
@@ -279,21 +290,24 @@ Partial Class frmMant_Responsables
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
-        'Label6
+        'btnSeleccionar
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(28, 173)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(221, 20)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Listado de Responsables"
+        Me.btnSeleccionar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSeleccionar.Location = New System.Drawing.Point(347, 491)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(103, 55)
+        Me.btnSeleccionar.TabIndex = 10
+        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.UseVisualStyleBackColor = False
         '
         'frmMant_Responsables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1091, 551)
+        Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnActualizar)
@@ -333,4 +347,5 @@ Partial Class frmMant_Responsables
     Friend WithEvents FechaNacimiento As DataGridViewTextBoxColumn
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnSeleccionar As Button
 End Class
