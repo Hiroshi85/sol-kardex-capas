@@ -14,8 +14,8 @@ Public Class frmKardex_Movs
         Kard = KardexLN.GetKardex(CodProdActual)
         NumProductos = New ProductoLN().ObtenerProductos().Count
         NudKardex.Maximum = NumProductos
-        TxtMinimo.Text = Kard.StockMinRepo.ToString
-        TxtRepo.Text = Kard.CantidadReposicion.ToString
+        NudMinimo.Value = Kard.StockMinRepo.ToString
+        NudRepo.Value = Kard.CantidadReposicion.ToString
         DtpFecha.Value = Kard.FechaApertura
         TxtActual.Text = KardexLN.GetStockActual(Kard.CodigoProducto)
         CargarEstado()
@@ -23,7 +23,7 @@ Public Class frmKardex_Movs
         If (Estado <> 1) Then
             TxtFalta.Visible = True
             lblFalta.Visible = True
-            TxtFalta.Text = Convert.ToDouble(TxtMinimo.Text) - Convert.ToDouble(TxtActual.Text)
+            TxtFalta.Text = Convert.ToDouble(NudMinimo.Value) - Convert.ToDouble(TxtActual.Text)
         Else
             TxtFalta.Visible = False
             lblFalta.Visible = False
@@ -120,8 +120,8 @@ Public Class frmKardex_Movs
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         Dim Kard As New Kardex
         Kard.CodigoProducto = CodProdActual
-        Kard.CantidadReposicion = TxtRepo.Text
-        Kard.StockMinRepo = TxtMinimo.Text
+        Kard.CantidadReposicion = NudRepo.Value
+        Kard.StockMinRepo = NudMinimo.Value
         Kard.FechaApertura = DtpFecha.Value
         KardexLN.ActualizarKardex(Kard)
         CargarKardex()

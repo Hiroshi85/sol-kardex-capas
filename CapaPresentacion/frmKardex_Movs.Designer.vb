@@ -38,13 +38,14 @@ Partial Class frmKardex_Movs
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtMinimo = New System.Windows.Forms.TextBox()
         Me.DtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.TxtActual = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LblEstado = New System.Windows.Forms.Label()
         Me.BtnIr = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.TxtUnidad = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -61,14 +62,15 @@ Partial Class frmKardex_Movs
         Me.Label10 = New System.Windows.Forms.Label()
         Me.LblNombre = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.TxtRepo = New System.Windows.Forms.TextBox()
-        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.NudMinimo = New System.Windows.Forms.NumericUpDown()
+        Me.NudRepo = New System.Windows.Forms.NumericUpDown()
         CType(Me.NudKardex, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVMovDeKardex, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NudHoja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.NudMinimo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NudRepo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NudKardex
@@ -217,14 +219,6 @@ Partial Class frmKardex_Movs
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Actual:"
         '
-        'TxtMinimo
-        '
-        Me.TxtMinimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtMinimo.Location = New System.Drawing.Point(110, 62)
-        Me.TxtMinimo.Name = "TxtMinimo"
-        Me.TxtMinimo.Size = New System.Drawing.Size(100, 27)
-        Me.TxtMinimo.TabIndex = 9
-        '
         'DtpFecha
         '
         Me.DtpFecha.Location = New System.Drawing.Point(871, 327)
@@ -275,8 +269,9 @@ Partial Class frmKardex_Movs
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.NudRepo)
+        Me.Panel1.Controls.Add(Me.NudMinimo)
         Me.Panel1.Controls.Add(Me.BtnActualizar)
-        Me.Panel1.Controls.Add(Me.TxtRepo)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.TxtUnidad)
         Me.Panel1.Controls.Add(Me.Label11)
@@ -287,11 +282,30 @@ Partial Class frmKardex_Movs
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.LblEstado)
         Me.Panel1.Controls.Add(Me.TxtActual)
-        Me.Panel1.Controls.Add(Me.TxtMinimo)
         Me.Panel1.Location = New System.Drawing.Point(674, 120)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(468, 183)
         Me.Panel1.TabIndex = 14
+        '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnActualizar.Location = New System.Drawing.Point(292, 121)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(113, 43)
+        Me.BtnActualizar.TabIndex = 20
+        Me.BtnActualizar.Text = "Actualizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(24, 144)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(110, 24)
+        Me.Label14.TabIndex = 18
+        Me.Label14.Text = "Reposicion:"
         '
         'TxtUnidad
         '
@@ -452,33 +466,27 @@ Partial Class frmKardex_Movs
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "Nombre: "
         '
-        'Label14
+        'NudMinimo
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(24, 144)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(110, 24)
-        Me.Label14.TabIndex = 18
-        Me.Label14.Text = "Reposicion:"
+        Me.NudMinimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NudMinimo.Location = New System.Drawing.Point(107, 62)
+        Me.NudMinimo.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.NudMinimo.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NudMinimo.Name = "NudMinimo"
+        Me.NudMinimo.Size = New System.Drawing.Size(120, 27)
+        Me.NudMinimo.TabIndex = 21
+        Me.NudMinimo.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'TxtRepo
+        'NudRepo
         '
-        Me.TxtRepo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRepo.Location = New System.Drawing.Point(140, 144)
-        Me.TxtRepo.Name = "TxtRepo"
-        Me.TxtRepo.Size = New System.Drawing.Size(100, 27)
-        Me.TxtRepo.TabIndex = 19
-        '
-        'BtnActualizar
-        '
-        Me.BtnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnActualizar.Location = New System.Drawing.Point(292, 121)
-        Me.BtnActualizar.Name = "BtnActualizar"
-        Me.BtnActualizar.Size = New System.Drawing.Size(113, 43)
-        Me.BtnActualizar.TabIndex = 20
-        Me.BtnActualizar.Text = "Actualizar"
-        Me.BtnActualizar.UseVisualStyleBackColor = True
+        Me.NudRepo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NudRepo.Location = New System.Drawing.Point(140, 144)
+        Me.NudRepo.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.NudRepo.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NudRepo.Name = "NudRepo"
+        Me.NudRepo.Size = New System.Drawing.Size(100, 27)
+        Me.NudRepo.TabIndex = 22
+        Me.NudRepo.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'frmKardex_Movs
         '
@@ -510,6 +518,8 @@ Partial Class frmKardex_Movs
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.NudMinimo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NudRepo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -523,7 +533,6 @@ Partial Class frmKardex_Movs
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TxtMinimo As TextBox
     Friend WithEvents DtpFecha As DateTimePicker
     Friend WithEvents TxtActual As TextBox
     Friend WithEvents Label5 As Label
@@ -554,7 +563,8 @@ Partial Class frmKardex_Movs
     Friend WithEvents TxtCategoria As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TxtRepo As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents BtnActualizar As Button
+    Friend WithEvents NudMinimo As NumericUpDown
+    Friend WithEvents NudRepo As NumericUpDown
 End Class
