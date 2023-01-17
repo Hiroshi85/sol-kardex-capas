@@ -1,16 +1,21 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
 Public Class frmKardex_Movs
-
+    Dim CodProdActual As Integer
     Private Sub frmKardex_Movs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarUltimaHoja()
-        ListarMovDeKardex()
         CargarKardex()
+        ListarMovDeKardex()
     End Sub
     Private Sub CargarKardex()
         Dim Kard As Kardex
-        Kard = KardexLN.GetKardex(NudKardex.Value)
-        TxtMinimo.Text = Kard.StockMinRepo.ToString
+        Dim NumProductos As Integer
+        CodProdActual = NudKardex.Value
+        Kard = KardexLN.GetKardex(CodProdActual)
+        NumProductos = New ProductoLN().ObtenerProductos().Count
+        NudKardex.Maximum = NumProductos
+        NudMinimo.Value = Kard.StockMinRepo.ToString
+        NudRepo.Value = Kard.CantidadReposicion.ToString
         DtpFecha.Value = Kard.FechaApertura
         TxtActual.Text = KardexLN.GetStockActual(Kard.CodigoProducto)
         CargarEstado()
@@ -18,7 +23,7 @@ Public Class frmKardex_Movs
         If (Estado <> 1) Then
             TxtFalta.Visible = True
             lblFalta.Visible = True
-            TxtFalta.Text = Convert.ToDouble(TxtMinimo.Text) - Convert.ToDouble(TxtActual.Text)
+            TxtFalta.Text = Convert.ToDouble(NudMinimo.Value) - Convert.ToDouble(TxtActual.Text)
         Else
             TxtFalta.Visible = False
             lblFalta.Visible = False
@@ -42,7 +47,7 @@ Public Class frmKardex_Movs
         Dim lista As List(Of Movimiento)
         Dim CodProd As Integer
         Dim NHoja As Integer
-        CodProd = Convert.ToInt32(NudKardex.Value)
+        CodProd = CodProdActual
         NHoja = Convert.ToInt32(NudHoja.Value)
 
         lista = KardexLN.ListarMovimientosKardex(CodProd, NHoja)
@@ -75,9 +80,8 @@ Public Class frmKardex_Movs
     End Sub
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         CargarUltimaHoja()
-        ListarMovDeKardex()
         CargarKardex()
-
+        ListarMovDeKardex()
     End Sub
 
     Private Sub CargarUltimaHoja()
@@ -110,5 +114,17 @@ Public Class frmKardex_Movs
 
     Private Sub BtnIr_Click(sender As Object, e As EventArgs) Handles BtnIr.Click
         ListarMovDeKardex()
+        NudKardex.Value = CodProdActual
+    End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Dim Kard As New Kardex
+        Kard.CodigoProducto = CodProdActual
+        Kard.CantidadReposicion = NudRepo.Value
+        Kard.StockMinRepo = NudMinimo.Value
+        Kard.FechaApertura = DtpFecha.Value
+        KardexLN.ActualizarKardex(Kard)
+        CargarKardex()
+        NudKardex.Value = CodProdActual
     End Sub
 End Class

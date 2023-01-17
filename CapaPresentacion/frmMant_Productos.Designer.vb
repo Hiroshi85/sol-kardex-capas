@@ -172,7 +172,7 @@ Partial Class FrmMant_Productos
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(110, 20)
         Me.Label9.TabIndex = 20
-        Me.Label9.Text = "Sotck Minimo"
+        Me.Label9.Text = "Stock Minimo"
         '
         'cboMedidaProducto
         '
