@@ -7,6 +7,7 @@ Public Class FrmMant_Productos
     ReadOnly _productoLN As New ProductoLN
     Dim productoActualizar As Producto
     Dim codigoProductoSeleccionado As Integer = -1
+
     Private Sub LLenarDatos()
         txtNombreProducto.Text = "Jabon Sapolio"
         txtDescripcionProducto.Text = "Detergente verde 1L Sapolio"
@@ -99,7 +100,6 @@ Public Class FrmMant_Productos
         CargarProductos(_productoLN.ObtenerProductos())
         LLenarDatos()
     End Sub
-
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         If (_helpers.ValidarPanel(PanInfoProducto) = False) Then Return
         Try
@@ -195,4 +195,6 @@ Public Class FrmMant_Productos
     Private Sub FrmMant_Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+
 End Class
