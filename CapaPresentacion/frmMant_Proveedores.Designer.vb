@@ -153,11 +153,11 @@ Partial Class frmMant_Proveedores
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.Location = New System.Drawing.Point(618, 49)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(264, 21)
+        Me.txtDescripcion.Size = New System.Drawing.Size(264, 28)
         Me.txtDescripcion.TabIndex = 3
         '
         'btnAñadir
@@ -189,7 +189,7 @@ Partial Class frmMant_Proveedores
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.Window
         Me.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(49, 535)
+        Me.btnActualizar.Location = New System.Drawing.Point(104, 568)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(113, 56)
         Me.btnActualizar.TabIndex = 6
@@ -201,7 +201,7 @@ Partial Class frmMant_Proveedores
         Me.btnEliminar.BackColor = System.Drawing.SystemColors.Window
         Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(239, 535)
+        Me.btnEliminar.Location = New System.Drawing.Point(239, 568)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(113, 56)
         Me.btnEliminar.TabIndex = 7
@@ -213,7 +213,7 @@ Partial Class frmMant_Proveedores
         Me.btnCerrar.BackColor = System.Drawing.SystemColors.Window
         Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1084, 568)
+        Me.btnCerrar.Location = New System.Drawing.Point(1054, 568)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(113, 56)
         Me.btnCerrar.TabIndex = 8
@@ -222,18 +222,18 @@ Partial Class frmMant_Proveedores
         '
         'txtBuscar
         '
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(104, 271)
+        Me.txtBuscar.Location = New System.Drawing.Point(123, 282)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(248, 21)
+        Me.txtBuscar.Size = New System.Drawing.Size(248, 28)
         Me.txtBuscar.TabIndex = 9
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 268)
+        Me.Label2.Location = New System.Drawing.Point(45, 282)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 21)
         Me.Label2.TabIndex = 10
@@ -241,11 +241,11 @@ Partial Class frmMant_Proveedores
         '
         'txtProveedor
         '
-        Me.txtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProveedor.Location = New System.Drawing.Point(266, 49)
         Me.txtProveedor.Name = "txtProveedor"
-        Me.txtProveedor.Size = New System.Drawing.Size(316, 21)
+        Me.txtProveedor.Size = New System.Drawing.Size(316, 28)
         Me.txtProveedor.TabIndex = 12
         '
         'Label4
@@ -270,20 +270,20 @@ Partial Class frmMant_Proveedores
         '
         'txtDireccion
         '
-        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDireccion.Location = New System.Drawing.Point(26, 54)
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(235, 21)
+        Me.txtDireccion.Size = New System.Drawing.Size(235, 28)
         Me.txtDireccion.TabIndex = 15
         '
         'txtTelefono
         '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.Location = New System.Drawing.Point(670, 54)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(148, 21)
+        Me.txtTelefono.Size = New System.Drawing.Size(148, 28)
         Me.txtTelefono.TabIndex = 17
         '
         'Label6
@@ -298,11 +298,11 @@ Partial Class frmMant_Proveedores
         '
         'txtCorreo
         '
-        Me.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCorreo.Location = New System.Drawing.Point(363, 54)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(276, 21)
+        Me.txtCorreo.Size = New System.Drawing.Size(276, 28)
         Me.txtCorreo.TabIndex = 19
         '
         'Label7
@@ -331,12 +331,12 @@ Partial Class frmMant_Proveedores
         '
         'txtRUC
         '
-        Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRUC.Location = New System.Drawing.Point(28, 46)
         Me.txtRUC.MaxLength = 11
         Me.txtRUC.Name = "txtRUC"
-        Me.txtRUC.Size = New System.Drawing.Size(166, 21)
+        Me.txtRUC.Size = New System.Drawing.Size(166, 28)
         Me.txtRUC.TabIndex = 15
         '
         'Label3
@@ -388,7 +388,7 @@ Partial Class frmMant_Proveedores
         Me.btnSeleccionar.BackColor = System.Drawing.SystemColors.Window
         Me.btnSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSeleccionar.Location = New System.Drawing.Point(423, 533)
+        Me.btnSeleccionar.Location = New System.Drawing.Point(374, 568)
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(103, 55)
         Me.btnSeleccionar.TabIndex = 24
@@ -399,7 +399,8 @@ Partial Class frmMant_Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1276, 590)
+        Me.BackColor = System.Drawing.SystemColors.Info
+        Me.ClientSize = New System.Drawing.Size(1233, 672)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label2)
