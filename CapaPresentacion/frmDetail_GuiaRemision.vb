@@ -61,9 +61,13 @@ Public Class frmDetail_GuiaRemision
             .PrecioDocumento = dPrecioDocumento
          }
         limpiar()
+        MovimientoLN.InsertarMovEntrada(xMovimiento)
         mostrarMovimientos()
+        MessageInformation("Movimiento añadido")
     End Sub
-
+    Private Sub MessageInformation(mensaje As String)
+        MessageBox.Show(mensaje, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         limpiar()
     End Sub

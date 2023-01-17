@@ -29,6 +29,11 @@ Partial Class frmMant_Documento
         Me.btndent = New System.Windows.Forms.Button()
         Me.btndsal = New System.Windows.Forms.Button()
         Me.DGVDocumentos = New System.Windows.Forms.DataGridView()
+        Me.NumDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdTipoDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -42,11 +47,7 @@ Partial Class frmMant_Documento
         Me.dtpFechaEmision = New System.Windows.Forms.DateTimePicker()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.NumDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdTipoDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoResponsable = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnBuscarResponsable = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVDocumentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -74,9 +75,9 @@ Partial Class frmMant_Documento
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(902, 442)
+        Me.Button1.Location = New System.Drawing.Point(890, 442)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 74)
+        Me.Button1.Size = New System.Drawing.Size(123, 74)
         Me.Button1.TabIndex = 21
         Me.Button1.Text = "VER DETALLE DE DOCUMENTO"
         Me.Button1.UseVisualStyleBackColor = True
@@ -125,9 +126,46 @@ Partial Class frmMant_Documento
         Me.DGVDocumentos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumDocumento, Me.Fecha, Me.IdTipoDoc, Me.IdProveedor, Me.CodigoResponsable})
         Me.DGVDocumentos.Location = New System.Drawing.Point(20, 323)
         Me.DGVDocumentos.Name = "DGVDocumentos"
+        Me.DGVDocumentos.RowHeadersWidth = 51
         Me.DGVDocumentos.RowTemplate.Height = 24
         Me.DGVDocumentos.Size = New System.Drawing.Size(856, 310)
         Me.DGVDocumentos.TabIndex = 16
+        '
+        'NumDocumento
+        '
+        Me.NumDocumento.DataPropertyName = "NumDocumento"
+        Me.NumDocumento.HeaderText = "NumDocumento"
+        Me.NumDocumento.MinimumWidth = 6
+        Me.NumDocumento.Name = "NumDocumento"
+        '
+        'Fecha
+        '
+        Me.Fecha.DataPropertyName = "Fecha"
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.MinimumWidth = 6
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'IdTipoDoc
+        '
+        Me.IdTipoDoc.DataPropertyName = "IdTipoDoc"
+        Me.IdTipoDoc.HeaderText = "IdTipoDoc"
+        Me.IdTipoDoc.MinimumWidth = 6
+        Me.IdTipoDoc.Name = "IdTipoDoc"
+        '
+        'IdProveedor
+        '
+        Me.IdProveedor.DataPropertyName = "IdProveedor"
+        Me.IdProveedor.HeaderText = "IdProveedor"
+        Me.IdProveedor.MinimumWidth = 6
+        Me.IdProveedor.Name = "IdProveedor"
+        '
+        'CodigoResponsable
+        '
+        Me.CodigoResponsable.DataPropertyName = "CodigoResponsable"
+        Me.CodigoResponsable.HeaderText = "CodigoResponsable"
+        Me.CodigoResponsable.MinimumWidth = 6
+        Me.CodigoResponsable.Name = "CodigoResponsable"
         '
         'Label3
         '
@@ -141,7 +179,7 @@ Partial Class frmMant_Documento
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(902, 136)
+        Me.btnLimpiar.Location = New System.Drawing.Point(910, 147)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(103, 29)
         Me.btnLimpiar.TabIndex = 13
@@ -151,6 +189,7 @@ Partial Class frmMant_Documento
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.btnBuscarResponsable)
         Me.Panel2.Controls.Add(Me.txtIdResponsable)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.cbProveedor)
@@ -161,12 +200,12 @@ Partial Class frmMant_Documento
         Me.Panel2.Controls.Add(Me.dtpFechaEmision)
         Me.Panel2.Location = New System.Drawing.Point(20, 89)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(856, 87)
+        Me.Panel2.Size = New System.Drawing.Size(873, 87)
         Me.Panel2.TabIndex = 10
         '
         'txtIdResponsable
         '
-        Me.txtIdResponsable.Location = New System.Drawing.Point(644, 43)
+        Me.txtIdResponsable.Location = New System.Drawing.Point(644, 41)
         Me.txtIdResponsable.Name = "txtIdResponsable"
         Me.txtIdResponsable.Size = New System.Drawing.Size(169, 22)
         Me.txtIdResponsable.TabIndex = 14
@@ -177,9 +216,9 @@ Partial Class frmMant_Documento
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(485, 43)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 20)
+        Me.Label7.Size = New System.Drawing.Size(97, 20)
         Me.Label7.TabIndex = 13
-        Me.Label7.Text = "IdResponsable:"
+        Me.Label7.Text = "Resonsable"
         '
         'cbProveedor
         '
@@ -195,9 +234,9 @@ Partial Class frmMant_Documento
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(26, 39)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 20)
+        Me.Label6.Size = New System.Drawing.Size(85, 20)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "IdProveedor:"
+        Me.Label6.Text = "Proveedor"
         '
         'cbTipoDoc
         '
@@ -237,7 +276,7 @@ Partial Class frmMant_Documento
         '
         'btnAñadir
         '
-        Me.btnAñadir.Location = New System.Drawing.Point(900, 92)
+        Me.btnAñadir.Location = New System.Drawing.Point(908, 103)
         Me.btnAñadir.Name = "btnAñadir"
         Me.btnAñadir.Size = New System.Drawing.Size(105, 36)
         Me.btnAñadir.TabIndex = 12
@@ -254,36 +293,14 @@ Partial Class frmMant_Documento
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "INFORMACION DEL DOCUMENTO"
         '
-        'NumDocumento
+        'btnBuscarResponsable
         '
-        Me.NumDocumento.DataPropertyName = "NumDocumento"
-        Me.NumDocumento.HeaderText = "NumDocumento"
-        Me.NumDocumento.Name = "NumDocumento"
-        '
-        'Fecha
-        '
-        Me.Fecha.DataPropertyName = "Fecha"
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'IdTipoDoc
-        '
-        Me.IdTipoDoc.DataPropertyName = "IdTipoDoc"
-        Me.IdTipoDoc.HeaderText = "IdTipoDoc"
-        Me.IdTipoDoc.Name = "IdTipoDoc"
-        '
-        'IdProveedor
-        '
-        Me.IdProveedor.DataPropertyName = "IdProveedor"
-        Me.IdProveedor.HeaderText = "IdProveedor"
-        Me.IdProveedor.Name = "IdProveedor"
-        '
-        'CodigoResponsable
-        '
-        Me.CodigoResponsable.DataPropertyName = "CodigoResponsable"
-        Me.CodigoResponsable.HeaderText = "CodigoResponsable"
-        Me.CodigoResponsable.Name = "CodigoResponsable"
+        Me.btnBuscarResponsable.Location = New System.Drawing.Point(820, 39)
+        Me.btnBuscarResponsable.Name = "btnBuscarResponsable"
+        Me.btnBuscarResponsable.Size = New System.Drawing.Size(35, 23)
+        Me.btnBuscarResponsable.TabIndex = 15
+        Me.btnBuscarResponsable.Text = "..."
+        Me.btnBuscarResponsable.UseVisualStyleBackColor = True
         '
         'frmMant_Documento
         '
@@ -327,4 +344,5 @@ Partial Class frmMant_Documento
     Friend WithEvents IdTipoDoc As DataGridViewTextBoxColumn
     Friend WithEvents IdProveedor As DataGridViewTextBoxColumn
     Friend WithEvents CodigoResponsable As DataGridViewTextBoxColumn
+    Friend WithEvents btnBuscarResponsable As Button
 End Class

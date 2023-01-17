@@ -7,9 +7,19 @@ Public Class frmMant_Responsables
     Dim xDNI As String
     Dim xFecha As Date
     Dim xCodigo As String
+
+    Dim selResponsable As Responsable = Nothing
+
+
     Private Sub frmMant_Responsables_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarResponsables()
+        If Me.Modal Then
+            btnSeleccionar.Visible = True
+        Else
+            btnSeleccionar.Visible = False
+        End If
     End Sub
+
     Private Sub listarResponsables()
         Dim lista As List(Of Responsable)
         lista = ResponsableLN.ListarResponsables
@@ -99,5 +109,32 @@ Public Class frmMant_Responsables
         Dim lista As List(Of Responsable)
         lista = ResponsableLN.Buscar(texto)
         DGVResponsables.DataSource = lista
+    End Sub
+
+    Public Function getSelResponsable() As Responsable
+        Return selResponsable
+    End Function
+
+    Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnSeleccionar_Click(sender As Object, e As EventArgs) Handles btnSeleccionar.Click
+        If DGVResponsables.SelectedRows.Count > 0 Then
+            Dim i As Integer = DGVResponsables.SelectedRows(0).Index
+            selResponsable = New Responsable With {
+                .CodigoResponsable = CStr(DGVResponsables.Rows(i).Cells("CodigoResponsable").Value),
+                .FechaNacimiento = CDate(DGVResponsables.Rows(i).Cells("FechaNacimiento").Value),
+                .Nombre = CStr(DGVResponsables.Rows(i).Cells("Nombre").Value),
+                .NumDNI = CStr(DGVResponsables.Rows(i).Cells("NumDNI").Value)
+            }
+            Me.Dispose()
+        Else
+            _helpers.MessageInformation("Seleccione una responsable")
+        End If
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

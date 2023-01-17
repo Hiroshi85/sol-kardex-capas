@@ -1,11 +1,15 @@
 ﻿Imports CapaNegocios
 Imports CapaEntidad
 Public Class frmMant_Documento
+    ReadOnly _helpers As New Helpers
     Dim xNumDocumento As Integer
     Dim xFecha As Date
     Dim xIdTipoDoc As Integer
     Dim xIdProveedor As Integer
     Dim xCodigoResponsable As String
+
+    Dim selResponsable As Responsable = Nothing
+    Dim selProveedor As Proveedor = Nothing
     Private Sub frmMant_Documento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reset()
         llenarProveedores()
@@ -64,17 +68,18 @@ Public Class frmMant_Documento
             dCodigoR = " "
         Else
             dIdProveedor = Nothing
-            dCodigoR = txtIdResponsable.Text
+            dCodigoR = selResponsable.CodigoResponsable
         End If
-
-        Dim xDocumento As New Documento With {
+        If Not IsNothing(selResponsable) Or Not IsNothing(selProveedor) Then
+            Dim xDocumento As New Documento With {
                 .Fecha = dFecha,
                 .IdTipoDoc = dIdTipoDoc,
                 .IdProveedor = dIdProveedor,
                 .CodigoResponsable = dCodigoR
             }
-        DocumentoLN.AgregarDocumento(xDocumento)
-        reset()
+            DocumentoLN.AgregarDocumento(xDocumento)
+            reset()
+        End If
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
@@ -180,11 +185,20 @@ Public Class frmMant_Documento
             End If
         Else
 
-                MessageInformation("Seleccione un documento")
+            MessageInformation("Seleccione un documento")
         End If
     End Sub
 
     Private Sub MessageInformation(mensaje As String)
         MessageBox.Show(mensaje, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub btnBuscarResponsable_Click(sender As Object, e As EventArgs) Handles btnBuscarResponsable.Click
+        Dim frmResponsables As New frmMant_Responsables
+        frmResponsables.ShowDialog()
+        selResponsable = frmResponsables.getSelResponsable
+        If Not IsNothing(selResponsable) Then
+            txtIdResponsable.Text = selResponsable.Nombre
+        End If
     End Sub
 End Class
