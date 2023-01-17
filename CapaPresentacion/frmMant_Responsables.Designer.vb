@@ -96,7 +96,7 @@ Partial Class frmMant_Responsables
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Snow
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Info
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtBuscarCodigoResp)
         Me.Panel1.Controls.Add(Me.Label5)

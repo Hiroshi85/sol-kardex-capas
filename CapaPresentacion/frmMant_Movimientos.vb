@@ -3,9 +3,11 @@ Imports CapaNegocios
 Public Class frmMant_Movimientos
     Public xDoc As Documento
     Dim responsable As Responsable
+    ReadOnly _productoLN As New ProductoLN
     Private Sub PRUEBA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrarMovimientos()
         mostrarDatos()
+        CargarIDsProductos()
         lblNumDoc.Text = xDoc.NumDocumento
 
         lblResponsable.Text = xDoc.CodigoResponsable
@@ -18,6 +20,14 @@ Public Class frmMant_Movimientos
             lblDocumento.Text = "Guia de Remision"
         End If
 
+    End Sub
+    Private Sub CargarIdsProductos()
+        Dim productos As List(Of Producto) = _productoLN.ObtenerProductos()
+        For Each producto As Producto In productos
+            cboCodigosProductos.Items.Add(New KeyValuePair(Of Integer, String)(producto.CodigoProducto, producto.NombreProducto))
+        Next
+        cboCodigosProductos.ValueMember = "Key"
+        cboCodigosProductos.DisplayMember = "Value"
     End Sub
     Private Sub mostrarDatos()
         responsable = ResponsableLN.BuscarCodigo(xDoc.CodigoResponsable)
@@ -34,16 +44,28 @@ Public Class frmMant_Movimientos
         DGVMovimientos.DataSource = lista
         DGVMovimientos.Columns("NumDocumento").DisplayIndex = 0
         DGVMovimientos.Columns("CodigoProducto").DisplayIndex = 1
-        DGVMovimientos.Columns("NumItem").DisplayIndex = 2
-        DGVMovimientos.Columns("NumHoja").DisplayIndex = 3
-        DGVMovimientos.Columns("PrecioDocumento").DisplayIndex = 4
-        DGVMovimientos.Columns("StockAnterior").DisplayIndex = 5
-        DGVMovimientos.Columns("CantidadSalida").DisplayIndex = 6
-        DGVMovimientos.Columns("CantidadEntrada").DisplayIndex = 7
-        DGVMovimientos.Columns("StockActual").DisplayIndex = 8
+        DGVMovimientos.Columns("PrecioDocumento").DisplayIndex = 2
+        DGVMovimientos.Columns("StockAnterior").DisplayIndex = 3
+        DGVMovimientos.Columns("CantidadSalida").DisplayIndex = 4
+        DGVMovimientos.Columns("CantidadEntrada").DisplayIndex = 5
+        DGVMovimientos.Columns("StockActual").DisplayIndex = 6
         DGVMovimientos.Columns("IdTipoMov").Visible = False
         DGVMovimientos.Columns("StockAnterior").Visible = False
         DGVMovimientos.Columns("StockActual").Visible = False
+        DGVMovimientos.Columns("NumItem").Visible = False
+        DGVMovimientos.Columns("NumHoja").HeaderText = False
+
+        ' cargar categorias en combo
+        Dim productosColumn As New DataGridViewComboBoxColumn With {
+            .DataSource = _productoLN.ObtenerProductos(),
+            .ValueMember = "CodigoProducto",
+            .DisplayMember = "NombreProducto",
+            .DataPropertyName = "CodigoProducto",
+            .HeaderText = "Producto",
+            .Name = "CodigoProducto"
+        }
+        DGVMovimientos.Columns.Add(productosColumn)
+
         If (xDoc.IdTipoDoc = 3) Then
             DGVMovimientos.Columns("CantidadSalida").Visible = False
         Else
@@ -84,7 +106,7 @@ Public Class frmMant_Movimientos
         Dim dCodigoProducto As Integer
         Dim dPrecioDocumento As Double
         dCantidad = txtCantidad.Text
-        dCodigoProducto = txtCodigo.Text
+        dCodigoProducto = DirectCast(cboCodigosProductos.SelectedItem, KeyValuePair(Of Integer, String)).Key
         dPrecioDocumento = txtPrecio.Text
 
         If (xDoc.IdTipoDoc = 3) Then
@@ -114,7 +136,7 @@ Public Class frmMant_Movimientos
 
     Private Sub limpiar()
         txtCantidad.Text = ""
-        txtCodigo.Text = ""
+        cboCodigosProductos.SelectedIndex = -1
         txtPrecio.Text = ""
     End Sub
 

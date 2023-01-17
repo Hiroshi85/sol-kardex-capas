@@ -34,12 +34,12 @@ Public Class frmDetail_GuiaRemision
     Private Sub columnsOrder()
         DGVMovimientos.Columns("NumDocumento").DisplayIndex = 0
         DGVMovimientos.Columns("CodigoProducto").DisplayIndex = 1
-        DGVMovimientos.Columns("NumItem").DisplayIndex = 2
-        DGVMovimientos.Columns("NumHoja").DisplayIndex = 3
-        DGVMovimientos.Columns("PrecioDocumento").DisplayIndex = 4
+        DGVMovimientos.Columns("NumItem").Visible = False
+        DGVMovimientos.Columns("NumHoja").Visible = False
+        DGVMovimientos.Columns("PrecioDocumento").DisplayIndex = 2
         'DGVMovimientos.Columns("StockAnterior").DisplayIndex = 5
         'DGVMovimientos.Columns("CantidadSalida").DisplayIndex = 6
-        DGVMovimientos.Columns("CantidadEntrada").DisplayIndex = 5
+        DGVMovimientos.Columns("CantidadEntrada").DisplayIndex = 3
         'DGVMovimientos.Columns("StockActual").DisplayIndex = 7
         DGVMovimientos.Columns("IdTipoMov").Visible = False
         DGVMovimientos.Columns("StockAnterior").Visible = False
@@ -47,6 +47,7 @@ Public Class frmDetail_GuiaRemision
         DGVMovimientos.Columns("CantidadSalida").Visible = False
         DGVMovimientos.Columns("CantidadSalida").Visible = False
         DGVMovimientos.Columns("NumDocumento").Visible = False
+        DGVMovimientos.Columns("ImporteSalida").Visible = False
 
 
     End Sub
@@ -185,30 +186,28 @@ Public Class frmDetail_GuiaRemision
         pdfDoc.Add(table1)
 
         'CABECERA
-        Dim table3 As PdfPTable = New PdfPTable(6)
-        Dim widths3 As Single() = New Single() {3.0F, 1.0F, 1.0F, 2.0F, 2.0F, 1.0F}
+        Dim table3 As PdfPTable = New PdfPTable(5)
+        Dim widths3 As Single() = New Single() {3.0F, 2.0F, 2.0F, 2.0F, 1.0F}
         table3.WidthPercentage = 95
         table3.SetWidths(widths3)
         col1 = New PdfPCell(New Phrase("Código de Producto", FontB8))
         col1.Border = 0
         table3.AddCell(col1)
-        col1 = New PdfPCell(New Phrase("Item", FontB8))
-        col1.Border = 0
-        table3.AddCell(col1)
-        col1 = New PdfPCell(New Phrase("N° Hoja", FontB8))
-        col1.Border = 0
-        table3.AddCell(col1)
         col1 = New PdfPCell(New Phrase("Precio en Documento", FontB8))
         col1.Border = 0
         table3.AddCell(col1)
+
         col1 = New PdfPCell(New Phrase("Cantidad de Entrada", FontB8))
+        col1.Border = 0
+        table3.AddCell(col1)
+        col1 = New PdfPCell(New Phrase("Importe de Entrada", FontB8))
         col1.Border = 0
         table3.AddCell(col1)
         table3.AddCell(CVacio)
         pdfDoc.Add(table3)
         'Detalles
-        Dim table4 As PdfPTable = New PdfPTable(6)
-        Dim widths4 As Single() = New Single() {3.0F, 1.0F, 1.0F, 2.0F, 2.0F, 1.0F}
+        Dim table4 As PdfPTable = New PdfPTable(5)
+        Dim widths4 As Single() = New Single() {3.0F, 2.0F, 2.0F, 2.0F, 1.0F}
         table4.WidthPercentage = 95
         table4.SetWidths(widths4)
 
@@ -222,14 +221,6 @@ Public Class frmDetail_GuiaRemision
             col1.Border = 0
             table4.AddCell(col1)
 
-            col1 = New PdfPCell(New Phrase(lista.Item(i).NumItem, Font8))
-            col1.Border = 0
-            table4.AddCell(col1)
-
-            col1 = New PdfPCell(New Phrase(lista.Item(i).NumHoja, Font8))
-            col1.Border = 0
-            table4.AddCell(col1)
-
             col1 = New PdfPCell(New Phrase(lista.Item(i).PrecioDocumento, Font8))
             col1.Border = 0
             table4.AddCell(col1)
@@ -237,6 +228,11 @@ Public Class frmDetail_GuiaRemision
             col1 = New PdfPCell(New Phrase(lista.Item(i).CantidadEntrada, Font8))
             col1.Border = 0
             table4.AddCell(col1)
+
+            col1 = New PdfPCell(New Phrase(lista.Item(i).ImporteEntrada, Font8))
+            col1.Border = 0
+            table4.AddCell(col1)
+
             table4.AddCell(CVacio)
         Next
         pdfDoc.Add(table4)

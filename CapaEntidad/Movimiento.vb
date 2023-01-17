@@ -9,6 +9,24 @@
     Private m_cantidadSalida As Double
     Private m_stockActual As Double
     Private m_idTipoMov As Integer
+    Private m_importeEntrada As Double
+    Private m_importeSalida As Double
+    Public Property ImporteSalida() As Double
+        Get
+            Return m_importeSalida
+        End Get
+        Set(ByVal value As Double)
+            m_importeSalida = value
+        End Set
+    End Property
+    Public Property ImporteEntrada() As Double
+        Get
+            Return m_importeEntrada
+        End Get
+        Set(ByVal value As Double)
+            m_importeEntrada = value
+        End Set
+    End Property
     Public Property IdTipoMov() As Integer
         Get
             Return m_idTipoMov

@@ -9,7 +9,7 @@ Public Class ConexionAD
 
     Public Function AbrirConexion() As Boolean
         Try
-            _connection.ConnectionString = "Data Source=.;Initial Catalog=EMPRESA_LIMPIEZA;Integrated Security=True"
+            _connection.ConnectionString = "Data Source=bruwindows\sqlexpress;Initial Catalog=EMPRESA_LIMPIEZA;Integrated Security=True"
             _connection.Open()
             Return True
         Catch ex As Exception

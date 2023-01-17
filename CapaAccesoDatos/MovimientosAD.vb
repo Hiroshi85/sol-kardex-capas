@@ -11,7 +11,7 @@ Public Class MovimientosAD
         Try
             _conexion.AbrirConexion()
             oComando.Connection = _conexion.ObtenerConexion()
-            oComando.CommandText = "select * from MOVIMIENTO where NumDocumento=" + Convert.ToString(obj)
+            oComando.CommandText = "select *, (precioDocumento*cantidadEntrada) as importeEntrada, (precioDocumento*cantidadSalida) as importeSalida from MOVIMIENTO where NumDocumento=" + Convert.ToString(obj)
             oComando.CommandType = CommandType.Text
             Dim oLector As SqlDataReader
             oLector = oComando.ExecuteReader
@@ -28,7 +28,9 @@ Public Class MovimientosAD
                             .StockAnterior = oLector.Item(5),
                             .CantidadEntrada = If(oLector.Item(6) Is DBNull.Value, Nothing, Convert.ToInt16(oLector.Item(6))),
                             .CantidadSalida = If(oLector.Item(7) Is DBNull.Value, Nothing, Convert.ToInt16(oLector.Item(7))),
-                            .StockActual = oLector.Item(8)
+                            .StockActual = oLector.Item(8),
+                            .ImporteEntrada = If(oLector.Item(10) Is DBNull.Value, Nothing, Convert.ToDouble(oLector.Item(10))),
+                            .ImporteSalida = If(oLector.Item(11) Is DBNull.Value, Nothing, Convert.ToDouble(oLector.Item(11)))
                         }
                     )
                 End While
