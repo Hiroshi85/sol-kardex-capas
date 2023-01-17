@@ -41,5 +41,7 @@
         OpenChildForm(New FrmMant_Productos(), sender)
     End Sub
 
-
+    Private Sub btnKardex_Click(sender As Object, e As EventArgs) Handles btnKardex.Click
+        OpenChildForm(New frmKardex_Movs(), sender)
+    End Sub
 End Class
