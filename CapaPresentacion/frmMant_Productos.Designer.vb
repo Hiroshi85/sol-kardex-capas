@@ -356,7 +356,7 @@ Partial Class FrmMant_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(1130, 628)
         Me.Controls.Add(Me.txtQNombreProducto)
         Me.Controls.Add(Me.btnCerrar)

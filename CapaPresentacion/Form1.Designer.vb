@@ -157,9 +157,8 @@ Partial Class Form1
         Me.lblTituloPanel.Font = New System.Drawing.Font("Century Gothic", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTituloPanel.Location = New System.Drawing.Point(384, 48)
         Me.lblTituloPanel.Name = "lblTituloPanel"
-        Me.lblTituloPanel.Size = New System.Drawing.Size(87, 29)
+        Me.lblTituloPanel.Size = New System.Drawing.Size(0, 29)
         Me.lblTituloPanel.TabIndex = 0
-        Me.lblTituloPanel.Text = "Label1"
         '
         'panMain
         '

@@ -85,6 +85,7 @@ Partial Class frmKardex_Movs
         Me.DGVMovDeKardex.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.NumDocumento, Me.IdTipoMov, Me.PrecioDocumento, Me.StockActual, Me.CantidadEntrada, Me.CantidadSalida, Me.StockFinal})
         Me.DGVMovDeKardex.Location = New System.Drawing.Point(26, 380)
         Me.DGVMovDeKardex.Name = "DGVMovDeKardex"
+        Me.DGVMovDeKardex.RowHeadersWidth = 51
         Me.DGVMovDeKardex.RowTemplate.Height = 24
         Me.DGVMovDeKardex.Size = New System.Drawing.Size(1116, 361)
         Me.DGVMovDeKardex.TabIndex = 1
@@ -92,50 +93,66 @@ Partial Class frmKardex_Movs
         'NumItem
         '
         Me.NumItem.HeaderText = "N°"
+        Me.NumItem.MinimumWidth = 6
         Me.NumItem.Name = "NumItem"
         Me.NumItem.ReadOnly = True
+        Me.NumItem.Width = 125
         '
         'NumDocumento
         '
         Me.NumDocumento.HeaderText = "Documento"
+        Me.NumDocumento.MinimumWidth = 6
         Me.NumDocumento.Name = "NumDocumento"
         Me.NumDocumento.ReadOnly = True
+        Me.NumDocumento.Width = 125
         '
         'IdTipoMov
         '
         Me.IdTipoMov.HeaderText = "Movimiento"
+        Me.IdTipoMov.MinimumWidth = 6
         Me.IdTipoMov.Name = "IdTipoMov"
         Me.IdTipoMov.ReadOnly = True
+        Me.IdTipoMov.Width = 125
         '
         'PrecioDocumento
         '
         Me.PrecioDocumento.HeaderText = "Precio"
+        Me.PrecioDocumento.MinimumWidth = 6
         Me.PrecioDocumento.Name = "PrecioDocumento"
         Me.PrecioDocumento.ReadOnly = True
+        Me.PrecioDocumento.Width = 125
         '
         'StockActual
         '
         Me.StockActual.HeaderText = "Stock Actual"
+        Me.StockActual.MinimumWidth = 6
         Me.StockActual.Name = "StockActual"
         Me.StockActual.ReadOnly = True
+        Me.StockActual.Width = 125
         '
         'CantidadEntrada
         '
         Me.CantidadEntrada.HeaderText = "Entrada"
+        Me.CantidadEntrada.MinimumWidth = 6
         Me.CantidadEntrada.Name = "CantidadEntrada"
         Me.CantidadEntrada.ReadOnly = True
+        Me.CantidadEntrada.Width = 125
         '
         'CantidadSalida
         '
         Me.CantidadSalida.HeaderText = "Salida"
+        Me.CantidadSalida.MinimumWidth = 6
         Me.CantidadSalida.Name = "CantidadSalida"
         Me.CantidadSalida.ReadOnly = True
+        Me.CantidadSalida.Width = 125
         '
         'StockFinal
         '
         Me.StockFinal.HeaderText = "Stock Final"
+        Me.StockFinal.MinimumWidth = 6
         Me.StockFinal.Name = "StockFinal"
         Me.StockFinal.ReadOnly = True
+        Me.StockFinal.Width = 125
         '
         'Label1
         '
@@ -143,7 +160,7 @@ Partial Class frmKardex_Movs
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(31, 98)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(173, 24)
+        Me.Label1.Size = New System.Drawing.Size(165, 22)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Codigo Producto:"
         '
@@ -163,7 +180,7 @@ Partial Class frmKardex_Movs
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(31, 328)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 24)
+        Me.Label2.Size = New System.Drawing.Size(52, 22)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Hoja:"
         '
@@ -183,7 +200,7 @@ Partial Class frmKardex_Movs
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(24, 62)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 24)
+        Me.Label3.Size = New System.Drawing.Size(71, 22)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Mínimo:"
         '
@@ -193,7 +210,7 @@ Partial Class frmKardex_Movs
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(24, 23)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(67, 24)
+        Me.Label4.Size = New System.Drawing.Size(65, 22)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Actual:"
         '
@@ -227,7 +244,7 @@ Partial Class frmKardex_Movs
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(739, 327)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(126, 17)
+        Me.Label5.Size = New System.Drawing.Size(118, 16)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Fecha de Apertura"
         Me.Label5.Visible = False
@@ -238,7 +255,7 @@ Partial Class frmKardex_Movs
         Me.LblEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblEstado.Location = New System.Drawing.Point(334, 21)
         Me.LblEstado.Name = "LblEstado"
-        Me.LblEstado.Size = New System.Drawing.Size(16, 24)
+        Me.LblEstado.Size = New System.Drawing.Size(16, 22)
         Me.LblEstado.TabIndex = 12
         Me.LblEstado.Text = "-"
         '
@@ -285,7 +302,7 @@ Partial Class frmKardex_Movs
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(24, 106)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(75, 24)
+        Me.Label11.Size = New System.Drawing.Size(72, 22)
         Me.Label11.TabIndex = 16
         Me.Label11.Text = "Unidad:"
         '
@@ -295,7 +312,7 @@ Partial Class frmKardex_Movs
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(249, 23)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(73, 24)
+        Me.Label7.Size = New System.Drawing.Size(71, 22)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Estado:"
         '
@@ -314,7 +331,7 @@ Partial Class frmKardex_Movs
         Me.lblFalta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFalta.Location = New System.Drawing.Point(249, 63)
         Me.lblFalta.Name = "lblFalta"
-        Me.lblFalta.Size = New System.Drawing.Size(55, 24)
+        Me.lblFalta.Size = New System.Drawing.Size(55, 22)
         Me.lblFalta.TabIndex = 13
         Me.lblFalta.Text = "Falta:"
         '
@@ -324,7 +341,7 @@ Partial Class frmKardex_Movs
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(670, 127)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 24)
+        Me.Label6.Size = New System.Drawing.Size(55, 22)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Stock"
         '
@@ -334,7 +351,7 @@ Partial Class frmKardex_Movs
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(235, 28)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(796, 32)
+        Me.Label8.Size = New System.Drawing.Size(795, 32)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "HOJA DE REGISTRO DE MOVIMIENTOS DE PRODUCTO"
         '
@@ -367,7 +384,7 @@ Partial Class frmKardex_Movs
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(312, 69)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(137, 24)
+        Me.Label13.Size = New System.Drawing.Size(132, 22)
         Me.Label13.TabIndex = 20
         Me.Label13.Text = "Precio base: S/"
         '
@@ -386,7 +403,7 @@ Partial Class frmKardex_Movs
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(8, 69)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(95, 24)
+        Me.Label12.Size = New System.Drawing.Size(93, 22)
         Me.Label12.TabIndex = 18
         Me.Label12.Text = "Categoría:"
         '
@@ -405,7 +422,7 @@ Partial Class frmKardex_Movs
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(8, 9)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(115, 24)
+        Me.Label10.Size = New System.Drawing.Size(109, 22)
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Descripcion:"
         '
@@ -415,7 +432,7 @@ Partial Class frmKardex_Movs
         Me.LblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblNombre.Location = New System.Drawing.Point(128, 154)
         Me.LblNombre.Name = "LblNombre"
-        Me.LblNombre.Size = New System.Drawing.Size(108, 24)
+        Me.LblNombre.Size = New System.Drawing.Size(102, 22)
         Me.LblNombre.TabIndex = 18
         Me.LblNombre.Text = "Información"
         '
@@ -425,7 +442,7 @@ Partial Class frmKardex_Movs
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(33, 154)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(89, 24)
+        Me.Label9.Size = New System.Drawing.Size(83, 22)
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "Nombre: "
         '
@@ -433,6 +450,7 @@ Partial Class frmKardex_Movs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(1175, 810)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.LblNombre)

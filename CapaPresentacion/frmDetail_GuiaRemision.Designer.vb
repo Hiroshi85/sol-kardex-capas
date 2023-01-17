@@ -447,6 +447,7 @@ Partial Class frmDetail_GuiaRemision
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(1189, 680)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnGuardar)

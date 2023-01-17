@@ -37,6 +37,7 @@ Partial Class frmMant_Documento
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnBuscarResponsable = New System.Windows.Forms.Button()
         Me.txtIdResponsable = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbProveedor = New System.Windows.Forms.ComboBox()
@@ -47,7 +48,6 @@ Partial Class frmMant_Documento
         Me.dtpFechaEmision = New System.Windows.Forms.DateTimePicker()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnBuscarResponsable = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVDocumentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -203,6 +203,15 @@ Partial Class frmMant_Documento
         Me.Panel2.Size = New System.Drawing.Size(873, 87)
         Me.Panel2.TabIndex = 10
         '
+        'btnBuscarResponsable
+        '
+        Me.btnBuscarResponsable.Location = New System.Drawing.Point(820, 39)
+        Me.btnBuscarResponsable.Name = "btnBuscarResponsable"
+        Me.btnBuscarResponsable.Size = New System.Drawing.Size(35, 23)
+        Me.btnBuscarResponsable.TabIndex = 15
+        Me.btnBuscarResponsable.Text = "..."
+        Me.btnBuscarResponsable.UseVisualStyleBackColor = True
+        '
         'txtIdResponsable
         '
         Me.txtIdResponsable.Location = New System.Drawing.Point(644, 41)
@@ -293,23 +302,15 @@ Partial Class frmMant_Documento
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "INFORMACION DEL DOCUMENTO"
         '
-        'btnBuscarResponsable
-        '
-        Me.btnBuscarResponsable.Location = New System.Drawing.Point(820, 39)
-        Me.btnBuscarResponsable.Name = "btnBuscarResponsable"
-        Me.btnBuscarResponsable.Size = New System.Drawing.Size(35, 23)
-        Me.btnBuscarResponsable.TabIndex = 15
-        Me.btnBuscarResponsable.Text = "..."
-        Me.btnBuscarResponsable.UseVisualStyleBackColor = True
-        '
         'frmMant_Documento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(1058, 677)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmMant_Documento"
-        Me.Text = "frmMant_Documento"
+        Me.Text = "Mantenedor Documentos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.DGVDocumentos, System.ComponentModel.ISupportInitialize).EndInit()

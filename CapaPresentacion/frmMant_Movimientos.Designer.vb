@@ -23,6 +23,14 @@ Partial Class frmMant_Movimientos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGVMovimientos = New System.Windows.Forms.DataGridView()
+        Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumHoja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockAnterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockActual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblProveedor = New System.Windows.Forms.Label()
         Me.lblNumDoc = New System.Windows.Forms.Label()
@@ -44,14 +52,6 @@ Partial Class frmMant_Movimientos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
-        Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumHoja = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StockAnterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StockActual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -68,13 +68,69 @@ Partial Class frmMant_Movimientos
         Me.DGVMovimientos.Size = New System.Drawing.Size(1025, 258)
         Me.DGVMovimientos.TabIndex = 30
         '
+        'NumItem
+        '
+        Me.NumItem.DataPropertyName = "NumItem"
+        Me.NumItem.HeaderText = "NumItem"
+        Me.NumItem.MinimumWidth = 6
+        Me.NumItem.Name = "NumItem"
+        '
+        'CodigoProducto
+        '
+        Me.CodigoProducto.DataPropertyName = "CodigoProducto"
+        Me.CodigoProducto.HeaderText = "CodigoProducto"
+        Me.CodigoProducto.MinimumWidth = 6
+        Me.CodigoProducto.Name = "CodigoProducto"
+        '
+        'NumHoja
+        '
+        Me.NumHoja.DataPropertyName = "NumHoja"
+        Me.NumHoja.HeaderText = "NumHoja"
+        Me.NumHoja.MinimumWidth = 6
+        Me.NumHoja.Name = "NumHoja"
+        '
+        'PrecioDocumento
+        '
+        Me.PrecioDocumento.DataPropertyName = "PrecioDocumento"
+        Me.PrecioDocumento.HeaderText = "PrecioDocumento"
+        Me.PrecioDocumento.MinimumWidth = 6
+        Me.PrecioDocumento.Name = "PrecioDocumento"
+        '
+        'StockAnterior
+        '
+        Me.StockAnterior.DataPropertyName = "StockAnterior"
+        Me.StockAnterior.HeaderText = "StockAnterior"
+        Me.StockAnterior.MinimumWidth = 6
+        Me.StockAnterior.Name = "StockAnterior"
+        '
+        'CantidadSalida
+        '
+        Me.CantidadSalida.DataPropertyName = "CantidadSalida"
+        Me.CantidadSalida.HeaderText = "CantidadSalida"
+        Me.CantidadSalida.MinimumWidth = 6
+        Me.CantidadSalida.Name = "CantidadSalida"
+        '
+        'CantidadEntrada
+        '
+        Me.CantidadEntrada.DataPropertyName = "CantidadEntrada"
+        Me.CantidadEntrada.HeaderText = "CantidadEntrada"
+        Me.CantidadEntrada.MinimumWidth = 6
+        Me.CantidadEntrada.Name = "CantidadEntrada"
+        '
+        'StockActual
+        '
+        Me.StockActual.DataPropertyName = "StockActual"
+        Me.StockActual.HeaderText = "StockActual"
+        Me.StockActual.MinimumWidth = 6
+        Me.StockActual.Name = "StockActual"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(278, 34)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(289, 32)
+        Me.Label1.Size = New System.Drawing.Size(288, 32)
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "DOCUMENTO NUM "
         '
@@ -84,7 +140,7 @@ Partial Class frmMant_Movimientos
         Me.lblProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProveedor.Location = New System.Drawing.Point(311, 146)
         Me.lblProveedor.Name = "lblProveedor"
-        Me.lblProveedor.Size = New System.Drawing.Size(0, 24)
+        Me.lblProveedor.Size = New System.Drawing.Size(0, 22)
         Me.lblProveedor.TabIndex = 33
         '
         'lblNumDoc
@@ -132,7 +188,7 @@ Partial Class frmMant_Movimientos
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(564, 141)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(252, 24)
+        Me.Label5.Size = New System.Drawing.Size(245, 22)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "CODIGO RESPONSABLE:"
         '
@@ -142,7 +198,7 @@ Partial Class frmMant_Movimientos
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.Location = New System.Drawing.Point(315, 101)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(0, 24)
+        Me.lblFecha.Size = New System.Drawing.Size(0, 22)
         Me.lblFecha.TabIndex = 39
         '
         'lblDocumento
@@ -151,7 +207,7 @@ Partial Class frmMant_Movimientos
         Me.lblDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDocumento.Location = New System.Drawing.Point(877, 101)
         Me.lblDocumento.Name = "lblDocumento"
-        Me.lblDocumento.Size = New System.Drawing.Size(0, 24)
+        Me.lblDocumento.Size = New System.Drawing.Size(0, 22)
         Me.lblDocumento.TabIndex = 40
         '
         'lblResponsable
@@ -160,7 +216,7 @@ Partial Class frmMant_Movimientos
         Me.lblResponsable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblResponsable.Location = New System.Drawing.Point(875, 142)
         Me.lblResponsable.Name = "lblResponsable"
-        Me.lblResponsable.Size = New System.Drawing.Size(0, 24)
+        Me.lblResponsable.Size = New System.Drawing.Size(0, 22)
         Me.lblResponsable.TabIndex = 41
         '
         'Panel1
@@ -207,7 +263,7 @@ Partial Class frmMant_Movimientos
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(434, 46)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(123, 17)
+        Me.Label9.Size = New System.Drawing.Size(115, 16)
         Me.Label9.TabIndex = 47
         Me.Label9.Text = "(Entrada o Salida)"
         '
@@ -266,66 +322,11 @@ Partial Class frmMant_Movimientos
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
-        'NumItem
-        '
-        Me.NumItem.DataPropertyName = "NumItem"
-        Me.NumItem.HeaderText = "NumItem"
-        Me.NumItem.MinimumWidth = 6
-        Me.NumItem.Name = "NumItem"
-        '
-        'CodigoProducto
-        '
-        Me.CodigoProducto.DataPropertyName = "CodigoProducto"
-        Me.CodigoProducto.HeaderText = "CodigoProducto"
-        Me.CodigoProducto.MinimumWidth = 6
-        Me.CodigoProducto.Name = "CodigoProducto"
-        '
-        'NumHoja
-        '
-        Me.NumHoja.DataPropertyName = "NumHoja"
-        Me.NumHoja.HeaderText = "NumHoja"
-        Me.NumHoja.MinimumWidth = 6
-        Me.NumHoja.Name = "NumHoja"
-        '
-        'PrecioDocumento
-        '
-        Me.PrecioDocumento.DataPropertyName = "PrecioDocumento"
-        Me.PrecioDocumento.HeaderText = "PrecioDocumento"
-        Me.PrecioDocumento.MinimumWidth = 6
-        Me.PrecioDocumento.Name = "PrecioDocumento"
-        '
-        'StockAnterior
-        '
-        Me.StockAnterior.DataPropertyName = "StockAnterior"
-        Me.StockAnterior.HeaderText = "StockAnterior"
-        Me.StockAnterior.MinimumWidth = 6
-        Me.StockAnterior.Name = "StockAnterior"
-        '
-        'CantidadSalida
-        '
-        Me.CantidadSalida.DataPropertyName = "CantidadSalida"
-        Me.CantidadSalida.HeaderText = "CantidadSalida"
-        Me.CantidadSalida.MinimumWidth = 6
-        Me.CantidadSalida.Name = "CantidadSalida"
-        '
-        'CantidadEntrada
-        '
-        Me.CantidadEntrada.DataPropertyName = "CantidadEntrada"
-        Me.CantidadEntrada.HeaderText = "CantidadEntrada"
-        Me.CantidadEntrada.MinimumWidth = 6
-        Me.CantidadEntrada.Name = "CantidadEntrada"
-        '
-        'StockActual
-        '
-        Me.StockActual.DataPropertyName = "StockActual"
-        Me.StockActual.HeaderText = "StockActual"
-        Me.StockActual.MinimumWidth = 6
-        Me.StockActual.Name = "StockActual"
-        '
         'frmMant_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(1117, 687)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnAgregar)
