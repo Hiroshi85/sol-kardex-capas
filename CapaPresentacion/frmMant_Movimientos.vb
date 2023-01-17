@@ -2,15 +2,12 @@
 Imports CapaNegocios
 Public Class frmMant_Movimientos
     Public xDoc As Documento
+    Dim responsable As Responsable
     Private Sub PRUEBA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrarMovimientos()
-
+        mostrarDatos()
         lblNumDoc.Text = xDoc.NumDocumento
-        If xDoc.IdProveedor = 0 Then
-            lblProveedor.Text = "-"
-        Else
-            lblProveedor.Text = xDoc.IdProveedor
-        End If
+
         lblResponsable.Text = xDoc.CodigoResponsable
         lblFecha.Text = xDoc.Fecha
         If xDoc.IdTipoDoc = 1 Then
@@ -22,7 +19,12 @@ Public Class frmMant_Movimientos
         End If
 
     End Sub
-
+    Private Sub mostrarDatos()
+        responsable = ResponsableLN.BuscarCodigo(xDoc.CodigoResponsable)
+        lblNombre.Text = responsable.Nombre
+        lblDNI.Text = responsable.NumDNI
+        lblResponsable.Text = responsable.CodigoResponsable
+    End Sub
     Public Sub mostrarMovimientos()
         Dim lista As List(Of Movimiento)
         Dim subTotal As Double
@@ -65,7 +67,7 @@ Public Class frmMant_Movimientos
 
     End Sub
 
-    Private Sub Label3_Click_1(sender As Object, e As EventArgs) Handles Label3.Click
+    Private Sub Label3_Click_1(sender As Object, e As EventArgs)
 
     End Sub
 

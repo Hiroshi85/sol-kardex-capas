@@ -32,10 +32,8 @@ Partial Class frmMant_Movimientos
         Me.CantidadEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StockActual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblProveedor = New System.Windows.Forms.Label()
         Me.lblNumDoc = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblDocumento = New System.Windows.Forms.Label()
@@ -59,6 +57,12 @@ Partial Class frmMant_Movimientos
         Me.txtTotal = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.lblDNI = New System.Windows.Forms.Label()
+        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -142,15 +146,6 @@ Partial Class frmMant_Movimientos
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "DOCUMENTO NUM "
         '
-        'lblProveedor
-        '
-        Me.lblProveedor.AutoSize = True
-        Me.lblProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProveedor.Location = New System.Drawing.Point(308, 122)
-        Me.lblProveedor.Name = "lblProveedor"
-        Me.lblProveedor.Size = New System.Drawing.Size(0, 24)
-        Me.lblProveedor.TabIndex = 33
-        '
         'lblNumDoc
         '
         Me.lblNumDoc.AutoSize = True
@@ -164,27 +159,17 @@ Partial Class frmMant_Movimientos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(67, 72)
+        Me.Label2.Location = New System.Drawing.Point(688, 198)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(220, 29)
         Me.Label2.TabIndex = 35
         Me.Label2.Text = "FECHA EMISION:"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(61, 113)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(213, 29)
-        Me.Label3.TabIndex = 36
-        Me.Label3.Text = "ID PROVEEDOR:"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(62, 155)
+        Me.Label5.Location = New System.Drawing.Point(38, 103)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(252, 24)
         Me.Label5.TabIndex = 38
@@ -194,7 +179,7 @@ Partial Class frmMant_Movimientos
         '
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.Location = New System.Drawing.Point(312, 77)
+        Me.lblFecha.Location = New System.Drawing.Point(926, 203)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(0, 24)
         Me.lblFecha.TabIndex = 39
@@ -212,7 +197,7 @@ Partial Class frmMant_Movimientos
         '
         Me.lblResponsable.AutoSize = True
         Me.lblResponsable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResponsable.Location = New System.Drawing.Point(341, 155)
+        Me.lblResponsable.Location = New System.Drawing.Point(315, 103)
         Me.lblResponsable.Name = "lblResponsable"
         Me.lblResponsable.Size = New System.Drawing.Size(0, 24)
         Me.lblResponsable.TabIndex = 41
@@ -405,11 +390,75 @@ Partial Class frmMant_Movimientos
         Me.Label4.TabIndex = 41
         Me.Label4.Text = "R.U.C 1023301258596"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(38, 142)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(111, 24)
+        Me.Label3.TabIndex = 53
+        Me.Label3.Text = "NOMBRE: "
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(435, 142)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(50, 24)
+        Me.Label14.TabIndex = 54
+        Me.Label14.Text = "DNI:"
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.Location = New System.Drawing.Point(155, 142)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(109, 24)
+        Me.lblNombre.TabIndex = 55
+        Me.lblNombre.Text = "<Nombre>"
+        '
+        'lblDNI
+        '
+        Me.lblDNI.AutoSize = True
+        Me.lblDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDNI.Location = New System.Drawing.Point(506, 142)
+        Me.lblDNI.Name = "lblDNI"
+        Me.lblDNI.Size = New System.Drawing.Size(68, 24)
+        Me.lblDNI.TabIndex = 56
+        Me.lblDNI.Text = "<DNI>"
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.Location = New System.Drawing.Point(207, 678)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(130, 42)
+        Me.btnImprimir.TabIndex = 59
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(35, 678)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(130, 42)
+        Me.btnGuardar.TabIndex = 60
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
         'frmMant_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1117, 763)
+        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.lblDNI)
+        Me.Controls.Add(Me.lblNombre)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.txtIGV)
         Me.Controls.Add(Me.txtSubTotal)
@@ -423,10 +472,8 @@ Partial Class frmMant_Movimientos
         Me.Controls.Add(Me.lblResponsable)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblNumDoc)
-        Me.Controls.Add(Me.lblProveedor)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGVMovimientos)
         Me.Controls.Add(Me.Panel2)
@@ -444,10 +491,8 @@ Partial Class frmMant_Movimientos
 
     Friend WithEvents DGVMovimientos As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents lblProveedor As Label
     Friend WithEvents lblNumDoc As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents lblDocumento As Label
@@ -479,4 +524,10 @@ Partial Class frmMant_Movimientos
     Friend WithEvents txtTotal As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents lblNombre As Label
+    Friend WithEvents lblDNI As Label
+    Friend WithEvents btnImprimir As Button
+    Friend WithEvents btnGuardar As Button
 End Class
