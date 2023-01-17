@@ -45,7 +45,6 @@ Partial Class frmMant_Movimientos
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.NumItem = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RUC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumHoja = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,7 +60,7 @@ Partial Class frmMant_Movimientos
         '
         Me.DGVMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.RUC, Me.CodigoProducto, Me.NumHoja, Me.PrecioDocumento, Me.StockAnterior, Me.CantidadSalida, Me.CantidadEntrada, Me.StockActual})
+        Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.CodigoProducto, Me.NumHoja, Me.PrecioDocumento, Me.StockAnterior, Me.CantidadSalida, Me.CantidadEntrada, Me.StockActual})
         Me.DGVMovimientos.Location = New System.Drawing.Point(35, 363)
         Me.DGVMovimientos.Name = "DGVMovimientos"
         Me.DGVMovimientos.RowHeadersWidth = 51
@@ -274,13 +273,6 @@ Partial Class frmMant_Movimientos
         Me.NumItem.MinimumWidth = 6
         Me.NumItem.Name = "NumItem"
         '
-        'RUC
-        '
-        Me.RUC.DataPropertyName = "RUC"
-        Me.RUC.HeaderText = "RUC"
-        Me.RUC.MinimumWidth = 6
-        Me.RUC.Name = "RUC"
-        '
         'CodigoProducto
         '
         Me.CodigoProducto.DataPropertyName = "CodigoProducto"
@@ -383,7 +375,6 @@ Partial Class frmMant_Movimientos
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents NumItem As DataGridViewTextBoxColumn
-    Friend WithEvents RUC As DataGridViewTextBoxColumn
     Friend WithEvents CodigoProducto As DataGridViewTextBoxColumn
     Friend WithEvents NumHoja As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDocumento As DataGridViewTextBoxColumn

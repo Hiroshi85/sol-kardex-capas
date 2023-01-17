@@ -86,3 +86,10 @@ CREATE PROCEDURE SP_SEARCH_PROVEEDOR
 as
 	SELECT * FROM PROVEEDOR WHERE Borrado = 0 AND Proveedor like '%'+@Proveedor+'%'
 go
+
+--- BÚSQUEDA DE PROVEEDOR POR ID
+CREATE PROCEDURE SP_SEARCH_PROVEEDORxID
+	@IdProveedor		int
+as
+	SELECT * FROM PROVEEDOR WHERE Borrado = 0 AND IdProveedor = @IdProveedor
+go

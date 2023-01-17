@@ -131,4 +131,36 @@ Public Class ProveedorAD
             _conexion.CerrarConexion()
         End Try
     End Function
+
+    Public Function BuscarID(x As Integer) As Proveedor
+        Dim oComando As New SqlCommand
+        Dim proveedor As New Proveedor
+        Try
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
+            oComando.CommandText = "SP_SEARCH_PROVEEDORxID"
+            oComando.CommandType = CommandType.StoredProcedure
+            oComando.Parameters.Add("@IdProveedor", SqlDbType.Int).Value = x
+            Dim oLector As SqlDataReader
+            oLector = oComando.ExecuteReader
+            If oLector.HasRows = True Then
+                While oLector.Read
+                    proveedor = New Proveedor With {
+                        .IdProveedor = oLector.Item(0),
+                        .RUC = oLector.Item(1),
+                        .Proveedor = oLector.Item(2),
+                        .Descripcion = oLector.Item(3),
+                        .Direccion = oLector.Item(4),
+                        .Telefono = oLector.Item(5),
+                        .Correo = oLector.Item(6)
+                    }
+                End While
+            End If
+            Return proveedor
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        Finally
+            _conexion.CerrarConexion()
+        End Try
+    End Function
 End Class
