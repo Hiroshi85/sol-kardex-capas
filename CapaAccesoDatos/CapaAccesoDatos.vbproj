@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentosAD.vb" />
+    <Compile Include="KardexAD.vb" />
     <Compile Include="MovimientosAD.vb" />
     <Compile Include="MedidaAD.vb" />
     <Compile Include="CategoriaAD.vb" />

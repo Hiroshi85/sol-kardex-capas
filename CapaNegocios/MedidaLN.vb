@@ -12,4 +12,7 @@ Public Class MedidaLN
         Return _medidaAD.ListarMedidas()
     End Function
 
+    Public Function GetMedida(Id As Integer) As Medida
+        Return _medidaAD.GetMedida(Id)
+    End Function
 End Class
