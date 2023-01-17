@@ -61,6 +61,8 @@ Partial Class frmDetail_GuiaRemision
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.txtTotal = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -73,7 +75,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(47, 67)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(296, 32)
+        Me.Label1.Size = New System.Drawing.Size(297, 32)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "GUÍA DE REMISIÓN "
         '
@@ -83,7 +85,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(737, 236)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(181, 22)
+        Me.Label2.Size = New System.Drawing.Size(192, 24)
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "Fecha de Emisión: "
         '
@@ -116,7 +118,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumDoc.Location = New System.Drawing.Point(150, 111)
         Me.lblNumDoc.Name = "lblNumDoc"
-        Me.lblNumDoc.Size = New System.Drawing.Size(115, 32)
+        Me.lblNumDoc.Size = New System.Drawing.Size(116, 32)
         Me.lblNumDoc.TabIndex = 42
         Me.lblNumDoc.Text = "<<N°>>"
         '
@@ -136,7 +138,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(48, 111)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 32)
+        Me.Label5.Size = New System.Drawing.Size(48, 32)
         Me.Label5.TabIndex = 40
         Me.Label5.Text = "N°"
         '
@@ -210,7 +212,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblProveedor.Location = New System.Drawing.Point(158, 19)
         Me.lblProveedor.Name = "lblProveedor"
-        Me.lblProveedor.Size = New System.Drawing.Size(137, 22)
+        Me.lblProveedor.Size = New System.Drawing.Size(142, 24)
         Me.lblProveedor.TabIndex = 43
         Me.lblProveedor.Text = "<<Proveedor>>"
         '
@@ -260,7 +262,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDescripcion.Location = New System.Drawing.Point(146, 57)
         Me.lblDescripcion.Name = "lblDescripcion"
-        Me.lblDescripcion.Size = New System.Drawing.Size(148, 22)
+        Me.lblDescripcion.Size = New System.Drawing.Size(154, 24)
         Me.lblDescripcion.TabIndex = 49
         Me.lblDescripcion.Text = "<<Descripcion>>"
         '
@@ -270,7 +272,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDireccion.Location = New System.Drawing.Point(146, 96)
         Me.lblDireccion.Name = "lblDireccion"
-        Me.lblDireccion.Size = New System.Drawing.Size(137, 22)
+        Me.lblDireccion.Size = New System.Drawing.Size(142, 24)
         Me.lblDireccion.TabIndex = 50
         Me.lblDireccion.Text = "<<Proveedor>>"
         '
@@ -280,7 +282,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTelefono.Location = New System.Drawing.Point(505, 96)
         Me.lblTelefono.Name = "lblTelefono"
-        Me.lblTelefono.Size = New System.Drawing.Size(124, 22)
+        Me.lblTelefono.Size = New System.Drawing.Size(124, 24)
         Me.lblTelefono.TabIndex = 51
         Me.lblTelefono.Text = "<<1234567>>"
         '
@@ -308,7 +310,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCorreo.Location = New System.Drawing.Point(253, 136)
         Me.lblCorreo.Name = "lblCorreo"
-        Me.lblCorreo.Size = New System.Drawing.Size(137, 22)
+        Me.lblCorreo.Size = New System.Drawing.Size(142, 24)
         Me.lblCorreo.TabIndex = 52
         Me.lblCorreo.Text = "<<Proveedor>>"
         '
@@ -318,7 +320,7 @@ Partial Class frmDetail_GuiaRemision
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.Location = New System.Drawing.Point(935, 236)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(106, 22)
+        Me.lblFecha.Size = New System.Drawing.Size(112, 24)
         Me.lblFecha.TabIndex = 52
         Me.lblFecha.Text = "dd-MM-yyyy"
         '
@@ -376,7 +378,7 @@ Partial Class frmDetail_GuiaRemision
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(488, 39)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(62, 16)
+        Me.Label12.Size = New System.Drawing.Size(68, 17)
         Me.Label12.TabIndex = 47
         Me.Label12.Text = "(Entrada)"
         '
@@ -427,7 +429,7 @@ Partial Class frmDetail_GuiaRemision
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(1028, 634)
+        Me.btnGuardar.Location = New System.Drawing.Point(1028, 691)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(130, 42)
         Me.btnGuardar.TabIndex = 57
@@ -436,19 +438,43 @@ Partial Class frmDetail_GuiaRemision
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(38, 634)
+        Me.btnImprimir.Location = New System.Drawing.Point(38, 691)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(130, 42)
         Me.btnImprimir.TabIndex = 58
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
+        'txtTotal
+        '
+        Me.txtTotal.AutoSize = True
+        Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.Location = New System.Drawing.Point(1012, 649)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(0, 18)
+        Me.txtTotal.TabIndex = 60
+        Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(837, 642)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Padding = New System.Windows.Forms.Padding(5)
+        Me.Label15.Size = New System.Drawing.Size(162, 30)
+        Me.Label15.TabIndex = 59
+        Me.Label15.Text = "        TOTAL      "
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'frmDetail_GuiaRemision
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Info
-        Me.ClientSize = New System.Drawing.Size(1189, 680)
+        Me.ClientSize = New System.Drawing.Size(1189, 756)
+        Me.Controls.Add(Me.txtTotal)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnLimpiar)
@@ -512,4 +538,6 @@ Partial Class frmDetail_GuiaRemision
     Friend WithEvents PrecioDocumento As DataGridViewTextBoxColumn
     Friend WithEvents CantidadEntrada As DataGridViewTextBoxColumn
     Friend WithEvents btnImprimir As Button
+    Friend WithEvents txtTotal As Label
+    Friend WithEvents Label15 As Label
 End Class

@@ -54,6 +54,7 @@ Partial Class frmMant_Proveedores
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnSeleccionar = New System.Windows.Forms.Button()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -188,7 +189,7 @@ Partial Class frmMant_Proveedores
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.Window
         Me.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(200, 568)
+        Me.btnActualizar.Location = New System.Drawing.Point(49, 535)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(113, 56)
         Me.btnActualizar.TabIndex = 6
@@ -200,7 +201,7 @@ Partial Class frmMant_Proveedores
         Me.btnEliminar.BackColor = System.Drawing.SystemColors.Window
         Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(385, 568)
+        Me.btnEliminar.Location = New System.Drawing.Point(239, 535)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(113, 56)
         Me.btnEliminar.TabIndex = 7
@@ -332,7 +333,7 @@ Partial Class frmMant_Proveedores
         '
         Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRUC.Location = New System.Drawing.Point(28, 49)
+        Me.txtRUC.Location = New System.Drawing.Point(28, 46)
         Me.txtRUC.MaxLength = 11
         Me.txtRUC.Name = "txtRUC"
         Me.txtRUC.Size = New System.Drawing.Size(166, 21)
@@ -341,10 +342,10 @@ Partial Class frmMant_Proveedores
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(21, 15)
+        Me.Label3.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(21, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 21)
+        Me.Label3.Size = New System.Drawing.Size(44, 29)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "RUC"
         '
@@ -382,12 +383,24 @@ Partial Class frmMant_Proveedores
         Me.Panel2.Size = New System.Drawing.Size(917, 93)
         Me.Panel2.TabIndex = 23
         '
+        'btnSeleccionar
+        '
+        Me.btnSeleccionar.BackColor = System.Drawing.SystemColors.Window
+        Me.btnSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSeleccionar.Location = New System.Drawing.Point(423, 533)
+        Me.btnSeleccionar.Name = "btnSeleccionar"
+        Me.btnSeleccionar.Size = New System.Drawing.Size(103, 55)
+        Me.btnSeleccionar.TabIndex = 24
+        Me.btnSeleccionar.Text = "Seleccionar"
+        Me.btnSeleccionar.UseVisualStyleBackColor = False
+        '
         'frmMant_Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Info
-        Me.ClientSize = New System.Drawing.Size(1196, 627)
+        Me.ClientSize = New System.Drawing.Size(1276, 590)
+        Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtBuscar)
@@ -446,4 +459,5 @@ Partial Class frmMant_Proveedores
     Friend WithEvents Correo As DataGridViewTextBoxColumn
     Friend WithEvents Direccion As DataGridViewTextBoxColumn
     Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents btnSeleccionar As Button
 End Class

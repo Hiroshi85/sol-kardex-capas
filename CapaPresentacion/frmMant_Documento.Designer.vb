@@ -38,9 +38,9 @@ Partial Class frmMant_Documento
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnBuscarResponsable = New System.Windows.Forms.Button()
+        Me.btnBuscarResponsable = New System.Windows.Forms.Button()
         Me.txtIdResponsable = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.cbProveedor = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbTipoDoc = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -48,6 +48,8 @@ Partial Class frmMant_Documento
         Me.dtpFechaEmision = New System.Windows.Forms.DateTimePicker()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnBuscarProveedor = New System.Windows.Forms.Button()
+        Me.txtProveedor = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DGVDocumentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -189,10 +191,11 @@ Partial Class frmMant_Documento
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.txtProveedor)
+        Me.Panel2.Controls.Add(Me.btnBuscarProveedor)
         Me.Panel2.Controls.Add(Me.btnBuscarResponsable)
         Me.Panel2.Controls.Add(Me.txtIdResponsable)
         Me.Panel2.Controls.Add(Me.Label7)
-        Me.Panel2.Controls.Add(Me.cbProveedor)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.cbTipoDoc)
         Me.Panel2.Controls.Add(Me.Label5)
@@ -212,11 +215,20 @@ Partial Class frmMant_Documento
         Me.btnBuscarResponsable.Text = "..."
         Me.btnBuscarResponsable.UseVisualStyleBackColor = True
         '
+        'btnBuscarResponsable
+        '
+        Me.btnBuscarResponsable.Location = New System.Drawing.Point(820, 39)
+        Me.btnBuscarResponsable.Name = "btnBuscarResponsable"
+        Me.btnBuscarResponsable.Size = New System.Drawing.Size(35, 23)
+        Me.btnBuscarResponsable.TabIndex = 15
+        Me.btnBuscarResponsable.Text = "..."
+        Me.btnBuscarResponsable.UseVisualStyleBackColor = True
+        '
         'txtIdResponsable
         '
-        Me.txtIdResponsable.Location = New System.Drawing.Point(644, 41)
+        Me.txtIdResponsable.Location = New System.Drawing.Point(626, 41)
         Me.txtIdResponsable.Name = "txtIdResponsable"
-        Me.txtIdResponsable.Size = New System.Drawing.Size(169, 22)
+        Me.txtIdResponsable.Size = New System.Drawing.Size(187, 22)
         Me.txtIdResponsable.TabIndex = 14
         '
         'Label7
@@ -228,14 +240,6 @@ Partial Class frmMant_Documento
         Me.Label7.Size = New System.Drawing.Size(97, 20)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Resonsable"
-        '
-        'cbProveedor
-        '
-        Me.cbProveedor.FormattingEnabled = True
-        Me.cbProveedor.Location = New System.Drawing.Point(189, 39)
-        Me.cbProveedor.Name = "cbProveedor"
-        Me.cbProveedor.Size = New System.Drawing.Size(273, 24)
-        Me.cbProveedor.TabIndex = 12
         '
         'Label6
         '
@@ -251,9 +255,9 @@ Partial Class frmMant_Documento
         '
         Me.cbTipoDoc.FormattingEnabled = True
         Me.cbTipoDoc.Items.AddRange(New Object() {"Factura", "Boleta", "Guia de Remision"})
-        Me.cbTipoDoc.Location = New System.Drawing.Point(644, 11)
+        Me.cbTipoDoc.Location = New System.Drawing.Point(626, 11)
         Me.cbTipoDoc.Name = "cbTipoDoc"
-        Me.cbTipoDoc.Size = New System.Drawing.Size(169, 24)
+        Me.cbTipoDoc.Size = New System.Drawing.Size(187, 24)
         Me.cbTipoDoc.TabIndex = 10
         '
         'Label5
@@ -302,6 +306,22 @@ Partial Class frmMant_Documento
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "INFORMACION DEL DOCUMENTO"
         '
+        'btnBuscarProveedor
+        '
+        Me.btnBuscarProveedor.Location = New System.Drawing.Point(436, 41)
+        Me.btnBuscarProveedor.Name = "btnBuscarProveedor"
+        Me.btnBuscarProveedor.Size = New System.Drawing.Size(35, 23)
+        Me.btnBuscarProveedor.TabIndex = 16
+        Me.btnBuscarProveedor.Text = "..."
+        Me.btnBuscarProveedor.UseVisualStyleBackColor = True
+        '
+        'txtProveedor
+        '
+        Me.txtProveedor.Location = New System.Drawing.Point(189, 41)
+        Me.txtProveedor.Name = "txtProveedor"
+        Me.txtProveedor.Size = New System.Drawing.Size(241, 22)
+        Me.txtProveedor.TabIndex = 17
+        '
         'frmMant_Documento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -331,7 +351,6 @@ Partial Class frmMant_Documento
     Friend WithEvents cbTipoDoc As ComboBox
     Friend WithEvents txtIdResponsable As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents cbProveedor As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents DGVDocumentos As DataGridView
@@ -346,4 +365,6 @@ Partial Class frmMant_Documento
     Friend WithEvents IdProveedor As DataGridViewTextBoxColumn
     Friend WithEvents CodigoResponsable As DataGridViewTextBoxColumn
     Friend WithEvents btnBuscarResponsable As Button
+    Friend WithEvents btnBuscarProveedor As Button
+    Friend WithEvents txtProveedor As TextBox
 End Class

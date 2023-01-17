@@ -1,7 +1,5 @@
 USE EMPRESA_LIMPIEZA
 GO
-select * from RESPONSABLE
-go
 
 --RESPONSABLES
 
@@ -41,10 +39,11 @@ as
 	SELECT * FROM RESPONSABLE WHERE Borrado = 0 AND Nombre like '%'+@Nombre+'%'
 go
 
-
--- PROVEEDORES
-select * from PROVEEDOR
-INSERT INTO PROVEEDOR VALUES ('La Poderosa SAAWAMAN','Mineria ilegal','AV LAS ROSAS ROJAS','+51 921234513','lapo@gmail.com',0)
+--- BÚSQUEDA DE RESPONSABLE POR ID
+CREATE PROCEDURE SP_SEARCH_RESPONSABLExCODIGO
+	@CodigoResponsable			varchar(36)
+as
+	SELECT * FROM RESPONSABLE WHERE CodigoResponsable = @CodigoResponsable
 go
 
 CREATE PROCEDURE SP_INSERT_PROVEEDOR

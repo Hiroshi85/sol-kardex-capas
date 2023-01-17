@@ -36,7 +36,6 @@ Partial Class frmMant_Movimientos
         Me.lblNumDoc = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblDocumento = New System.Windows.Forms.Label()
@@ -52,8 +51,17 @@ Partial Class frmMant_Movimientos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtSubTotal = New System.Windows.Forms.Label()
+        Me.txtIGV = New System.Windows.Forms.Label()
+        Me.txtTotal = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGVMovimientos
@@ -61,7 +69,7 @@ Partial Class frmMant_Movimientos
         Me.DGVMovimientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.CodigoProducto, Me.NumHoja, Me.PrecioDocumento, Me.StockAnterior, Me.CantidadSalida, Me.CantidadEntrada, Me.StockActual})
-        Me.DGVMovimientos.Location = New System.Drawing.Point(35, 363)
+        Me.DGVMovimientos.Location = New System.Drawing.Point(35, 376)
         Me.DGVMovimientos.Name = "DGVMovimientos"
         Me.DGVMovimientos.RowHeadersWidth = 51
         Me.DGVMovimientos.RowTemplate.Height = 24
@@ -128,7 +136,7 @@ Partial Class frmMant_Movimientos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(278, 34)
+        Me.Label1.Location = New System.Drawing.Point(285, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(288, 32)
         Me.Label1.TabIndex = 31
@@ -138,7 +146,7 @@ Partial Class frmMant_Movimientos
         '
         Me.lblProveedor.AutoSize = True
         Me.lblProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProveedor.Location = New System.Drawing.Point(311, 146)
+        Me.lblProveedor.Location = New System.Drawing.Point(308, 122)
         Me.lblProveedor.Name = "lblProveedor"
         Me.lblProveedor.Size = New System.Drawing.Size(0, 22)
         Me.lblProveedor.TabIndex = 33
@@ -147,7 +155,7 @@ Partial Class frmMant_Movimientos
         '
         Me.lblNumDoc.AutoSize = True
         Me.lblNumDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumDoc.Location = New System.Drawing.Point(602, 34)
+        Me.lblNumDoc.Location = New System.Drawing.Point(589, 27)
         Me.lblNumDoc.Name = "lblNumDoc"
         Me.lblNumDoc.Size = New System.Drawing.Size(0, 32)
         Me.lblNumDoc.TabIndex = 34
@@ -156,7 +164,7 @@ Partial Class frmMant_Movimientos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(64, 96)
+        Me.Label2.Location = New System.Drawing.Point(67, 72)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(220, 29)
         Me.Label2.TabIndex = 35
@@ -166,27 +174,17 @@ Partial Class frmMant_Movimientos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(64, 137)
+        Me.Label3.Location = New System.Drawing.Point(61, 113)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(213, 29)
         Me.Label3.TabIndex = 36
         Me.Label3.Text = "ID PROVEEDOR:"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(560, 99)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(256, 29)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "TIPO DOCUMENTO:"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(564, 141)
+        Me.Label5.Location = New System.Drawing.Point(62, 155)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(245, 22)
         Me.Label5.TabIndex = 38
@@ -196,7 +194,7 @@ Partial Class frmMant_Movimientos
         '
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.Location = New System.Drawing.Point(315, 101)
+        Me.lblFecha.Location = New System.Drawing.Point(312, 77)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(0, 22)
         Me.lblFecha.TabIndex = 39
@@ -204,17 +202,17 @@ Partial Class frmMant_Movimientos
         'lblDocumento
         '
         Me.lblDocumento.AutoSize = True
-        Me.lblDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDocumento.Location = New System.Drawing.Point(877, 101)
+        Me.lblDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDocumento.Location = New System.Drawing.Point(93, 64)
         Me.lblDocumento.Name = "lblDocumento"
-        Me.lblDocumento.Size = New System.Drawing.Size(0, 22)
+        Me.lblDocumento.Size = New System.Drawing.Size(0, 36)
         Me.lblDocumento.TabIndex = 40
         '
         'lblResponsable
         '
         Me.lblResponsable.AutoSize = True
         Me.lblResponsable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblResponsable.Location = New System.Drawing.Point(875, 142)
+        Me.lblResponsable.Location = New System.Drawing.Point(341, 155)
         Me.lblResponsable.Name = "lblResponsable"
         Me.lblResponsable.Size = New System.Drawing.Size(0, 22)
         Me.lblResponsable.TabIndex = 41
@@ -229,7 +227,7 @@ Partial Class frmMant_Movimientos
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.txtCodigo)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Location = New System.Drawing.Point(35, 231)
+        Me.Panel1.Location = New System.Drawing.Point(35, 244)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(810, 107)
         Me.Panel1.TabIndex = 42
@@ -298,7 +296,7 @@ Partial Class frmMant_Movimientos
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(31, 197)
+        Me.Label6.Location = New System.Drawing.Point(31, 210)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(131, 20)
         Me.Label6.TabIndex = 43
@@ -306,7 +304,7 @@ Partial Class frmMant_Movimientos
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(881, 231)
+        Me.btnAgregar.Location = New System.Drawing.Point(881, 244)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(130, 42)
         Me.btnAgregar.TabIndex = 44
@@ -315,39 +313,130 @@ Partial Class frmMant_Movimientos
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(879, 290)
+        Me.btnLimpiar.Location = New System.Drawing.Point(879, 303)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(130, 42)
         Me.btnLimpiar.TabIndex = 45
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(720, 648)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Padding = New System.Windows.Forms.Padding(5)
+        Me.Label11.Size = New System.Drawing.Size(152, 30)
+        Me.Label11.TabIndex = 46
+        Me.Label11.Text = "     SUB TOTAL"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(730, 682)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Padding = New System.Windows.Forms.Padding(5)
+        Me.Label12.Size = New System.Drawing.Size(164, 30)
+        Me.Label12.TabIndex = 47
+        Me.Label12.Text = "    I.G.V (18%)    "
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(730, 716)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Padding = New System.Windows.Forms.Padding(5)
+        Me.Label13.Size = New System.Drawing.Size(162, 30)
+        Me.Label13.TabIndex = 48
+        Me.Label13.Text = "        TOTAL      "
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'txtSubTotal
+        '
+        Me.txtSubTotal.AutoSize = True
+        Me.txtSubTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSubTotal.Location = New System.Drawing.Point(901, 655)
+        Me.txtSubTotal.Name = "txtSubTotal"
+        Me.txtSubTotal.Size = New System.Drawing.Size(0, 18)
+        Me.txtSubTotal.TabIndex = 49
+        Me.txtSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtIGV
+        '
+        Me.txtIGV.AutoSize = True
+        Me.txtIGV.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIGV.Location = New System.Drawing.Point(903, 689)
+        Me.txtIGV.Name = "txtIGV"
+        Me.txtIGV.Size = New System.Drawing.Size(0, 18)
+        Me.txtIGV.TabIndex = 50
+        Me.txtIGV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtTotal
+        '
+        Me.txtTotal.AutoSize = True
+        Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.Location = New System.Drawing.Point(905, 723)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(0, 18)
+        Me.txtTotal.TabIndex = 51
+        Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.lblDocumento)
+        Me.Panel2.Location = New System.Drawing.Point(693, 77)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(367, 118)
+        Me.Panel2.TabIndex = 52
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(7, 15)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(344, 36)
+        Me.Label4.TabIndex = 41
+        Me.Label4.Text = "R.U.C 1023301258596"
+        '
         'frmMant_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Info
-        Me.ClientSize = New System.Drawing.Size(1117, 687)
+        Me.ClientSize = New System.Drawing.Size(1117, 763)
+        Me.Controls.Add(Me.txtTotal)
+        Me.Controls.Add(Me.txtIGV)
+        Me.Controls.Add(Me.txtSubTotal)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblResponsable)
-        Me.Controls.Add(Me.lblDocumento)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblNumDoc)
         Me.Controls.Add(Me.lblProveedor)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGVMovimientos)
+        Me.Controls.Add(Me.Panel2)
         Me.Name = "frmMant_Movimientos"
         Me.Text = "PRUEBA"
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -359,7 +448,6 @@ Partial Class frmMant_Movimientos
     Friend WithEvents lblNumDoc As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents lblFecha As Label
     Friend WithEvents lblDocumento As Label
@@ -383,4 +471,12 @@ Partial Class frmMant_Movimientos
     Friend WithEvents CantidadSalida As DataGridViewTextBoxColumn
     Friend WithEvents CantidadEntrada As DataGridViewTextBoxColumn
     Friend WithEvents StockActual As DataGridViewTextBoxColumn
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txtSubTotal As Label
+    Friend WithEvents txtIGV As Label
+    Friend WithEvents txtTotal As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label4 As Label
 End Class

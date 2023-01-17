@@ -25,6 +25,7 @@ Public Class frmMant_Movimientos
 
     Public Sub mostrarMovimientos()
         Dim lista As List(Of Movimiento)
+        Dim subTotal As Double
         lista = MovimientoLN.ListarMovimientos(xDoc.NumDocumento)
         DGVMovimientos.AllowUserToOrderColumns = True
         DGVMovimientos.MultiSelect = False
@@ -46,8 +47,13 @@ Public Class frmMant_Movimientos
         Else
             DGVMovimientos.Columns("CantidadEntrada").Visible = False
         End If
-    End Sub
 
+        '' Obtener SubTotal, IGV y Total
+        subTotal = MovimientoLN.CalcularSubTotal(xDoc.NumDocumento, 1)
+        txtSubTotal.Text = "S/. " + Convert.ToString(subTotal)
+        txtIGV.Text = "S/. " + Convert.ToString(0.18 * subTotal)
+        txtTotal.Text = "S/. " + Convert.ToString(1.18 * subTotal)
+    End Sub
     Public Sub cargar(obj As Documento)
         xDoc = obj
     End Sub
@@ -108,5 +114,17 @@ Public Class frmMant_Movimientos
         txtCantidad.Text = ""
         txtCodigo.Text = ""
         txtPrecio.Text = ""
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+
+    End Sub
+
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class
