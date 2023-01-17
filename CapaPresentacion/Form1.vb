@@ -17,4 +17,9 @@
         Dim frmDoc As New frmMant_Documento
         frmDoc.Visible = True
     End Sub
+
+    Private Sub btnGuiasDeRemision_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim f As New frmDetail_GuiaRemision
+        f.Visible = True
+    End Sub
 End Class

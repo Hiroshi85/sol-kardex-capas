@@ -1,5 +1,9 @@
 ﻿Imports CapaNegocios
 Imports CapaEntidad
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+
 Public Class frmDetail_GuiaRemision
     Dim xDoc As Documento
     Dim proveedor As New Proveedor
@@ -8,10 +12,10 @@ Public Class frmDetail_GuiaRemision
         mostrarMovimientos()
     End Sub
     Private Sub mostrarDatos()
-        Proveedor = ProveedorLN.BuscarID(xDoc.IdProveedor)
-        lblCorreo.Text = Proveedor.Correo
-        lblProveedor.Text = Proveedor.Proveedor
-        lblDescripcion.Text = Proveedor.Descripcion
+        proveedor = ProveedorLN.BuscarID(xDoc.IdProveedor)
+        lblCorreo.Text = proveedor.Correo
+        lblProveedor.Text = proveedor.Proveedor
+        lblDescripcion.Text = proveedor.Descripcion
         lblTelefono.Text = Proveedor.Telefono
         lblRUC.Text = Proveedor.RUC
         lblNumDoc.Text = xDoc.NumDocumento
@@ -72,5 +76,13 @@ Public Class frmDetail_GuiaRemision
         txtCantidad.Text = ""
         txtCodigo.Text = ""
         txtPrecio.Text = ""
+    End Sub
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        Dim doc As New Document(PageSize.A4, 10, 10, 10, 10)
+        Dim pdfw As PdfWriter = PdfWriter.GetInstance(doc, New FileStream("nuevo_pdf.pdf", FileMode.Create))
+        doc.Open()
+        doc.Add(New Paragraph("Este es un nuevo archivo PDF."))
+        doc.Close()
     End Sub
 End Class
