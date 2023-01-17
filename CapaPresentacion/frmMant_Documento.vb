@@ -193,7 +193,7 @@ Public Class frmMant_Documento
                     .CodigoResponsable = dCodigoR
                 }
             If dIdTipoDoc <> 3 Then
-                Dim frm As New frmMant_Movimientos()
+                Dim frm As New frmDetail_BoletaFactura()
                 frm.cargar(xDocumento)
                 frm.Visible() = True
             Else
