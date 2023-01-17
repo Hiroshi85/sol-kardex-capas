@@ -70,7 +70,11 @@ Public Class KardexAD
             lector = oComando.ExecuteReader()
 
             If lector.Read Then
-                ultima = lector.Item("Ultima Hoja")
+                If (Not IsDBNull(lector.Item("Ultima Hoja"))) Then
+                    ultima = lector.Item("Ultima Hoja")
+                Else
+                    ultima = 1
+                End If
             End If
             Return ultima
         Catch ex As Exception

@@ -9,8 +9,12 @@ Public Class frmKardex_Movs
     End Sub
     Private Sub CargarKardex()
         Dim Kard As Kardex
+        Dim NumProductos As Integer
         Kard = KardexLN.GetKardex(NudKardex.Value)
+        NumProductos = New ProductoLN().ObtenerProductos().Count
+        NudKardex.Maximum = NumProductos
         TxtMinimo.Text = Kard.StockMinRepo.ToString
+        TxtRepo.Text = Kard.CantidadReposicion.ToString
         DtpFecha.Value = Kard.FechaApertura
         TxtActual.Text = KardexLN.GetStockActual(Kard.CodigoProducto)
         CargarEstado()
