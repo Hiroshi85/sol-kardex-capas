@@ -1,7 +1,10 @@
 USE EMPRESA_LIMPIEZA
 GO
 select * from RESPONSABLE
+go
+
 --RESPONSABLES
+
 CREATE PROCEDURE SP_INSERT_RESPONSABLE
 	@NumDNI					char(8),
 	@FechaNacimiento		date,
@@ -42,19 +45,23 @@ go
 -- PROVEEDORES
 select * from PROVEEDOR
 INSERT INTO PROVEEDOR VALUES ('La Poderosa SAAWAMAN','Mineria ilegal','AV LAS ROSAS ROJAS','+51 921234513','lapo@gmail.com',0)
+go
+
 CREATE PROCEDURE SP_INSERT_PROVEEDOR
+	@RUC			  char(11),
 	@Proveedor		  varchar(30),
 	@Descripcion      varchar(30),
 	@Direccion		  varchar(30),
 	@Telefono		  varchar(13),
 	@Correo			  varchar(30)
 as
-	INSERT INTO PROVEEDOR(Proveedor, Descripcion, Direccion, Telefono, Correo) 
-		VALUES	(@Proveedor, @Descripcion, @Direccion, @Telefono, @Correo)
+	INSERT INTO PROVEEDOR(RUC,Proveedor, Descripcion, Direccion, Telefono, Correo) 
+		VALUES	(@RUC,@Proveedor, @Descripcion, @Direccion, @Telefono, @Correo)
 go
 
 CREATE PROCEDURE SP_UPDATE_PROVEEDOR
 	@IdProveedor	        int,
+	@RUC				char(11),
 	@Proveedor		  varchar(30),
 	@Descripcion      varchar(30),
 	@Direccion		  varchar(30),
@@ -62,6 +69,7 @@ CREATE PROCEDURE SP_UPDATE_PROVEEDOR
 	@Correo			  varchar(30)
 as
 	UPDATE PROVEEDOR SET 
+		RUC = @RUC,
 		Proveedor = @Proveedor,
 		Descripcion = @Descripcion,
 		Direccion = @Direccion,
@@ -82,4 +90,11 @@ CREATE PROCEDURE SP_SEARCH_PROVEEDOR
 	@Proveedor varchar(30)
 as
 	SELECT * FROM PROVEEDOR WHERE Borrado = 0 AND Proveedor like '%'+@Proveedor+'%'
+go
+
+--- BÚSQUEDA DE PROVEEDOR POR ID
+CREATE PROCEDURE SP_SEARCH_PROVEEDORxID
+	@IdProveedor		int
+as
+	SELECT * FROM PROVEEDOR WHERE Borrado = 0 AND IdProveedor = @IdProveedor
 go

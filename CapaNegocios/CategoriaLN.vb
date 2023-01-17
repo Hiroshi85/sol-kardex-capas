@@ -11,5 +11,7 @@ Public Class CategoriaLN
     Public Function ListarCategorias() As List(Of Categoria)
         Return _categoriaAD.ListarCategorias()
     End Function
-
+    Public Function GetCategoria(Id As Integer) As Categoria
+        Return _categoriaAD.GetCategoria(Id)
+    End Function
 End Class

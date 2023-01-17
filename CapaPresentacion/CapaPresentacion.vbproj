@@ -83,6 +83,11 @@
     </Compile>
     <Compile Include="frmMant_Productos.Designer.vb">
       <DependentUpon>frmMant_Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKardex_Movs.Designer.vb">
+      <DependentUpon>frmKardex_Movs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKardex_Movs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDetail_GuiaRemision.Designer.vb">
@@ -138,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Productos.resx">
       <DependentUpon>frmMant_Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKardex_Movs.resx">
+      <DependentUpon>frmKardex_Movs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetail_GuiaRemision.resx">
+      <DependentUpon>frmDetail_GuiaRemision.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMant_Documento.resx">
       <DependentUpon>frmMant_Documento.vb</DependentUpon>

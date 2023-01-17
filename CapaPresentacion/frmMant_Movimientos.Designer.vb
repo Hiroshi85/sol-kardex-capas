@@ -63,6 +63,7 @@ Partial Class frmMant_Movimientos
         Me.DGVMovimientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumItem, Me.CodigoProducto, Me.NumHoja, Me.PrecioDocumento, Me.StockAnterior, Me.CantidadSalida, Me.CantidadEntrada, Me.StockActual})
         Me.DGVMovimientos.Location = New System.Drawing.Point(35, 363)
         Me.DGVMovimientos.Name = "DGVMovimientos"
+        Me.DGVMovimientos.RowHeadersWidth = 51
         Me.DGVMovimientos.RowTemplate.Height = 24
         Me.DGVMovimientos.Size = New System.Drawing.Size(1025, 258)
         Me.DGVMovimientos.TabIndex = 30
@@ -269,51 +270,59 @@ Partial Class frmMant_Movimientos
         '
         Me.NumItem.DataPropertyName = "NumItem"
         Me.NumItem.HeaderText = "NumItem"
+        Me.NumItem.MinimumWidth = 6
         Me.NumItem.Name = "NumItem"
         '
         'CodigoProducto
         '
         Me.CodigoProducto.DataPropertyName = "CodigoProducto"
         Me.CodigoProducto.HeaderText = "CodigoProducto"
+        Me.CodigoProducto.MinimumWidth = 6
         Me.CodigoProducto.Name = "CodigoProducto"
         '
         'NumHoja
         '
         Me.NumHoja.DataPropertyName = "NumHoja"
         Me.NumHoja.HeaderText = "NumHoja"
+        Me.NumHoja.MinimumWidth = 6
         Me.NumHoja.Name = "NumHoja"
         '
         'PrecioDocumento
         '
         Me.PrecioDocumento.DataPropertyName = "PrecioDocumento"
         Me.PrecioDocumento.HeaderText = "PrecioDocumento"
+        Me.PrecioDocumento.MinimumWidth = 6
         Me.PrecioDocumento.Name = "PrecioDocumento"
         '
         'StockAnterior
         '
         Me.StockAnterior.DataPropertyName = "StockAnterior"
         Me.StockAnterior.HeaderText = "StockAnterior"
+        Me.StockAnterior.MinimumWidth = 6
         Me.StockAnterior.Name = "StockAnterior"
         '
         'CantidadSalida
         '
         Me.CantidadSalida.DataPropertyName = "CantidadSalida"
         Me.CantidadSalida.HeaderText = "CantidadSalida"
+        Me.CantidadSalida.MinimumWidth = 6
         Me.CantidadSalida.Name = "CantidadSalida"
         '
         'CantidadEntrada
         '
         Me.CantidadEntrada.DataPropertyName = "CantidadEntrada"
         Me.CantidadEntrada.HeaderText = "CantidadEntrada"
+        Me.CantidadEntrada.MinimumWidth = 6
         Me.CantidadEntrada.Name = "CantidadEntrada"
         '
         'StockActual
         '
         Me.StockActual.DataPropertyName = "StockActual"
         Me.StockActual.HeaderText = "StockActual"
+        Me.StockActual.MinimumWidth = 6
         Me.StockActual.Name = "StockActual"
         '
-        'PRUEBA
+        'frmMant_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -333,7 +342,7 @@ Partial Class frmMant_Movimientos
         Me.Controls.Add(Me.lblProveedor)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGVMovimientos)
-        Me.Name = "PRUEBA"
+        Me.Name = "frmMant_Movimientos"
         Me.Text = "PRUEBA"
         CType(Me.DGVMovimientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

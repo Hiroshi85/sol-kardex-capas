@@ -1,12 +1,8 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
 Public Class frmMant_Proveedores
-    Dim xIdProveedor As Integer
-    Dim xDescripcion As String
-    Dim xTelefono As String
-    Dim xCorreo As String
-    Dim xDireccion As String
-    Dim xProv As String
+
+    Dim updtProveedor As Proveedor
     Private Sub frmMant_Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         listarProveedores()
     End Sub
@@ -21,22 +17,26 @@ Public Class frmMant_Proveedores
     End Sub
 
     Private Sub DGVProveedores_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProveedores.CellEndEdit
-        xIdProveedor = CInt(DGVProveedores.Rows(e.RowIndex).Cells("IdProveedor").Value)
-        xDescripcion = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Descripcion").Value)
-        xTelefono = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Telefono").Value)
-        xProv = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Proveedor").Value)
-        xCorreo = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Correo").Value)
-        xDireccion = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Direccion").Value)
+        updtProveedor = New Proveedor With {
+            .IdProveedor = CInt(DGVProveedores.Rows(e.RowIndex).Cells("IdProveedor").Value),
+            .RUC = CStr(DGVProveedores.Rows(e.RowIndex).Cells("RUC").Value),
+            .Descripcion = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Descripcion").Value),
+            .Telefono = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Telefono").Value),
+            .Proveedor = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Proveedor").Value),
+            .Correo = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Correo").Value),
+            .Direccion = CStr(DGVProveedores.Rows(e.RowIndex).Cells("Direccion").Value)
+        }
     End Sub
 
     'Reutilizables
     Private Sub OrderDisplay()
         DGVProveedores.Columns("IdProveedor").DisplayIndex = 0
-        DGVProveedores.Columns("Proveedor").DisplayIndex = 1
-        DGVProveedores.Columns("Descripcion").DisplayIndex = 2
-        DGVProveedores.Columns("Correo").DisplayIndex = 3
-        DGVProveedores.Columns("Direccion").DisplayIndex = 4
-        DGVProveedores.Columns("Telefono").DisplayIndex = 5
+        DGVProveedores.Columns("RUC").DisplayIndex = 1
+        DGVProveedores.Columns("Proveedor").DisplayIndex = 2
+        DGVProveedores.Columns("Descripcion").DisplayIndex = 3
+        DGVProveedores.Columns("Correo").DisplayIndex = 4
+        DGVProveedores.Columns("Direccion").DisplayIndex = 5
+        DGVProveedores.Columns("Telefono").DisplayIndex = 6
     End Sub
     Private Sub MessageInformation(mensaje As String)
         MessageBox.Show(mensaje, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -49,6 +49,7 @@ Public Class frmMant_Proveedores
         Return confirm
     End Function
     Private Sub Clear()
+        txtRUC.Text = ""
         txtDescripcion.Text = ""
         txtCorreo.Text = ""
         txtDireccion.Text = ""
@@ -71,8 +72,10 @@ Public Class frmMant_Proveedores
         Dim direccion As String = txtDireccion.Text
         Dim correo As String = txtCorreo.Text
         Dim proveedor As String = txtProveedor.Text
+        Dim ruc As String = txtRUC.Text
         If descripcion <> "" And telefono <> "" And direccion <> "" And correo <> "" And proveedor <> "" Then
             Dim xProveedor As New Proveedor With {
+                .RUC = ruc,
                 .Descripcion = descripcion,
                 .Telefono = telefono,
                 .Direccion = direccion,
@@ -93,15 +96,7 @@ Public Class frmMant_Proveedores
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Dim xProveedor As New Proveedor With {
-            .IdProveedor = xIdProveedor,
-            .Descripcion = xDescripcion,
-            .Telefono = xTelefono,
-            .Direccion = xDireccion,
-            .Correo = xCorreo,
-            .Proveedor = xProv
-        }
-        ProveedorLN.Actualizar(xProveedor)
+        ProveedorLN.Actualizar(updtProveedor)
         listarProveedores()
         MessageInformation("Datos actualizados")
     End Sub
@@ -131,6 +126,14 @@ Public Class frmMant_Proveedores
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub txtDescripcion_TextChanged(sender As Object, e As EventArgs) Handles txtDescripcion.TextChanged
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
 End Class

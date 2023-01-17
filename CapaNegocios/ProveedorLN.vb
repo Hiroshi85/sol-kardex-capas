@@ -21,4 +21,9 @@ Public Class ProveedorLN
         Dim objAD As New ProveedorAD
         Return objAD.Buscar(obj)
     End Function
+
+    Public Shared Function BuscarID(obj As Integer) As Proveedor
+        Dim objAD As New ProveedorAD
+        Return objAD.BuscarID(obj)
+    End Function
 End Class

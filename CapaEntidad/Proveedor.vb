@@ -5,6 +5,15 @@
     Private m_direccion As String
     Private m_telefono As String
     Private m_correo As String
+    Private m_ruc As String
+    Public Property RUC() As String
+        Get
+            Return m_ruc
+        End Get
+        Set(ByVal value As String)
+            m_ruc = value
+        End Set
+    End Property
     Public Property Correo() As String
         Get
             Return m_correo

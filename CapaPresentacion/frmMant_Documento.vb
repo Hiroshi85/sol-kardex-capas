@@ -169,12 +169,18 @@ Public Class frmMant_Documento
                     .IdProveedor = dIdProveedor,
                     .CodigoResponsable = dCodigoR
                 }
-
-            Dim frm As New frmMant_Movimientos()
-            frm.cargar(xDocumento)
-            frm.Visible() = True
+            If dIdTipoDoc <> 3 Then
+                Dim frm As New frmMant_Movimientos()
+                frm.cargar(xDocumento)
+                frm.Visible() = True
+            Else
+                Dim frm As New frmDetail_GuiaRemision()
+                frm.cargar(xDocumento)
+                frm.Visible = True
+            End If
         Else
-            MessageInformation("Seleccione un documento")
+
+                MessageInformation("Seleccione un documento")
         End If
     End Sub
 

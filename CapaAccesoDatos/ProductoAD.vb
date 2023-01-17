@@ -39,7 +39,7 @@ Public Class ProductoAD
         Dim cmd As New SqlCommand
         If _conexion.AbrirConexion() Then
             cmd.Connection = _conexion.ObtenerConexion()
-            cmd.CommandText = "SP_LISTAR_PRODUCTOS"
+            cmd.CommandText = "SP_OBTENER_PRODUCTO_POR_ID"
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = codigoProducto
             Dim lector As SqlDataReader
