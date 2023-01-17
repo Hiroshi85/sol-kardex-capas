@@ -1,13 +1,18 @@
 ﻿Imports CapaEntidad
 Imports System.Data.SqlClient
 Public Class KardexAD
+    Private ReadOnly _conexion As ConexionAD
+
+    Public Sub New()
+        _conexion = New ConexionAD()
+    End Sub
+
     Public Function ListarMovimientosKardex(CodProd As Integer, NHoja As Integer) As List(Of Movimiento)
-        Dim oConexion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Dim lista As New List(Of Movimiento)
         Try
-            oConexion.Open()
-            oComando.Connection = oConexion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_MOVS_KARDEX_PAG"
             oComando.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = CodProd
@@ -48,16 +53,15 @@ Public Class KardexAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConexion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 
     Public Function GetUltimaHojaKardex(CodProd As Integer) As Integer
-        Dim oConexion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
-            oConexion.Open()
-            oComando.Connection = oConexion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_ULTIMA_HOJA_KARDEX"
             oComando.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = CodProd
@@ -72,15 +76,14 @@ Public Class KardexAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConexion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
     Public Function GetKardex(CodProd As Integer) As Kardex
-        Dim oConexion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
-            oConexion.Open()
-            oComando.Connection = oConexion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_GET_KARDEX"
             oComando.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = CodProd
@@ -99,16 +102,15 @@ Public Class KardexAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConexion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 
     Public Function GetStockActual(CodProd As Integer) As Double
-        Dim oConexion As New SqlConnection("server=.; Integrated Security = true; DataBase = EMPRESA_LIMPIEZA")
         Dim oComando As New SqlCommand
         Try
-            oConexion.Open()
-            oComando.Connection = oConexion
+            _conexion.AbrirConexion()
+            oComando.Connection = _conexion.ObtenerConexion()
             oComando.CommandType = CommandType.StoredProcedure
             oComando.CommandText = "SP_StockProducto"
             oComando.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = CodProd
@@ -123,7 +125,7 @@ Public Class KardexAD
         Catch ex As Exception
             Throw New Exception(ex.Message)
         Finally
-            oConexion.Close()
+            _conexion.CerrarConexion()
         End Try
     End Function
 End Class

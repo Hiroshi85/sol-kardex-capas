@@ -142,7 +142,7 @@ Partial Class frmMant_Movimientos
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(285, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(289, 32)
+        Me.Label1.Size = New System.Drawing.Size(288, 32)
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "DOCUMENTO NUM "
         '
@@ -171,7 +171,7 @@ Partial Class frmMant_Movimientos
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(38, 103)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(252, 24)
+        Me.Label5.Size = New System.Drawing.Size(245, 22)
         Me.Label5.TabIndex = 38
         Me.Label5.Text = "CODIGO RESPONSABLE:"
         '
@@ -181,7 +181,7 @@ Partial Class frmMant_Movimientos
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.Location = New System.Drawing.Point(926, 203)
         Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(0, 24)
+        Me.lblFecha.Size = New System.Drawing.Size(0, 22)
         Me.lblFecha.TabIndex = 39
         '
         'lblDocumento
@@ -199,7 +199,7 @@ Partial Class frmMant_Movimientos
         Me.lblResponsable.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblResponsable.Location = New System.Drawing.Point(315, 103)
         Me.lblResponsable.Name = "lblResponsable"
-        Me.lblResponsable.Size = New System.Drawing.Size(0, 24)
+        Me.lblResponsable.Size = New System.Drawing.Size(0, 22)
         Me.lblResponsable.TabIndex = 41
         '
         'Panel1
@@ -246,7 +246,7 @@ Partial Class frmMant_Movimientos
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(434, 46)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(123, 17)
+        Me.Label9.Size = New System.Drawing.Size(115, 16)
         Me.Label9.TabIndex = 47
         Me.Label9.Text = "(Entrada o Salida)"
         '

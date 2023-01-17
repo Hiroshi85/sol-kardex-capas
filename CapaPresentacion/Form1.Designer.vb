@@ -33,6 +33,7 @@ Partial Class Form1
         Me.panTitle = New System.Windows.Forms.Panel()
         Me.lblTituloPanel = New System.Windows.Forms.Label()
         Me.panMain = New System.Windows.Forms.Panel()
+        Me.btnKardex = New System.Windows.Forms.Button()
         Me.panLogo.SuspendLayout()
         Me.panMenu.SuspendLayout()
         Me.panTitle.SuspendLayout()
@@ -84,6 +85,7 @@ Partial Class Form1
         'panMenu
         '
         Me.panMenu.BackColor = System.Drawing.Color.Honeydew
+        Me.panMenu.Controls.Add(Me.btnKardex)
         Me.panMenu.Controls.Add(Me.btnDocumentos)
         Me.panMenu.Controls.Add(Me.btnResponsables)
         Me.panMenu.Controls.Add(Me.btnProductos)
@@ -102,7 +104,7 @@ Partial Class Form1
         Me.btnDocumentos.FlatAppearance.BorderSize = 0
         Me.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDocumentos.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDocumentos.Location = New System.Drawing.Point(0, 511)
+        Me.btnDocumentos.Location = New System.Drawing.Point(3, 598)
         Me.btnDocumentos.Name = "btnDocumentos"
         Me.btnDocumentos.Size = New System.Drawing.Size(222, 71)
         Me.btnDocumentos.TabIndex = 3
@@ -118,7 +120,7 @@ Partial Class Form1
         Me.btnResponsables.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnResponsables.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnResponsables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnResponsables.Location = New System.Drawing.Point(0, 400)
+        Me.btnResponsables.Location = New System.Drawing.Point(3, 487)
         Me.btnResponsables.Name = "btnResponsables"
         Me.btnResponsables.Size = New System.Drawing.Size(222, 71)
         Me.btnResponsables.TabIndex = 2
@@ -157,9 +159,8 @@ Partial Class Form1
         Me.lblTituloPanel.Font = New System.Drawing.Font("Century Gothic", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTituloPanel.Location = New System.Drawing.Point(384, 48)
         Me.lblTituloPanel.Name = "lblTituloPanel"
-        Me.lblTituloPanel.Size = New System.Drawing.Size(87, 29)
+        Me.lblTituloPanel.Size = New System.Drawing.Size(0, 29)
         Me.lblTituloPanel.TabIndex = 0
-        Me.lblTituloPanel.Text = "Label1"
         '
         'panMain
         '
@@ -168,6 +169,21 @@ Partial Class Form1
         Me.panMain.Name = "panMain"
         Me.panMain.Size = New System.Drawing.Size(1001, 600)
         Me.panMain.TabIndex = 9
+        '
+        'btnKardex
+        '
+        Me.btnKardex.BackgroundImage = CType(resources.GetObject("btnKardex.BackgroundImage"), System.Drawing.Image)
+        Me.btnKardex.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnKardex.FlatAppearance.BorderSize = 0
+        Me.btnKardex.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnKardex.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnKardex.Location = New System.Drawing.Point(0, 385)
+        Me.btnKardex.Name = "btnKardex"
+        Me.btnKardex.Size = New System.Drawing.Size(222, 71)
+        Me.btnKardex.TabIndex = 4
+        Me.btnKardex.Text = "KARDEXS"
+        Me.btnKardex.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnKardex.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -200,4 +216,5 @@ Partial Class Form1
     Friend WithEvents panTitle As Panel
     Friend WithEvents panMain As Panel
     Friend WithEvents lblTituloPanel As Label
+    Friend WithEvents btnKardex As Button
 End Class

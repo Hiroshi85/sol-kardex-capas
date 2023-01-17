@@ -96,6 +96,7 @@ Partial Class frmMant_Responsables
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Snow
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.txtBuscarCodigoResp)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -306,6 +307,7 @@ Partial Class frmMant_Responsables
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Info
         Me.ClientSize = New System.Drawing.Size(1091, 551)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.btnCerrar)
@@ -313,7 +315,7 @@ Partial Class frmMant_Responsables
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Name = "frmMant_Responsables"
-        Me.Text = "frmMant_Responsables"
+        Me.Text = "Mantenedor Responsables"
         CType(Me.DGVResponsables, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

@@ -65,11 +65,11 @@ Partial Class frmMant_Proveedores
         Me.DGVProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVProveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdProveedor, Me.RUC, Me.Proveedor, Me.Descripcion, Me.Correo, Me.Direccion, Me.Telefono})
-        Me.DGVProveedores.Location = New System.Drawing.Point(12, 300)
+        Me.DGVProveedores.Location = New System.Drawing.Point(12, 319)
         Me.DGVProveedores.Name = "DGVProveedores"
         Me.DGVProveedores.RowHeadersWidth = 51
         Me.DGVProveedores.RowTemplate.Height = 24
-        Me.DGVProveedores.Size = New System.Drawing.Size(1252, 219)
+        Me.DGVProveedores.Size = New System.Drawing.Size(1155, 233)
         Me.DGVProveedores.TabIndex = 0
         '
         'IdProveedor
@@ -134,30 +134,30 @@ Partial Class frmMant_Proveedores
         'Proveedores
         '
         Me.Proveedores.AutoSize = True
-        Me.Proveedores.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Proveedores.Location = New System.Drawing.Point(503, 9)
+        Me.Proveedores.Font = New System.Drawing.Font("Century Gothic", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Proveedores.Location = New System.Drawing.Point(503, 10)
         Me.Proveedores.Name = "Proveedores"
-        Me.Proveedores.Size = New System.Drawing.Size(163, 29)
+        Me.Proveedores.Size = New System.Drawing.Size(152, 27)
         Me.Proveedores.TabIndex = 1
         Me.Proveedores.Text = "Proveedores"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(261, 14)
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(261, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 29)
+        Me.Label1.Size = New System.Drawing.Size(102, 21)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Proveedor"
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcion.Location = New System.Drawing.Point(618, 46)
+        Me.txtDescripcion.Location = New System.Drawing.Point(618, 49)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(264, 21)
+        Me.txtDescripcion.Size = New System.Drawing.Size(264, 28)
         Me.txtDescripcion.TabIndex = 3
         '
         'btnAñadir
@@ -165,9 +165,9 @@ Partial Class frmMant_Proveedores
         Me.btnAñadir.BackColor = System.Drawing.SystemColors.Window
         Me.btnAñadir.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAñadir.Location = New System.Drawing.Point(1056, 83)
+        Me.btnAñadir.Location = New System.Drawing.Point(1056, 88)
         Me.btnAñadir.Name = "btnAñadir"
-        Me.btnAñadir.Size = New System.Drawing.Size(111, 60)
+        Me.btnAñadir.Size = New System.Drawing.Size(111, 64)
         Me.btnAñadir.TabIndex = 4
         Me.btnAñadir.Text = "Añadir"
         Me.btnAñadir.UseVisualStyleBackColor = False
@@ -177,9 +177,9 @@ Partial Class frmMant_Proveedores
         Me.btnLimpiar.BackColor = System.Drawing.SystemColors.Window
         Me.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLimpiar.Location = New System.Drawing.Point(1056, 161)
+        Me.btnLimpiar.Location = New System.Drawing.Point(1056, 171)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(111, 60)
+        Me.btnLimpiar.Size = New System.Drawing.Size(111, 64)
         Me.btnLimpiar.TabIndex = 5
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = False
@@ -189,9 +189,9 @@ Partial Class frmMant_Proveedores
         Me.btnActualizar.BackColor = System.Drawing.SystemColors.Window
         Me.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Location = New System.Drawing.Point(49, 535)
+        Me.btnActualizar.Location = New System.Drawing.Point(104, 568)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(113, 53)
+        Me.btnActualizar.Size = New System.Drawing.Size(113, 56)
         Me.btnActualizar.TabIndex = 6
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = False
@@ -201,9 +201,9 @@ Partial Class frmMant_Proveedores
         Me.btnEliminar.BackColor = System.Drawing.SystemColors.Window
         Me.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(239, 535)
+        Me.btnEliminar.Location = New System.Drawing.Point(239, 568)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(113, 53)
+        Me.btnEliminar.Size = New System.Drawing.Size(113, 56)
         Me.btnEliminar.TabIndex = 7
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
@@ -213,105 +213,105 @@ Partial Class frmMant_Proveedores
         Me.btnCerrar.BackColor = System.Drawing.SystemColors.Window
         Me.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.LightGray
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1084, 535)
+        Me.btnCerrar.Location = New System.Drawing.Point(1054, 568)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(113, 53)
+        Me.btnCerrar.Size = New System.Drawing.Size(113, 56)
         Me.btnCerrar.TabIndex = 8
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = False
         '
         'txtBuscar
         '
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(104, 255)
+        Me.txtBuscar.Location = New System.Drawing.Point(123, 282)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(248, 21)
+        Me.txtBuscar.Size = New System.Drawing.Size(248, 28)
         Me.txtBuscar.TabIndex = 9
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 252)
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(45, 282)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 29)
+        Me.Label2.Size = New System.Drawing.Size(67, 21)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Buscar"
         '
         'txtProveedor
         '
-        Me.txtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProveedor.Location = New System.Drawing.Point(266, 46)
+        Me.txtProveedor.Location = New System.Drawing.Point(266, 49)
         Me.txtProveedor.Name = "txtProveedor"
-        Me.txtProveedor.Size = New System.Drawing.Size(316, 21)
+        Me.txtProveedor.Size = New System.Drawing.Size(316, 28)
         Me.txtProveedor.TabIndex = 12
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(631, 14)
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(631, 15)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 29)
+        Me.Label4.Size = New System.Drawing.Size(112, 21)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Descripción"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(11, 22)
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(11, 23)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(78, 29)
+        Me.Label5.Size = New System.Drawing.Size(93, 21)
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "Dirección"
         '
         'txtDireccion
         '
-        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(26, 51)
+        Me.txtDireccion.Location = New System.Drawing.Point(26, 54)
         Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(235, 21)
+        Me.txtDireccion.Size = New System.Drawing.Size(235, 28)
         Me.txtDireccion.TabIndex = 15
         '
         'txtTelefono
         '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(670, 51)
+        Me.txtTelefono.Location = New System.Drawing.Point(670, 54)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(148, 21)
+        Me.txtTelefono.Size = New System.Drawing.Size(148, 28)
         Me.txtTelefono.TabIndex = 17
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(665, 19)
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(665, 20)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 29)
+        Me.Label6.Size = New System.Drawing.Size(86, 21)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Teléfono"
         '
         'txtCorreo
         '
-        Me.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorreo.Location = New System.Drawing.Point(363, 51)
+        Me.txtCorreo.Location = New System.Drawing.Point(363, 54)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(276, 21)
+        Me.txtCorreo.Size = New System.Drawing.Size(276, 28)
         Me.txtCorreo.TabIndex = 19
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(358, 12)
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(358, 13)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(143, 29)
+        Me.Label7.Size = New System.Drawing.Size(175, 21)
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Correo Electrónico"
         '
@@ -324,19 +324,19 @@ Partial Class frmMant_Proveedores
         Me.Panel1.Controls.Add(Me.txtProveedor)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.txtDescripcion)
-        Me.Panel1.Location = New System.Drawing.Point(49, 61)
+        Me.Panel1.Location = New System.Drawing.Point(49, 65)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(917, 82)
+        Me.Panel1.Size = New System.Drawing.Size(917, 87)
         Me.Panel1.TabIndex = 21
         '
         'txtRUC
         '
-        Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtRUC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRUC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRUC.Location = New System.Drawing.Point(28, 46)
         Me.txtRUC.MaxLength = 11
         Me.txtRUC.Name = "txtRUC"
-        Me.txtRUC.Size = New System.Drawing.Size(166, 21)
+        Me.txtRUC.Size = New System.Drawing.Size(166, 28)
         Me.txtRUC.TabIndex = 15
         '
         'Label3
@@ -352,20 +352,20 @@ Partial Class frmMant_Proveedores
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(52, 49)
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(52, 52)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(159, 29)
+        Me.Label8.Size = New System.Drawing.Size(190, 21)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Datos del Proveedor"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Dubai", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(53, 149)
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(53, 158)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(191, 29)
+        Me.Label9.Size = New System.Drawing.Size(238, 21)
         Me.Label9.TabIndex = 22
         Me.Label9.Text = "Información de Contacto"
         '
@@ -378,9 +378,9 @@ Partial Class frmMant_Proveedores
         Me.Panel2.Controls.Add(Me.txtDireccion)
         Me.Panel2.Controls.Add(Me.txtTelefono)
         Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Location = New System.Drawing.Point(49, 161)
+        Me.Panel2.Location = New System.Drawing.Point(49, 171)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(917, 88)
+        Me.Panel2.Size = New System.Drawing.Size(917, 93)
         Me.Panel2.TabIndex = 23
         '
         'btnSeleccionar
@@ -388,7 +388,7 @@ Partial Class frmMant_Proveedores
         Me.btnSeleccionar.BackColor = System.Drawing.SystemColors.Window
         Me.btnSeleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSeleccionar.Location = New System.Drawing.Point(423, 533)
+        Me.btnSeleccionar.Location = New System.Drawing.Point(374, 568)
         Me.btnSeleccionar.Name = "btnSeleccionar"
         Me.btnSeleccionar.Size = New System.Drawing.Size(103, 55)
         Me.btnSeleccionar.TabIndex = 24
@@ -397,9 +397,10 @@ Partial Class frmMant_Proveedores
         '
         'frmMant_Proveedores
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1276, 590)
+        Me.BackColor = System.Drawing.SystemColors.Info
+        Me.ClientSize = New System.Drawing.Size(1233, 672)
         Me.Controls.Add(Me.btnSeleccionar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label2)
@@ -414,8 +415,9 @@ Partial Class frmMant_Proveedores
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Panel2)
+        Me.Font = New System.Drawing.Font("Century Gothic", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "frmMant_Proveedores"
-        Me.Text = "frmMant_Proveedores"
+        Me.Text = "Mantenedor Proveedores"
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
