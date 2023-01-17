@@ -132,4 +132,18 @@ Public Class KardexAD
             _conexion.CerrarConexion()
         End Try
     End Function
+
+    Public Sub ActualizarKardex(Kard As Kardex)
+        Dim cmd As New SqlCommand
+        If _conexion.AbrirConexion() Then
+            cmd.Connection = _conexion.ObtenerConexion()
+            cmd.CommandText = "SP_ACTUALIZAR_KARD"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@CodigoProducto", SqlDbType.Int).Value = Kard.CodigoProducto
+            cmd.Parameters.Add("@StockMin", SqlDbType.Decimal).Value = Kard.StockMinRepo
+            cmd.Parameters.Add("@CantRepo", SqlDbType.Decimal).Value = Kard.CantidadReposicion
+            cmd.ExecuteNonQuery()
+            _conexion.CerrarConexion()
+        End If
+    End Sub
 End Class

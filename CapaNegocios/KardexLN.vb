@@ -35,4 +35,8 @@ Public Class KardexLN
         End If
         Return Estado
     End Function
+    Public Shared Function ActualizarKardex(Kard As Kardex)
+        Dim objMovKard As New KardexAD
+        objMovKard.ActualizarKardex(Kard)
+    End Function
 End Class

@@ -63,6 +63,7 @@ Partial Class frmKardex_Movs
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TxtRepo = New System.Windows.Forms.TextBox()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
         CType(Me.NudKardex, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVMovDeKardex, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NudHoja, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,6 +275,7 @@ Partial Class frmKardex_Movs
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.BtnActualizar)
         Me.Panel1.Controls.Add(Me.TxtRepo)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.TxtUnidad)
@@ -297,7 +299,7 @@ Partial Class frmKardex_Movs
         Me.TxtUnidad.Location = New System.Drawing.Point(110, 105)
         Me.TxtUnidad.Name = "TxtUnidad"
         Me.TxtUnidad.ReadOnly = True
-        Me.TxtUnidad.Size = New System.Drawing.Size(100, 27)
+        Me.TxtUnidad.Size = New System.Drawing.Size(130, 27)
         Me.TxtUnidad.TabIndex = 17
         '
         'Label11
@@ -468,6 +470,16 @@ Partial Class frmKardex_Movs
         Me.TxtRepo.Size = New System.Drawing.Size(100, 27)
         Me.TxtRepo.TabIndex = 19
         '
+        'BtnActualizar
+        '
+        Me.BtnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnActualizar.Location = New System.Drawing.Point(292, 121)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(113, 43)
+        Me.BtnActualizar.TabIndex = 20
+        Me.BtnActualizar.Text = "Actualizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
+        '
         'frmKardex_Movs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -544,4 +556,5 @@ Partial Class frmKardex_Movs
     Friend WithEvents Label9 As Label
     Friend WithEvents TxtRepo As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents BtnActualizar As Button
 End Class

@@ -96,3 +96,19 @@ begin
 	where NumItem = @maxItem and p.CodigoProducto = @CodigoProducto and NumHoja = @ultima_hoja
 end
 GO
+
+DROP PROCEDURE IF EXISTS SP_ACTUALIZAR_KARD
+GO
+
+CREATE PROCEDURE SP_ACTUALIZAR_KARD
+    @CodigoProducto INT,
+    @StockMin DECIMAL,
+    @CantRepo DECIMAL
+AS
+BEGIN
+    UPDATE KARDEX
+    SET StockMinRepo = @StockMin,
+        CantidadReposicion = @CantRepo
+    WHERE CodigoProducto = @CodigoProducto
+END
+GO

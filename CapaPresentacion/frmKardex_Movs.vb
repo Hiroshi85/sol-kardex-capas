@@ -1,16 +1,17 @@
 ﻿Imports CapaEntidad
 Imports CapaNegocios
 Public Class frmKardex_Movs
-
+    Dim CodProdActual As Integer
     Private Sub frmKardex_Movs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarUltimaHoja()
-        ListarMovDeKardex()
         CargarKardex()
+        ListarMovDeKardex()
     End Sub
     Private Sub CargarKardex()
         Dim Kard As Kardex
         Dim NumProductos As Integer
-        Kard = KardexLN.GetKardex(NudKardex.Value)
+        CodProdActual = NudKardex.Value
+        Kard = KardexLN.GetKardex(CodProdActual)
         NumProductos = New ProductoLN().ObtenerProductos().Count
         NudKardex.Maximum = NumProductos
         TxtMinimo.Text = Kard.StockMinRepo.ToString
@@ -46,7 +47,7 @@ Public Class frmKardex_Movs
         Dim lista As List(Of Movimiento)
         Dim CodProd As Integer
         Dim NHoja As Integer
-        CodProd = Convert.ToInt32(NudKardex.Value)
+        CodProd = CodProdActual
         NHoja = Convert.ToInt32(NudHoja.Value)
 
         lista = KardexLN.ListarMovimientosKardex(CodProd, NHoja)
@@ -79,9 +80,8 @@ Public Class frmKardex_Movs
     End Sub
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         CargarUltimaHoja()
-        ListarMovDeKardex()
         CargarKardex()
-
+        ListarMovDeKardex()
     End Sub
 
     Private Sub CargarUltimaHoja()
@@ -114,5 +114,17 @@ Public Class frmKardex_Movs
 
     Private Sub BtnIr_Click(sender As Object, e As EventArgs) Handles BtnIr.Click
         ListarMovDeKardex()
+        NudKardex.Value = CodProdActual
+    End Sub
+
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
+        Dim Kard As New Kardex
+        Kard.CodigoProducto = CodProdActual
+        Kard.CantidadReposicion = TxtRepo.Text
+        Kard.StockMinRepo = TxtMinimo.Text
+        Kard.FechaApertura = DtpFecha.Value
+        KardexLN.ActualizarKardex(Kard)
+        CargarKardex()
+        NudKardex.Value = CodProdActual
     End Sub
 End Class
