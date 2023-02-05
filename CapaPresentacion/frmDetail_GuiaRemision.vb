@@ -1,5 +1,6 @@
 ﻿Imports CapaNegocios
 Imports CapaEntidad
+Imports capaaccesodatos
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
@@ -190,7 +191,7 @@ Public Class frmDetail_GuiaRemision
         Dim widths3 As Single() = New Single() {3.0F, 2.0F, 2.0F, 2.0F, 1.0F}
         table3.WidthPercentage = 95
         table3.SetWidths(widths3)
-        col1 = New PdfPCell(New Phrase("Código de Producto", FontB8))
+        col1 = New PdfPCell(New Phrase("Producto", FontB8))
         col1.Border = 0
         table3.AddCell(col1)
         col1 = New PdfPCell(New Phrase("Precio en Documento", FontB8))
